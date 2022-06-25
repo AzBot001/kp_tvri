@@ -25,7 +25,7 @@ if (isset($_POST['simpangns'])) {
 
     for ($i = 0; $i < $jumlah_su; $i++) {
 
-        $query_detail = $mysqli->query("INSERT INTO detail_naskah VALUES ('','$last_id','$su[$i]','$narasi_soundup[$i]')");
+        $query_detail = $mysqli->query("INSERT INTO detail_naskah VALUES ('','$last_id','$u[$i]','$su[$i]','$narasi_soundup[$i]')");
     }
 
 ?>
