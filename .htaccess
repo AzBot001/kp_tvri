@@ -25,7 +25,6 @@ RewriteRule ^buatNaskahGns$ reporter.php?t_reporter=buatNaskahGns
 RewriteRule ^buatNaskahHabari$ reporter.php?t_reporter=buatNaskahHabari
 RewriteRule ^buatNaskahSulampa$ reporter.php?t_reporter=buatNaskahSulampa
 RewriteRule ^buatNaskahDialog$ reporter.php?t_reporter=buatNaskahDialog
-RewriteRule ^buatNaskahLc$ reporter.php?t_reporter=buatNaskahLc
 RewriteRule ^dataBeritaNaskah_reporter$ reporter.php?t_reporter=dataBeritaNaskah_reporter
 RewriteRule ^dataBeritaRundown_reporter$ reporter.php?t_reporter=dataBeritaRundown_reporter
 RewriteRule ^dataBeritaLead_reporter$ reporter.php?t_reporter=dataBeritaLead_reporter

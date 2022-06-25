@@ -32,9 +32,6 @@ if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'beranda_reporter') {
 } else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'buatNaskahDialog') {
     $title = 'Buat Naskah Dialog';
     $icon = 'fas fa-edit';
-} else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'buatNaskahLc') {
-    $title = 'Buat Naskah Live Cross';
-    $icon = 'fas fa-edit';
 } else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'dataBeritaNaskah') {
     $title = 'Data Naskah';
     $icon = 'fas fa-edit';

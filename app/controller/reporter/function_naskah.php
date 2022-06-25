@@ -167,8 +167,4 @@ function tampil_naskah_dialog($mysqli)
     }
 }
 
-function tampil_naskah_lc($mysqli)
-{
-}
-
 ?>

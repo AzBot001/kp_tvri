@@ -30,8 +30,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
-                                    <tr>
+                                <tr>
+                                    <td>1</td>
                                         <td>Gorontalo Hari Ini</td>
                                         <td>07 April 2022</td>
                                         <td class="text-right py-0 align-middle">
@@ -85,6 +85,7 @@
                                 </tbody>
                             </table>
                         </div>
+                    <!-- /.card-body -->
                     </div>
                 </div>
             </div>

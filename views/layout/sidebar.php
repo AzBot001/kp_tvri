@@ -185,12 +185,6 @@
                                       <p>Naskah Dialog</p>
                                   </a>
                               </li>
-                              <li class="nav-item">
-                                  <a href="<?= $base_url ?>buatNaskahLc" class="nav-link">
-                                      <i class="far fa-circle nav-icon"></i>
-                                      <p>Naskah Live Cross</p>
-                                  </a>
-                              </li>
                           </ul>
                       </li>
                       <li class="nav-item has-treeview">
