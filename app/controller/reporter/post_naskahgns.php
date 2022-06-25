@@ -13,14 +13,16 @@ if (isset($_POST['simpangns'])) {
     $lead = $_POST['lead'];
     $narasi = $_POST['narasi'];
     $su = $_POST['su'];
+    $u = $_POST['u'];
     $narasi_soundup = $_POST['narasi_soundup'];
-    $jenis = $_POST['jenis'];
+    $jenis = 'gns';
     $sts_periksa = $_POST['sts_periksa'];
     $stss_edit = $_POST['sts_edit'];
+    $id = $_POST['id_user'];
     // print_r($narasi_soundup);
     $jumlah_su = count($su) - 1;
 
-    $query = $mysqli->query("INSERT INTO naskah VALUES ('','$judul','$lokasi','$kameramen','$tgl_berita','$kategori','$bobot','$lead','$narasi','$jenis','$sts_periksa','$stss_edit')");
+    $query = $mysqli->query("INSERT INTO naskah VALUES ('','$judul','$lokasi','$kameramen','$tgl_berita','$kategori','$bobot','$lead','$narasi','$jenis','$sts_periksa','$stss_edit','$id', '', '', '')");
     $last_id = $mysqli->insert_id;
 
     for ($i = 0; $i < $jumlah_su; $i++) {
@@ -29,9 +31,11 @@ if (isset($_POST['simpangns'])) {
     }
 
 ?>
-   
-    <?php
-    flash("msg_simpan_ghi", "Data Berhasi Disimpan");
+    <script>
+        document.location.href = '<?= $base_url ?>dataBeritaNaskah_reporter';
+    </script>
+<?php
+
 }
 
-    ?>
+?>

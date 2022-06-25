@@ -61,6 +61,7 @@ include 'app/controller/reporter/post_naskah.php';
                                                 <th>No</th>
                                                 <th>Judul</th>
                                                 <th>Kameramen</th>
+                                                <th>Reporter</th>
                                                 <th>Tanggal</th>
                                                 <th>Lokasi</th>
                                                 <th>Kategori</th>
