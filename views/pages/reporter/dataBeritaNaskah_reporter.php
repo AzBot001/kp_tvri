@@ -26,6 +26,7 @@ include 'app/controller/reporter/post_naskah.php';
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                     <a class="nav-item nav-link active" id="ghi-tab" data-toggle="tab" href="#ghi" role="tab" aria-controls="ghi" aria-selected="true">GHI</a>
                                     <a class="nav-item nav-link" id="nav-GNS-tab" data-toggle="tab" href="#nav-GNS" role="tab" aria-controls="nav-GNS" aria-selected="false">GNS</a>
+                                    <a class="nav-item nav-link" id="nav-habari-tab" data-toggle="tab" href="#nav-habari" role="tab" aria-controls="nav-habari" aria-selected="false">HABARI</a>
                                     <a class="nav-item nav-link" id="nav-sulampa-tab" data-toggle="tab" href="#nav-sulampa" role="tab" aria-controls="nav-sulampa" aria-selected="false">SULAMPA</a>
                                     <a class="nav-item nav-link" id="nav-dialog-tab" data-toggle="tab" href="#nav-dialog" role="tab" aria-controls="nav-dialog" aria-selected="false">DIALOG</a>
                                     <a class="nav-item nav-link" id="nav-live-tab" data-toggle="tab" href="#nav-live" role="tab" aria-controls="nav-live" aria-selected="false">LIVE CROSS</a>
@@ -74,6 +75,29 @@ include 'app/controller/reporter/post_naskah.php';
                                         </tbody>
                                     </table>
                                 </div>
+
+                                <div class="tab-pane fade" id="nav-habari" role="tabpanel" aria-labelledby="nav-habari-tab">
+                                    <br>
+                                    <table id="dataTable2" class="table ">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Judul</th>
+                                                <th>Kameramen</th>
+                                                <th>Reporter</th>
+                                                <th>Tanggal</th>
+                                                <th>Lokasi</th>
+                                                <th>Kategori</th>
+                                                <th>Status</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php tampil_naskah_lipuu($mysqli); ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+
                                 <div class="tab-pane fade" id="nav-sulampa" role="tabpanel" aria-labelledby="nav-sulampa-tab">
                                     <br>
                                     <table id="dataTable3" class="table">
