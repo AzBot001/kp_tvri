@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /kp_tvri/
+RewriteBase /kpabidamir/
 Options +FollowSymLinks
 
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -30,6 +30,7 @@ RewriteRule ^dataBeritaRundown_reporter$ reporter.php?t_reporter=dataBeritaRundo
 RewriteRule ^dataBeritaLead_reporter$ reporter.php?t_reporter=dataBeritaLead_reporter
 RewriteRule ^refghi/([0-9]+)$ reporter.php?t_reporter=refghi&id=$1 [NC,L]
 RewriteRule ^ref_sulampa/([0-9]+)$ reporter.php?t_reporter=ref_sulampa&id=$1 [NC,L]
+RewriteRule ^refgns/([0-9]+)$ reporter.php?t_reporter=refgns&id=$1 [NC,L]
 
 <IfModule mod_headers.c>
 Header set X-XSS-Protection "1; mode=block"
