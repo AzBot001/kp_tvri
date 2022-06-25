@@ -106,6 +106,7 @@ include 'app/controller/reporter/post_naskahsulampa.php';
                                         <div class="row mb-2">
                                             <div class="col-8">
                                                 <label>Sound Up</label>
+                                                <input type="text" class="form-control col-2 mb-1" name="u[]" placeholder="urutan">
                                                 <input type="text" name="su[]" placeholder="Masukan Soundup" class="form-control">
                                             </div>
                                             <div class="col-12 mt-2">

@@ -13,6 +13,7 @@ if (isset($_POST['simpansulampa'])) {
     $lead = $_POST['lead'];
     $narasi = $_POST['narasi'];
     $su = $_POST['su'];
+    $u = $_POST['u'];
     $narasi_soundup = $_POST['narasi_soundup'];
     $jenis = 'sulampa';
     $sts_periksa = $_POST['sts_periksa'];
@@ -26,7 +27,7 @@ if (isset($_POST['simpansulampa'])) {
 
     for ($i = 0; $i < $jumlah_su; $i++) {
 
-        $query_detail = $mysqli->query("INSERT INTO detail_naskah VALUES ('','$last_id','$su[$i]','$narasi_soundup[$i]')");
+        $query_detail = $mysqli->query("INSERT INTO detail_naskah VALUES ('','$last_id','$u[$i]','$su[$i]','$narasi_soundup[$i]')");
     }
 
 ?>

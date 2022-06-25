@@ -16,29 +16,23 @@ include 'app/controller/reporter/post_naskah.php';
         <div class="content-fluid">
             <div class="row">
                 <div class="col-12">
-                    <div class="card card-primary card-outline card-outline-tabs">
-                        <div class="card-header p-0 border-bottom-0">
-                            <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="tabel-naskah-ghi-tab" data-toggle="pill" href="#tabel-naskah-ghi" role="tab" aria-controls="tabel-naskah-ghi" aria-selected="true">GHI</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="tabel-naskah-gns-tab" data-toggle="pill" href="#tabel-naskah-gns" role="tab" aria-controls="tabel-naskah-gns" aria-selected="false">GNS</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="tabel-naskah-sulampa-tab" data-toggle="pill" href="#tabel-naskah-sulampa" role="tab" aria-controls="tabel-naskah-sulampa" aria-selected="false">SULAMPA</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="tabel-naskah-lipuu-tab" data-toggle="pill" href="#tabel-naskah-lipuu" role="tab" aria-controls="tabel-naskah-lipuu" aria-selected="false">LIPU'U</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="tabel-naskah-lc-tab" data-toggle="pill" href="#tabel-naskah-lc" role="tab" aria-controls="tabel-naskah-lc" aria-selected="false">LIVE CROSS</a>
-                                </li>
-                            </ul>
+                    <div class="card">
+                        <div class="card-header">
+                            Data Naskah
                         </div>
                         <div class="card-body">
-                            <div class="tab-content" id="custom-tabs-four-tabContent">
-                                <div class="tab-pane fade show active" id="tabel-naskah-ghi" role="tabpanel" aria-labelledby="tabel-naskah-ghi-tab">
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <a class="nav-item nav-link active" id="ghi-tab" data-toggle="tab" href="#ghi" role="tab" aria-controls="ghi" aria-selected="true">GHI</a>
+                                    <a class="nav-item nav-link" id="nav-GNS-tab" data-toggle="tab" href="#nav-GNS" role="tab" aria-controls="nav-GNS" aria-selected="false">GNS</a>
+                                    <a class="nav-item nav-link" id="nav-sulampa-tab" data-toggle="tab" href="#nav-sulampa" role="tab" aria-controls="nav-sulampa" aria-selected="false">SULAMPA</a>
+                                    <a class="nav-item nav-link" id="nav-lipuu-tab" data-toggle="tab" href="#nav-lipuu" role="tab" aria-controls="nav-lipuu" aria-selected="false">LIPU'U</a>
+                                    <a class="nav-item nav-link" id="nav-live-tab" data-toggle="tab" href="#nav-live" role="tab" aria-controls="nav-live" aria-selected="false">LIVE CROSS</a>
+                                </div>
+                            </nav>
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="ghi" role="tabpanel" aria-labelledby="ghi-tab">
+                                    <br>
                                     <table id="dataTable" class="table">
                                         <thead class="thead-light">
                                             <tr>
@@ -58,7 +52,8 @@ include 'app/controller/reporter/post_naskah.php';
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="tab-pane fade" id="tabel-naskah-gns" role="tabpanel" aria-labelledby="tabel-naskah-gns-tab">
+                                <div class="tab-pane fade" id="nav-GNS" role="tabpanel" aria-labelledby="nav-GNS-tab">
+                                    <br>
                                     <table id="dataTable2" class="table ">
                                         <thead class="thead-light">
                                             <tr>
@@ -77,7 +72,8 @@ include 'app/controller/reporter/post_naskah.php';
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="tab-pane fade" id="tabel-naskah-sulampa" role="tabpanel" aria-labelledby="tabel-naskah-sulampa-tab">
+                                <div class="tab-pane fade" id="nav-sulampa" role="tabpanel" aria-labelledby="nav-sulampa-tab">
+                                    <br>
                                     <table id="dataTable3" class="table">
                                         <thead>
                                             <tr>
@@ -96,46 +92,10 @@ include 'app/controller/reporter/post_naskah.php';
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="tab-pane fade" id="tabel-naskah-lipuu" role="tabpanel" aria-labelledby="tabel-naskah-lipuu-tab">
-                                    <table id="dataTable4" class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Judul</th>
-                                                <th>Kameramen</th>
-                                                <th>Tanggal</th>
-                                                <th>Lokasi</th>
-                                                <th>Kategori</th>
-                                                <th>Status</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php tampil_naskah_lipuu($mysqli); ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="tab-pane fade" id="tabel-naskah-lc" role="tabpanel" aria-labelledby="tabel-naskah-lc-tab">
-                                    <table id="dataTable5" class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Judul</th>
-                                                <th>Kameramen</th>
-                                                <th>Tanggal</th>
-                                                <th>Lokasi</th>
-                                                <th>Kategori</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php tampil_naskah_lc($mysqli); ?>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <div class="tab-pane fade" id="nav-lipuu" role="tabpanel" aria-labelledby="nav-lipuu-tab">...</div>
+                                <div class="tab-pane fade" id="nav-live" role="tabpanel" aria-labelledby="nav-live-tab">...</div>
                             </div>
                         </div>
-                        <!-- /.card -->
                     </div>
                 </div>
             </div>

@@ -79,6 +79,14 @@
         .nav-item:hover .nav-link:hover {
             color:  #fff !important;
         }
+        
+        .t-bl {
+            color: #437fc7;
+        }
+
+        .t-bl:hover  {
+            color:  #437fc7 !important;
+        }
 
         .bg-biru {
             background-color: #437FC7;
