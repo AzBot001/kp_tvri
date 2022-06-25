@@ -2,7 +2,7 @@
 
 function tampil_ref_ghi($mysqli,$base_url){
     $nomor = 1;
-    $query = $mysqli->query("SELECT * FROM naskah JOIN kategori ON naskah.id_kategori = kategori.id_kategori WHERE jenis = 'ghi'");
+    $query = $mysqli->query("SELECT * FROM naskah JOIN kategori ON naskah.id_kategori = kategori.id_kategori JOIN user ON naskah.id_user = user.id_user WHERE jenis = 'ghi' ORDER BY id_naskah DESC");
     while($data = $query->fetch_assoc()){
         ?>
             <tr>
@@ -15,6 +15,7 @@ function tampil_ref_ghi($mysqli,$base_url){
                         echo $ptgs['nama_user'];
                     ?>
                 </td>
+                <td><?= $data['nama_user'] ?></td>
                 <td><?= tgl_indo($data['tgl_berita']) ?></td>
                 <td><?= $data['nama_kategori'] ?></td>
                 <td>

@@ -180,7 +180,8 @@ include 'app/controller/reporter/post_naskahghi.php';
              <tr>
                 <th>#</th>
                 <th>Judul</th>
-                <th>Petugas</th>
+                <th>Kameramen</th>
+                <th>Reporter</th>
                 <th>Tanggal</th>
                 <th>Kategori</th>
                 <th>Aksi</th>

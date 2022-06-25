@@ -73,7 +73,9 @@ if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'beranda_reporter') {
     include 'views/pages/reporter/dataBeritaLead_reporter.php';
 } else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'refghi') {
     include 'views/pages/reporter/refghi.php';
-} else {
+} else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'ref_sulampa') {
+    include 'views/pages/reporter/ref_sulampa.php';
+}else {
     include 'views/pages/reporter/beranda_reporter.php';
 }
 

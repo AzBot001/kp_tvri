@@ -1,7 +1,7 @@
 <?php
-include 'app/controller/reporter/post_naskahghi.php';
+include 'app/controller/reporter/post_naskahsulampa.php';
 $idx = $_GET['id'];
-$query = $mysqli->query("SELECT * FROM naskah JOIN user ON naskah.kameramen = user.id_user JOIN kategori ON naskah.id_kategori = kategori.id_kategori WHERE id_naskah = '$idx'");
+$query = $mysqli->query("SELECT * FROM naskah JOIN sumber_berita ON naskah.id_kategori = sumber_berita.id_sumber_berita WHERE id_naskah = '$idx'");
 $d = $query->fetch_assoc();
 
 ?>
@@ -9,7 +9,7 @@ $d = $query->fetch_assoc();
     <section class="content">
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
-            <a href="<?= $base_url ?>buatNaskahGhi" class="btn btn-danger"><i class="fas fa-arrow-left"></i></a>
+            <a href="<?= $base_url ?>buatNaskahSulampa" class="btn btn-danger"><i class="fas fa-arrow-left"></i></a>
             <button type="button" data-toggle="modal" data-target="#ref" class="btn btn-warning btn-md btn-flat mb-3 mt-3 text-white">
                 <i class="fas fa-eye fa-md  mr-2"></i>
                 Lihat Refrensi Naskah
@@ -33,14 +33,27 @@ $d = $query->fetch_assoc();
                                         <div class="form-group">
                                             <label>Judul</label>
                                             <input type="hidden" name="id_user" value="<?= $_SESSION['id'] ?>">
+                                            <input type="hidden" name="lokasi" value="SULAMPA">
                                             <input name="judul" type="text" class="form-control" value="<?= $d['judul'] ?>" placeholder="Masukkan Judul Berita">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <!-- text input -->
                                         <div class="form-group">
-                                            <label>Lokasi</label>
-                                            <input name="lokasi" type="text" value="<?= $d['lokasi'] ?>" class="form-control" placeholder="Masukkan Lokasi Berita">
+                                            <label>Sumber Berita</label>
+                                            <select class="form-control" name="kategori">
+                                                <option value="<?= $d['id_kategori'] ?>"><?= $d['nama_sumber_berita'] ?></option>
+                                                <?php
+
+                                                $sumber = $mysqli->query("SELECT * FROM sumber_berita");
+                                                while ($dataS = $sumber->fetch_assoc()) {
+                                                ?>
+                                                    <option value="<?= $dataS['id_sumber_berita'] ?>"><?= $dataS['nama_sumber_berita'] ?></option>
+                                                <?php
+                                                }
+
+                                                ?>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -48,23 +61,8 @@ $d = $query->fetch_assoc();
                                     <div class="col-sm-6">
                                         <!-- text input -->
                                         <div class="form-group">
-                                            <label>Kameramen</label>
-                                            <select name="kameramen" class="form-control select2bs4" style="width: 100%;">
-                                                <option value="<?= $d['kameramen'] ?>">
-                                                    <?= $d['nama_user'] ?>
-                                                </option>
-                                                <?php
-
-                                                $kameramen = $mysqli->query("SELECT * FROM user WHERE level != '0'");
-                                                while ($data = $kameramen->fetch_assoc()) {
-                                                ?>
-                                                    <option value="<?= $data['id_user'] ?>"><?= $data['nama_user'] ?></option>
-                                                <?php
-                                                }
-
-                                                ?>
-
-                                            </select>
+                                            <label>Rep / Cam</label>
+                                            <input name="kameramen" value="<?= $d['kameramen'] ?>" type="text" class="form-control" placeholder="Masukkan Reporter dan Kameramen Berita">
                                         </div>
                                     </div>
 
@@ -73,40 +71,7 @@ $d = $query->fetch_assoc();
                                         <input name="tgl_berita" value="<?= $d['tgl_berita'] ?>" type="date" class="form-control datetimepicker-input" data-target="#reservationdate" placeholder="Masukkan Tanggal Berita" />
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <!-- select -->
-                                        <div class="form-group">
-                                            <label>Kategori Berita</label>
-                                            <select class="form-control" name="kategori">
-                                                <option value="<?= $d['id_kategori'] ?>"><?= $d['nama_kategori'] ?></option>
-                                                <?php
-
-                                                $kategori = $mysqli->query("SELECT * FROM kategori");
-                                                while ($dataK = $kategori->fetch_assoc()) {
-                                                ?>
-                                                    <option value="<?= $dataK['id_kategori'] ?>"><?= $dataK['nama_kategori'] ?></option>
-                                                <?php
-                                                }
-
-                                                ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <!-- select -->
-                                        <div class="form-group">
-                                            <label>Bobot Berita</label>
-                                            <select class="form-control" name="bobot">
-                                                <option value="<?= $d['bobot'] ?>"><?= $d['bobot'] ?></option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="card card-info">
@@ -185,7 +150,7 @@ $d = $query->fetch_assoc();
                                     </div>
                                 </div>
                                 <div class="mt-5">
-                                    <button type="submit" name="simpanghi" class="btn btn-block btn-success">Simpan</button>
+                                    <button type="submit" name="simpansulampa" class="btn btn-block btn-success">Simpan</button>
                                 </div>
                             </div>
                             <!-- /.card-body -->
@@ -220,7 +185,7 @@ $d = $query->fetch_assoc();
                         </tr>
                     </thead>
                     <tbody>
-                        <?php tampil_ref_ghi($mysqli, $base_url) ?>
+                        <?php tampil_ref_sulampa($mysqli, $base_url) ?>
                     </tbody>
                 </table>
             </div>
