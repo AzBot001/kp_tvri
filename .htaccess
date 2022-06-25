@@ -1,0 +1,41 @@
+RewriteEngine On
+RewriteBase /kpabidamir/
+Options +FollowSymLinks
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^admin$ admin.php
+RewriteRule ^beranda_admin$ admin.php?t_admin=beranda_admin
+RewriteRule ^dataBeritaNaskah$ admin.php?t_admin=dataBeritaNaskah
+RewriteRule ^dataBeritaRundown$ admin.php?t_admin=dataBeritaRundown
+RewriteRule ^dataBeritaLead$ admin.php?t_admin=dataBeritaLead
+RewriteRule ^user$ admin.php?t_admin=user
+RewriteRule ^formatTimredaksi_admin$ admin.php?t_admin=formatTimredaksi_admin
+RewriteRule ^naskahDefault_admin$ admin.php?t_admin=naskahDefault_admin
+RewriteRule ^editNaskah_admin$ admin.php?t_admin=editNaskah_admin
+RewriteRule ^kategori_admin$ admin.php?t_admin=kategori_admin
+RewriteRule ^cu_admin$ admin.php?t_admin=cu_admin
+RewriteRule ^sumber_admin$ admin.php?t_admin=sumber_admin
+
+RewriteRule ^reporter$ reporter.php
+RewriteRule ^beranda_reporter$ reporter.php?t_reporter=beranda_reporter
+RewriteRule ^buatNaskahGhi$ reporter.php?t_reporter=buatNaskahGhi
+RewriteRule ^buatNaskahGns$ reporter.php?t_reporter=buatNaskahGns
+RewriteRule ^buatNaskahHabari$ reporter.php?t_reporter=buatNaskahHabari
+RewriteRule ^buatNaskahSulampa$ reporter.php?t_reporter=buatNaskahSulampa
+RewriteRule ^buatNaskahDialog$ reporter.php?t_reporter=buatNaskahDialog
+RewriteRule ^buatNaskahLc$ reporter.php?t_reporter=buatNaskahLc
+RewriteRule ^dataBeritaNaskah_reporter$ reporter.php?t_reporter=dataBeritaNaskah_reporter
+RewriteRule ^dataBeritaRundown_reporter$ reporter.php?t_reporter=dataBeritaRundown_reporter
+RewriteRule ^dataBeritaLead_reporter$ reporter.php?t_reporter=dataBeritaLead_reporter
+RewriteRule ^refghi/([0-9]+)$ reporter.php?t_reporter=refghi&id=$1 [NC,L]
+
+<IfModule mod_headers.c>
+Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+<Files env.php>
+deny from all
+</Files>
+Options All -Indexes
