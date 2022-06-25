@@ -26,7 +26,7 @@ include 'app/controller/reporter/post_naskah.php';
                                     <a class="nav-item nav-link active" id="ghi-tab" data-toggle="tab" href="#ghi" role="tab" aria-controls="ghi" aria-selected="true">GHI</a>
                                     <a class="nav-item nav-link" id="nav-GNS-tab" data-toggle="tab" href="#nav-GNS" role="tab" aria-controls="nav-GNS" aria-selected="false">GNS</a>
                                     <a class="nav-item nav-link" id="nav-sulampa-tab" data-toggle="tab" href="#nav-sulampa" role="tab" aria-controls="nav-sulampa" aria-selected="false">SULAMPA</a>
-                                    <a class="nav-item nav-link" id="nav-lipuu-tab" data-toggle="tab" href="#nav-lipuu" role="tab" aria-controls="nav-lipuu" aria-selected="false">LIPU'U</a>
+                                    <a class="nav-item nav-link" id="nav-dialog-tab" data-toggle="tab" href="#nav-dialog" role="tab" aria-controls="nav-dialog" aria-selected="false">DIALOG</a>
                                     <a class="nav-item nav-link" id="nav-live-tab" data-toggle="tab" href="#nav-live" role="tab" aria-controls="nav-live" aria-selected="false">LIVE CROSS</a>
                                 </div>
                             </nav>
@@ -92,7 +92,26 @@ include 'app/controller/reporter/post_naskah.php';
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="tab-pane fade" id="nav-lipuu" role="tabpanel" aria-labelledby="nav-lipuu-tab">...</div>
+                                <div class="tab-pane fade" id="nav-dialog" role="tabpanel" aria-labelledby="nav-dialog-tab">
+                                <br>
+                                    <table id="dataTable3" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Judul</th>
+                                                <th>Narasumber</th>
+                                                <th>Keterangan Narasumber</th>
+                                                <th>Tanggal</th>
+                                                <th>Kategori</th>
+                                                <th>Status</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php tampil_naskah_dialog($mysqli); ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                                 <div class="tab-pane fade" id="nav-live" role="tabpanel" aria-labelledby="nav-live-tab">...</div>
                             </div>
                         </div>
