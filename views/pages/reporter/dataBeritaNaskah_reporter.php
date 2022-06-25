@@ -1,4 +1,5 @@
 <?php
+$l_reporter = $_SESSION['id'];
 include 'app/controller/reporter/post_naskah.php';
 // include 'app/controller/reporter/post_naskahghi.php';
 ?>
@@ -48,7 +49,7 @@ include 'app/controller/reporter/post_naskah.php';
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php tampil_naskah_ghi($mysqli); ?>
+                                            <?php tampil_naskah_ghi($mysqli,$l_reporter); ?>
                                         </tbody>
                                     </table>
                                 </div>

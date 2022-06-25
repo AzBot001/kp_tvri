@@ -1,9 +1,10 @@
 <?php
 
-function tampil_naskah_ghi($mysqli)
+function tampil_naskah_ghi($mysqli, $l_reporter)
 {
+   
     $nomor = 1;
-    $query = $mysqli->query("SELECT * FROM kategori JOIN naskah ON kategori.id_kategori = naskah.id_kategori JOIN user ON naskah.id_user = user.id_user WHERE jenis='ghi' ");
+    $query = $mysqli->query("SELECT * FROM kategori JOIN naskah ON kategori.id_kategori = naskah.id_kategori JOIN user ON naskah.id_user = user.id_user WHERE jenis='ghi' ORDER BY id_naskah DESC ");
     while ($data = $query->fetch_assoc()) {
 ?>
         <tr>
@@ -11,9 +12,9 @@ function tampil_naskah_ghi($mysqli)
             <td><?= $data['judul'] ?></td>
             <td>
                 <?php
-                    $kmrmn = $mysqli->query("SELECT * FROM user WHERE id_user = '{$data['kameramen']}'");
-                    $dtkmrmn = $kmrmn->fetch_assoc();
-                    echo $dtkmrmn['nama_user']
+                $kmrmn = $mysqli->query("SELECT * FROM user WHERE id_user = '{$data['kameramen']}'");
+                $dtkmrmn = $kmrmn->fetch_assoc();
+                echo $dtkmrmn['nama_user']
 
                 ?>
             </td>
@@ -48,8 +49,15 @@ function tampil_naskah_ghi($mysqli)
             </td>
             <td>
                 <button class="btn btn-success btn-xs"><i class="fas fa-print"></i></button>
-                <button class="btn btn-warning text-white btn-xs"><i class="fas fa-edit"></i></button>
-                <button class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
+                <?php
+                if ($data['id_user'] == $l_reporter) {
+                ?>
+                    <button class="btn btn-warning text-white btn-xs"><i class="fas fa-edit"></i></button>
+                    <button class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
+                <?php
+                }
+                ?>
+
             </td>
         </tr>
     <?php
@@ -58,19 +66,16 @@ function tampil_naskah_ghi($mysqli)
 
 function tampil_naskah_gns($mysqli)
 {
-    
-    
 }
 
 function tampil_naskah_lipuu($mysqli)
 {
-   
 }
 
 function tampil_naskah_sulampa($mysqli)
 {
     $nomor = 1;
-    $query = $mysqli->query("SELECT * FROM sumber_berita JOIN naskah ON sumber_berita.id_sumber_berita = naskah.id_kategori WHERE jenis = 'sulampa' ");
+    $query = $mysqli->query("SELECT * FROM sumber_berita JOIN naskah ON sumber_berita.id_sumber_berita = naskah.id_kategori WHERE jenis = 'sulampa' ORDER BY id_naskah DESC ");
     while ($data = $query->fetch_assoc()) {
     ?>
         <tr>
@@ -111,13 +116,12 @@ function tampil_naskah_sulampa($mysqli)
                 <button class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
             </td>
         </tr>
-    <?php
+<?php
     }
 }
 
 function tampil_naskah_lc($mysqli)
 {
-
 }
 
 ?>
