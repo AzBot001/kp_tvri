@@ -1,6 +1,6 @@
 <?php
 
-function tampil_naskah_ghi($mysqli, $l_reporter)
+function tampil_naskah_ghi($mysqli, $l_reporter, $base_url)
 {
 
     $nomor = 1;
@@ -48,23 +48,25 @@ function tampil_naskah_ghi($mysqli, $l_reporter)
                 ?>
             </td>
             <td>
-                <button class="btn btn-success btn-xs"><i class="fas fa-print"></i></button>
-                <?php
-                if ($data['id_user'] == $l_reporter) {
-                ?>
-                    <button class="btn btn-warning text-white btn-xs"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
-                <?php
-                }
-                ?>
-
+                <form action="" method="post">
+                    <input type="hidden" name="id" value="<?= $data['id_naskah'] ?>">
+                    <button class="btn btn-success btn-xs"><i class="fas fa-print"></i></button>
+                    <?php
+                    if ($data['id_user'] == $l_reporter) {
+                    ?>
+                        <a href="<?= $base_url ?>editghi/<?= $data['id_naskah'] ?>" class="btn btn-warning text-white btn-xs"><i class="fas fa-edit"></i></a>
+                        <button name="hapus_ghi" onclick="return confirm('Anda Yakin?')" class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
+                    <?php
+                    }
+                    ?>
+                </form>
             </td>
         </tr>
     <?php
     }
 }
 
-function tampil_naskah_gns($mysqli)
+function tampil_naskah_gns($mysqli,$base_url)
 {
     $nomor = 1;
     $query = $mysqli->query("SELECT * FROM kategori JOIN naskah ON kategori.id_kategori = naskah.id_kategori JOIN user ON naskah.id_user = user.id_user WHERE jenis='gns' ORDER BY id_naskah DESC ");
@@ -111,12 +113,12 @@ function tampil_naskah_gns($mysqli)
                 ?>
             </td>
             <td>
-                <button class="btn btn-success btn-xs"><i class="fas fa-print"></i></button>
-
-                <button class="btn btn-warning text-white btn-xs"><i class="fas fa-edit"></i></button>
-                <button class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
-
-
+                <form action="" method="post">
+                    <input type="hidden" name="id" value="<?= $data['id_naskah'] ?>">
+                    <button class="btn btn-success btn-xs"><i class="fas fa-print"></i></button>
+                    <a href="<?= $base_url ?>editgns/<?= $data['id_naskah'] ?>" class="btn btn-warning text-white btn-xs"><i class="fas fa-edit"></i></a>
+                    <button name="hapus_gns" onclick="return confirm('Anda Yakin?')" class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
+                </form>
             </td>
         </tr>
     <?php

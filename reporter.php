@@ -76,6 +76,10 @@ if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'beranda_reporter') {
     include 'views/pages/reporter/refgns.php';
 } else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'ref_habari') {
     include 'views/pages/reporter/ref_habari.php';
+}else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'editghi') {
+    include 'views/pages/reporter/editghi.php';
+}else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'editgns') {
+    include 'views/pages/reporter/editgns.php';
 }else {
     include 'views/pages/reporter/beranda_reporter.php';
 }

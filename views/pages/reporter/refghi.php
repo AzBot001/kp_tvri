@@ -1,7 +1,7 @@
 <?php
 include 'app/controller/reporter/post_naskahghi.php';
 $idx = $_GET['id'];
-$query = $mysqli->query("SELECT * FROM naskah JOIN user ON naskah.kameramen = user.id_user JOIN kategori ON naskah.id_kategori = kategori.id_kategori WHERE id_naskah = '$idx'");
+$query = $mysqli->query("SELECT * FROM naskah JOIN kategori ON naskah.id_kategori = kategori.id_kategori WHERE id_naskah = '$idx'");
 $d = $query->fetch_assoc();
 
 ?>
@@ -51,7 +51,11 @@ $d = $query->fetch_assoc();
                                             <label>Kameramen</label>
                                             <select name="kameramen" class="form-control select2bs4" style="width: 100%;">
                                                 <option value="<?= $d['kameramen'] ?>">
-                                                    <?= $d['nama_user'] ?>
+                                                    <?php
+                                                        $kDefault = $mysqli->query("SELECT * FROM user WHERE id_user = '{$d['kameramen']}'");
+                                                        $kDefaultx = $kDefault->fetch_assoc();
+                                                        echo $kDefaultx['nama_user']
+                                                    ?> 
                                                 </option>
                                                 <?php
 
@@ -134,7 +138,7 @@ $d = $query->fetch_assoc();
                                         </div>
                                     </div>
                                 </div>
-                                <div class="mb-2">
+                                <div class="after-add-more mb-2">
                                     <div class="row">
                                         <div class="col-12">
                                             <button type="button" class="btn btn-warning text-white add-more"><i class="fas fa-plus-circle"></i> Soundup</button>
@@ -152,6 +156,7 @@ $d = $query->fetch_assoc();
                                                 <div class="row mb-2">
                                                     <div class="col-8">
                                                         <label>Sound Up</label>
+                                                        <input type="text" value="<?= $sux['urutan'] ?>" class="form-control col-2 mb-1" name="u[]" placeholder="urutan">
                                                         <input type="text" value="<?= $sux['su'] ?>" name="su[]" placeholder="Masukan Soundup" class="form-control">
                                                     </div>
                                                     <div class="col-12 mt-2">
@@ -167,12 +172,13 @@ $d = $query->fetch_assoc();
                                 <?php
                                 }
                                 ?>
-      
-                                <div class=" after-add-more copy" style="display: none;">
+
+                                <div class="  copy" style="display: none;">
                                     <div class="control-group">
                                         <div class="row mb-2">
                                             <div class="col-8">
                                                 <label>Sound Up</label>
+                                                <input type="text" class="form-control col-2 mb-1" name="u[]" placeholder="urutan">
                                                 <input type="text" name="su[]" placeholder="Masukan Soundup" class="form-control">
                                             </div>
                                             <div class="col-12 mt-2">
@@ -208,12 +214,13 @@ $d = $query->fetch_assoc();
                 </button>
             </div>
             <div class="modal-body">
-                <table class="table">
+                <table class="table" id="dataTable">
                     <thead class="thead-light">
                         <tr>
                             <th>#</th>
                             <th>Judul</th>
-                            <th>Petugas</th>
+                            <th>Kameramen</th>
+                            <th>Reporter</th>
                             <th>Tanggal</th>
                             <th>Kategori</th>
                             <th>Aksi</th>
@@ -226,7 +233,6 @@ $d = $query->fetch_assoc();
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>
