@@ -50,7 +50,7 @@ function tampil_naskah_ghi($mysqli, $l_reporter, $base_url)
             <td>
                 <form action="" method="post">
                     <input type="hidden" name="id" value="<?= $data['id_naskah'] ?>">
-                    <button class="btn btn-success btn-xs"><i class="fas fa-print"></i></button>
+                    <a href="<?= $base_url ?>app/controller/reporter/cetak/cetak_ghi.php?id=<?= $data['id_naskah'] ?>" class="btn btn-success btn-xs" target="_blank"><i class="fas fa-print"></i></a>
                     <?php
                     if ($data['id_user'] == $l_reporter) {
                     ?>

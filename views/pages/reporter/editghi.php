@@ -10,7 +10,7 @@ $d = $query->fetch_assoc();
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
             <a href="<?= $base_url ?>dataBeritaNaskah_reporter" class="btn btn-danger mt-3 mb-3"><i class="fas fa-arrow-left"></i></a>
-          
+
 
 
             <form action="" method="post">
@@ -49,7 +49,11 @@ $d = $query->fetch_assoc();
                                             <label>Kameramen</label>
                                             <select name="kameramen" class="form-control select2bs4" style="width: 100%;">
                                                 <option value="<?= $d['kameramen'] ?>">
-                                                    <?= $d['nama_user'] ?>
+                                                    <?php
+                                                    $kDefault = $mysqli->query("SELECT * FROM user WHERE id_user = '{$d['kameramen']}'");
+                                                    $kDefaultx = $kDefault->fetch_assoc();
+                                                    echo $kDefaultx['nama_user']
+                                                    ?>
                                                 </option>
                                                 <?php
 
@@ -166,7 +170,7 @@ $d = $query->fetch_assoc();
                                 <?php
                                 }
                                 ?>
-      
+
                                 <div class="  copy" style="display: none;">
                                     <div class="control-group">
                                         <div class="row mb-2">
@@ -197,4 +201,3 @@ $d = $query->fetch_assoc();
         </div>
     </section>
 </div>
-
