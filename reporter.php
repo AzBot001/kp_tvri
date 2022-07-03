@@ -80,6 +80,12 @@ if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'beranda_reporter') {
     include 'views/pages/reporter/editghi.php';
 }else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'editgns') {
     include 'views/pages/reporter/editgns.php';
+}else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'edithabari') {
+    include 'views/pages/reporter/edithabari.php';
+}else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'editsulampa') {
+    include 'views/pages/reporter/editsulampa.php';
+}else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'editdialog') {
+    include 'views/pages/reporter/editdialog.php';
 }else {
     include 'views/pages/reporter/beranda_reporter.php';
 }

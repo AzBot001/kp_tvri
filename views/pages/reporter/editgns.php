@@ -28,6 +28,7 @@ $d = $query->fetch_assoc();
                                         <!-- text input -->
                                         <div class="form-group">
                                             <label>Judul</label>
+                                            <input type="hidden" name="idx" value="<?= $idx ?>">
                                             <input type="hidden" name="id_user" value="<?= $d['id_user'] ?>">
                                             <input name="judul" type="text" class="form-control" value="<?= $d['judul'] ?>" placeholder="Masukkan Judul Berita">
                                         </div>

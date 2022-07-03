@@ -50,8 +50,7 @@ if (isset($_POST['editgns'])) {
     $u = $_POST['u'];
     $narasi_soundup = $_POST['narasi_soundup'];
     $jenis = 'gns';
-    $sts_periksa = $_POST['sts_periksa'];
-    $stss_edit = $_POST['sts_edit'];
+
     $id = $_POST['id_user'];
     // print_r($narasi_soundup);
     $jumlah_su = count($su) - 1;

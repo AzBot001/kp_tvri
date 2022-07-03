@@ -66,7 +66,7 @@ function tampil_naskah_ghi($mysqli, $l_reporter, $base_url)
     }
 }
 
-function tampil_naskah_gns($mysqli,$base_url)
+function tampil_naskah_gns($mysqli, $base_url)
 {
     $nomor = 1;
     $query = $mysqli->query("SELECT * FROM kategori JOIN naskah ON kategori.id_kategori = naskah.id_kategori JOIN user ON naskah.id_user = user.id_user WHERE jenis='gns' ORDER BY id_naskah DESC ");
@@ -125,7 +125,7 @@ function tampil_naskah_gns($mysqli,$base_url)
     }
 }
 
-function tampil_naskah_lipuu($mysqli)
+function tampil_naskah_lipuu($mysqli, $base_url)
 {
     $nomor = 1;
     $query = $mysqli->query("SELECT * FROM kategori JOIN naskah ON kategori.id_kategori = naskah.id_kategori JOIN user ON naskah.id_user = user.id_user WHERE jenis='habari' ORDER BY id_naskah DESC ");
@@ -172,19 +172,19 @@ function tampil_naskah_lipuu($mysqli)
                 ?>
             </td>
             <td>
-                <button class="btn btn-success btn-xs"><i class="fas fa-print"></i></button>
-
-                <button class="btn btn-warning text-white btn-xs"><i class="fas fa-edit"></i></button>
-                <button class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
-
-
+                <form action="" method="post">
+                    <input type="hidden" name="id" value="<?= $data['id_naskah'] ?>">
+                    <button class="btn btn-success btn-xs"><i class="fas fa-print"></i></button>
+                    <a href="<?= $base_url ?>edithabari/<?= $data['id_naskah'] ?>" class="btn btn-warning text-white btn-xs"><i class="fas fa-edit"></i></a>
+                    <button name="hapus_habari" onclick="return confirm('Anda Yakin?')" class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
+                </form>
             </td>
         </tr>
     <?php
     }
 }
 
-function tampil_naskah_sulampa($mysqli)
+function tampil_naskah_sulampa($mysqli,$base_url)
 {
     $nomor = 1;
     $query = $mysqli->query("SELECT * FROM sumber_berita JOIN naskah ON sumber_berita.id_sumber_berita = naskah.id_kategori WHERE jenis = 'sulampa' ORDER BY id_naskah DESC ");
@@ -223,16 +223,19 @@ function tampil_naskah_sulampa($mysqli)
                 ?>
             </td>
             <td>
-                <button class="btn btn-success btn-xs"><i class="fas fa-print"></i></button>
-                <button class="btn btn-warning text-white btn-xs"><i class="fas fa-edit"></i></button>
-                <button class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
+            <form action="" method="post">
+                    <input type="hidden" name="id" value="<?= $data['id_naskah'] ?>">
+                    <button class="btn btn-success btn-xs"><i class="fas fa-print"></i></button>
+                    <a href="<?= $base_url ?>editsulampa/<?= $data['id_naskah'] ?>" class="btn btn-warning text-white btn-xs"><i class="fas fa-edit"></i></a>
+                    <button name="hapus_sulampa" onclick="return confirm('Anda Yakin?')" class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
+                </form>
             </td>
         </tr>
     <?php
     }
 }
 
-function tampil_naskah_dialog($mysqli)
+function tampil_naskah_dialog($mysqli,$base_url)
 {
     $nomor = 1;
     $query = $mysqli->query("SELECT * FROM kategori JOIN naskah  ON kategori.id_kategori = naskah.id_kategori WHERE jenis = 'dialog' ");
@@ -244,7 +247,7 @@ function tampil_naskah_dialog($mysqli)
             <td><?= $data['narasumber'] ?></td>
             <td><?= $data['ket_narsum'] ?></td>
             <td><?= tgl_indo($data['tgl_berita']) ?></td>
-            <td><?= $data['id_kategori'] ?></td>
+            <td><?= $data['nama_kategori'] ?></td>
             <td>
                 <?php
                 if ($data['sts_periksa'] == '0') {
@@ -271,9 +274,12 @@ function tampil_naskah_dialog($mysqli)
                 ?>
             </td>
             <td>
-                <button class="btn btn-success btn-xs"><i class="fas fa-print"></i></button>
-                <button class="btn btn-warning text-white btn-xs"><i class="fas fa-edit"></i></button>
-                <button class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
+            <form action="" method="post">
+                    <input type="hidden" name="id" value="<?= $data['id_naskah'] ?>">
+                    <button class="btn btn-success btn-xs"><i class="fas fa-print"></i></button>
+                    <a href="<?= $base_url ?>editdialog/<?= $data['id_naskah'] ?>" class="btn btn-warning text-white btn-xs"><i class="fas fa-edit"></i></a>
+                    <button name="hapus_dialog" onclick="return confirm('Anda Yakin?')" class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
+                </form>
             </td>
         </tr>
 <?php

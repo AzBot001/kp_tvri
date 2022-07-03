@@ -51,8 +51,7 @@ if (isset($_POST['editghi'])) {
     $u = $_POST['u'];
     $narasi_soundup = $_POST['narasi_soundup'];
     $jenis = 'ghi';
-    $sts_periksa = $_POST['sts_periksa'];
-    $stss_edit = $_POST['sts_edit'];
+  
     $id = $_POST['id_user'];
     $jumlah_su = count($su) - 1;
     $idx = $_POST['idx'];
