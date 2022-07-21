@@ -21,6 +21,24 @@ if ($_SESSION['type_user'] == 'reporter') {
     <?php
         return false;
 }
+if ($_SESSION['type_user'] == 'editor') {
+    ?>
+        <script>
+            alert('Akses Ditolak');
+            window.location.href = '<?= $base_url; ?>beranda_editor';
+        </script>
+    <?php
+        return false;
+}
+if ($_SESSION['type_user'] == 'eic') {
+    ?>
+        <script>
+            alert('Akses Ditolak');
+            window.location.href = '<?= $base_url; ?>beranda_eic';
+        </script>
+    <?php
+        return false;
+}
 
 ?>
 <!DOCTYPE html>

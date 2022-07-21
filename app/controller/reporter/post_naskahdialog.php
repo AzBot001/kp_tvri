@@ -17,7 +17,7 @@ if (isset($_POST['simpandialog'])) {
     $ket_narsum = $_POST['ket_narsum'];
     $nohp_narsum = $_POST['nomorhp_narsum'];
 
-    $query = $mysqli->query("INSERT INTO naskah VALUES ('','$judul','','','$tgl_berita','$kategori','$bobot','$lead','','$jenis','$sts_periksa','$stss_edit','$id', '$narsum', '$ket_narsum', '$nohp_narsum')");
+    $query = $mysqli->query("INSERT INTO naskah VALUES ('','$judul','','','$tgl_berita','$kategori','$bobot','$lead','','$jenis','$sts_periksa','$stss_edit','$id', '$narsum', '$ket_narsum', '$nohp_narsum','')");
  
 ?>
     <script>
