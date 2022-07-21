@@ -46,11 +46,7 @@ function tgl_indo($tanggal)
 </head>
 <style>
     td {
-<<<<<<< HEAD
-        line-height: 12px;
-=======
         line-height: 22px;
->>>>>>> 0a710c92ce4b9f6bcd9642ac0226afe96d61e8d3
     }
 </style>
 

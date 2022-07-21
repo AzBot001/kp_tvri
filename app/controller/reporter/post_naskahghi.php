@@ -26,16 +26,14 @@ if (isset($_POST['simpanghi'])) {
     $last_id = $mysqli->insert_id;
 
     for ($i = 0; $i < $jumlah_su; $i++) {
+
         $query_detail = $mysqli->query("INSERT INTO detail_naskah VALUES ('','$last_id','$u[$i]','$su[$i]','$narasi_soundup[$i]')");
     }
+
 ?>
     <script>
         document.location.href = '<?= $base_url ?>dataBeritaNaskah_reporter';
     </script>
-    <?php
-
-    ?>
-
 <?php
 
 }

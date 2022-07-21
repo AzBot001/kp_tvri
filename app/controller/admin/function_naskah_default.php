@@ -14,8 +14,9 @@ function tampil_naskah_default($mysqli)
             <td>
                 <form action="" method="post">
                     <input type="hidden" name="id" value="<?= $data['id_naskahdefault'] ?>">
-                    <button type="button" class="btn btn-xs btn-success" data-toggle="modal" data-target="#detail_naskah_default<?= $data['id_naskahdefault'] ?>">
-                        <i class="fas fa-file"></i>
+                    <a href="<?= $base_url ?>app/controller/admin/cetak/cetak_naskahdefault.php?id=<?= $data['id_naskahdefault'] ?>" class="btn btn-success btn-xs" target="_blank">
+                        <i class="fas fa-print"></i>
+                    </a>
                     </button>
                     <button type="button" class="btn btn-xs btn-warning text-white" data-toggle="modal" data-target="#edit_naskah_default<?= $data['id_naskahdefault'] ?>">
                         <i class="fas fa-edit"></i>

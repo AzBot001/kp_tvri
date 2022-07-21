@@ -5,11 +5,16 @@ include "../../../../app/env.php";
 $query = $mysqli->query("SELECT * FROM naskah WHERE id_naskah = '$id'");
 $d = $query->fetch_assoc();
 
-$kameramen = $mysqli->query("SELECT * FROM user WHERE id_user = '{$d['kameramen']}'");
-$k = $kameramen->fetch_assoc();
+$dkg = $d['id_kategori'];
 
-$reporter = $mysqli->query("SELECT * FROM user WHERE id_user = '{$d['id_user']}'");
-$r = $reporter->fetch_assoc();
+$query = $mysqli->query("SELECT * FROM sumber_berita WHERE id_sumber_berita = '$dkg' ");
+$kg = $query->fetch_assoc();
+
+// $kameramen = $mysqli->query("SELECT * FROM user WHERE id_user = '{$d['kameramen']}'");
+// $k = $kameramen->fetch_assoc();
+
+// $reporter = $mysqli->query("SELECT * FROM user WHERE id_user = '{$d['id_user']}'");
+// $r = $reporter->fetch_assoc();
 function tgl_indo($tanggal)
 {
     $bulan = array(
@@ -46,11 +51,7 @@ function tgl_indo($tanggal)
 </head>
 <style>
     td {
-<<<<<<< HEAD
-        line-height: 12px;
-=======
         line-height: 22px;
->>>>>>> 0a710c92ce4b9f6bcd9642ac0226afe96d61e8d3
     }
 </style>
 
@@ -65,17 +66,17 @@ function tgl_indo($tanggal)
             <td><?= tgl_indo($d['tgl_berita']) ?></td>
         </tr>
         <tr>
-            <td>Reporter</td>
+            <td>Rep / Cam</td>
             <td>:</td>
-            <td><?= $r['nama_user'] ?></td>
+            <td><?= $d['kameramen'] ?></td>
         </tr>
         <tr>
             <td rowspan="2" valign="top">
                 <h5>JDL : <?= $d['judul'] ?></h5>
             </td>
-            <td>Kameramen</td>
+            <td>Sumber Berita</td>
             <td>:</td>
-            <td><?= $k['nama_user'] ?></td>
+            <td><?= $kg['nama_sumber_berita'] ?></td>
         </tr>
         <tr>
             <td>Prakarsa</td>
