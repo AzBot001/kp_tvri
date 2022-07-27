@@ -50,6 +50,8 @@ RewriteRule ^editgns_eic/([0-9]+)$ eic.php?t_eic=editgns&id=$1 [NC,L]
 RewriteRule ^edithabari_eic/([0-9]+)$ eic.php?t_eic=edithabari&id=$1 [NC,L]
 RewriteRule ^editsulampa_eic/([0-9]+)$ eic.php?t_eic=editsulampa&id=$1 [NC,L]
 RewriteRule ^editdialog_eic/([0-9]+)$ eic.php?t_eic=editdialog&id=$1 [NC,L]
+RewriteRule ^buatpaket_eic$ eic.php?t_eic=buatpaket_eic
+
 <IfModule mod_headers.c>
 Header set X-XSS-Protection "1; mode=block"
 </IfModule>

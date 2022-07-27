@@ -1,12 +1,65 @@
 <?php
 
+// th>Nama Program</th>
+//                                     <th>Judul Paket</th>
+//                                     <th>Pengarah Acara</th>
+//                                     <th>Status</th>
+//                                     <th>Aksi</th>
+
+function tampil_paket($mysqli)
+{
+    $nomor = 1;
+    $query = $mysqli->query("SELECT * FROM paket JOIN program_cu ON paket.program_paket = program_cu.id_program_cu JOIN user ON paket.pengarah_acara = user.id_user");
+    while ($data = $query->fetch_assoc()) {
+?>
+        <tr>
+            <td><?= $nomor++ ?></td>
+            <td>
+                <?php
+                $program = $mysqli->query("SELECT * FROM program_cu WHERE id_program_cu = '{$data['program_paket']}'");
+                $dtprogram = $program->fetch_assoc();
+                echo $dtprogram['nama_program_cu']
+
+                ?>
+            </td>
+            <td><?= $data['judul_paket'] ?></td>
+            <td>
+                <?php
+                $pd = $mysqli->query("SELECT * FROM user WHERE id_user = '{$data['pengarah_acara']}'");
+                $dtpd = $pd->fetch_assoc();
+                echo $dtpd['nama_user']
+                ?>
+            </td>
+            <td> <?php
+                    if ($data['status'] == '0') {
+                        echo "Belum Produksi";
+                    } else if ($data['status'] == '1') {
+                        echo "Sementara Produksi";
+                    } else if ($data['status'] == '2') {
+                        echo "Proses Editing";
+                    } else {
+                    ?>
+                    <div class="badge badge-success"><i class="fas fa-check"></i> Sudah Tayang</div>
+                <?php
+                    }
+                ?>
+            </td>
+            <td>
+
+            </td>
+        </tr>
+
+    <?php
+    }
+}
+
 function tampil_naskah_ghi($mysqli, $l_reporter, $base_url)
 {
 
     $nomor = 1;
     $query = $mysqli->query("SELECT * FROM kategori JOIN naskah ON kategori.id_kategori = naskah.id_kategori JOIN user ON naskah.id_user = user.id_user WHERE jenis='ghi' ORDER BY id_naskah DESC ");
     while ($data = $query->fetch_assoc()) {
-?>
+    ?>
         <tr>
             <td><?= $nomor++ ?></td>
             <td><?= $data['judul'] ?></td>
@@ -48,7 +101,7 @@ function tampil_naskah_ghi($mysqli, $l_reporter, $base_url)
                 ?>
             </td>
             <td>
-               <a href="<?= $base_url ?>editghi_eic/<?= $data['id_naskah'] ?>" class="btn btn-xs btn-primary"><i class="fas fa-edit"></i></a>
+                <a href="<?= $base_url ?>editghi_eic/<?= $data['id_naskah'] ?>" class="btn btn-xs btn-primary"><i class="fas fa-edit"></i></a>
             </td>
         </tr>
 
@@ -103,11 +156,11 @@ function tampil_naskah_gns($mysqli, $base_url)
                 ?>
             </td>
             <td>
-            <a href="<?= $base_url ?>editgns_eic/<?= $data['id_naskah'] ?>" class="btn btn-xs btn-primary"><i class="fas fa-edit"></i></a>
+                <a href="<?= $base_url ?>editgns_eic/<?= $data['id_naskah'] ?>" class="btn btn-xs btn-primary"><i class="fas fa-edit"></i></a>
             </td>
         </tr>
 
-      
+
     <?php
     }
 }
@@ -159,11 +212,11 @@ function tampil_naskah_lipuu($mysqli, $base_url)
                 ?>
             </td>
             <td>
-            <a href="<?= $base_url ?>edithabari_eic/<?= $data['id_naskah'] ?>" class="btn btn-xs btn-primary"><i class="fas fa-edit"></i></a>
+                <a href="<?= $base_url ?>edithabari_eic/<?= $data['id_naskah'] ?>" class="btn btn-xs btn-primary"><i class="fas fa-edit"></i></a>
             </td>
         </tr>
 
-       
+
     <?php
     }
 }
@@ -207,7 +260,7 @@ function tampil_naskah_sulampa($mysqli, $base_url)
                 ?>
             </td>
             <td>
-            <a href="<?= $base_url ?>editsulampa_eic/<?= $data['id_naskah'] ?>" class="btn btn-xs btn-primary"><i class="fas fa-edit"></i></a>
+                <a href="<?= $base_url ?>editsulampa_eic/<?= $data['id_naskah'] ?>" class="btn btn-xs btn-primary"><i class="fas fa-edit"></i></a>
             </td>
         </tr>
 
@@ -254,11 +307,11 @@ function tampil_naskah_dialog($mysqli, $base_url)
                 ?>
             </td>
             <td>
-            <a href="<?= $base_url ?>editdialog_eic/<?= $data['id_naskah'] ?>" class="btn btn-xs btn-primary"><i class="fas fa-edit"></i></a> 
+                <a href="<?= $base_url ?>editdialog_eic/<?= $data['id_naskah'] ?>" class="btn btn-xs btn-primary"><i class="fas fa-edit"></i></a>
             </td>
         </tr>
 
-       
+
 <?php
     }
 }
