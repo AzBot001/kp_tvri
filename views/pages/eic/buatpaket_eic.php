@@ -47,7 +47,7 @@ include 'app/controller/eic/post_paket.php';
                         }
                         ?>
 
-                        <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#inputpaket"><i class="fas fa-plus-circle"></i> User</button>
+                        <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#inputpaket"><i class="fas fa-plus-circle"></i> Paket Acara</button>
                         <table id="dataTable" class="table">
                             <thead class="thead-light">
                                 <tr>

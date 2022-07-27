@@ -1,11 +1,5 @@
 <?php
 
-// th>Nama Program</th>
-//                                     <th>Judul Paket</th>
-//                                     <th>Pengarah Acara</th>
-//                                     <th>Status</th>
-//                                     <th>Aksi</th>
-
 function tampil_paket($mysqli)
 {
     $nomor = 1;
@@ -32,22 +26,84 @@ function tampil_paket($mysqli)
             </td>
             <td> <?php
                     if ($data['status'] == '0') {
-                        echo "Belum Produksi";
-                    } else if ($data['status'] == '1') {
-                        echo "Sementara Produksi";
-                    } else if ($data['status'] == '2') {
-                        echo "Proses Editing";
-                    } else {
                     ?>
+                    <div class="badge badge-danger text-white"><i class="fas fa-clock"></i> Belum Produksi</div>
+                <?php
+                    } else if ($data['status'] == '1') {
+                ?>
+                    <div class="badge badge-warning text-white"><i class="fas fa-clock"></i> Sementara Produksi</div>
+                <?php
+                    } else if ($data['status'] == '2') {
+                ?>
+                    <div class="badge badge-warning text-white"><i class="fas fa-clock"></i> Proses Editing</div>
+                <?php
+                    } else {
+                ?>
                     <div class="badge badge-success"><i class="fas fa-check"></i> Sudah Tayang</div>
                 <?php
                     }
                 ?>
             </td>
-            <td>
 
+            <td>
+                <form action="" method="post">
+                    <input type="hidden" name="id" value="<?= $data['id_paket'] ?>">
+                    <button class="btn btn-xs btn-primary" type="button" data-toggle="modal" data-target="#edit<?= $data['id_paket'] ?>"><i class="fas fa-edit"></i></button>
+                    <button class="btn btn-xs btn-danger" type="submit" name="hapus" onclick="return confirm('Anda yakin menghapus data ini?')"><i class="fas fa-trash"></i></button>
+                </form>
             </td>
         </tr>
+
+        <div class="modal fade" id="edit<?= $data['id_paketr'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <form action="" method="post">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Edit Paket</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label>Nama User</label>
+                                        <input type="hidden" name="id" value="<?= $data['id_user'] ?>">
+                                        <input type="text" name="nm_user" class="form-control" value="<?= $data['nama_user'] ?>" id="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Level</label>
+                                        <select name="level" class="form-control">
+                                            <option hidden value="<?= $data['level'] ?>">
+                                                <?php
+                                                if ($data['level'] == '1') {
+                                                    echo 'Reporter';
+                                                } else if ($data['level'] == '2') {
+                                                    echo 'User';
+                                                } else if ($data['level'] == '3') {
+                                                    echo 'Desk';
+                                                } else if ($data['level'] == '4') {
+                                                    echo 'Editor';
+                                                }
+                                                ?>
+                                            </option>
+                                            <option value="1">Reporter</option>
+                                            <option value="2">User</option>
+                                            <option value="3">Desk</option>
+                                            <option value="4">Editor</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" name="edit" class="btn btn-success btn-block"><i class="fas fa-save"></i> Simpan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
     <?php
     }

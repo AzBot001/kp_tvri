@@ -4,12 +4,12 @@ include 'app/controller/admin/function_user.php';
 include 'app/flash_message.php';
 
 if (isset($_POST['simpan_user'])) {
-    $program_paket = $_POST['program_paket'];
-    $judul_paket = $_POST['judul_paket'];
-    $pengarah_acara = $_POST['pengarah_acara'];
-    $status = $_POST['pengarah_acara'];
-    $query = $mysqli->query("INSERT INTO paket(id_paket,program_paket,judul_paket,pengarah_acara,status) VALUES ('','$program_paket','$judul_paket','$pengarah_acara','$status')");
-    flash("msg_simpan", "Data Paket Berhasil Disimpan");
+    $nama = $_POST['nm_user'];
+    $username = $_POST['username'];
+    $level = $_POST['level'];
+    $pass = md5('tvrinews123');
+    $query = $mysqli->query("INSERT INTO user(id_user,nama_user,user,status_user,pass,level) VALUES ('','$nama','$username','Aktif','$pass','$level')");
+    flash("msg_simpan_user", "Data User Berhasil Disimpan");
 }
 
 if (isset($_POST['reset'])) {
