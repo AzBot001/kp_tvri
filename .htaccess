@@ -38,6 +38,18 @@ RewriteRule ^edithabari/([0-9]+)$ reporter.php?t_reporter=edithabari&id=$1 [NC,L
 RewriteRule ^editsulampa/([0-9]+)$ reporter.php?t_reporter=editsulampa&id=$1 [NC,L]
 RewriteRule ^editdialog/([0-9]+)$ reporter.php?t_reporter=editdialog&id=$1 [NC,L]
 
+RewriteRule ^editor$ editor.php
+RewriteRule ^beranda_editor$ editor.php?t_editor=beranda_editor
+RewriteRule ^dataBeritaNaskah_editor$ editor.php?t_editor=dataBeritaNaskah_editor
+
+RewriteRule ^eic$ eic.php
+RewriteRule ^beranda_eic$ eic.php?t_eic=beranda_eic
+RewriteRule ^dataBeritaNaskah_eic$ eic.php?t_eic=dataBeritaNaskah_eic
+RewriteRule ^editghi_eic/([0-9]+)$ eic.php?t_eic=editghi&id=$1 [NC,L]
+RewriteRule ^editgns_eic/([0-9]+)$ eic.php?t_eic=editgns&id=$1 [NC,L]
+RewriteRule ^edithabari_eic/([0-9]+)$ eic.php?t_eic=edithabari&id=$1 [NC,L]
+RewriteRule ^editsulampa_eic/([0-9]+)$ eic.php?t_eic=editsulampa&id=$1 [NC,L]
+RewriteRule ^editdialog_eic/([0-9]+)$ eic.php?t_eic=editdialog&id=$1 [NC,L]
 <IfModule mod_headers.c>
 Header set X-XSS-Protection "1; mode=block"
 </IfModule>
