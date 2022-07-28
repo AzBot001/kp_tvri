@@ -37,6 +37,8 @@ RewriteRule ^editgns/([0-9]+)$ reporter.php?t_reporter=editgns&id=$1 [NC,L]
 RewriteRule ^edithabari/([0-9]+)$ reporter.php?t_reporter=edithabari&id=$1 [NC,L]
 RewriteRule ^editsulampa/([0-9]+)$ reporter.php?t_reporter=editsulampa&id=$1 [NC,L]
 RewriteRule ^editdialog/([0-9]+)$ reporter.php?t_reporter=editdialog&id=$1 [NC,L]
+RewriteRule ^buatpaket_rep$ reporter.php?t_reporter=buatpaket_rep
+
 
 RewriteRule ^editor$ editor.php
 RewriteRule ^beranda_editor$ editor.php?t_editor=beranda_editor
