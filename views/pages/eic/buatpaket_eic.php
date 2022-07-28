@@ -2,9 +2,16 @@
 include 'app/controller/eic/post_paket.php';
 ?>
 <div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <h3>Data Paket Acara</h3>
+            </div>
+        </div>
+    </section>
     <section class="content">
         <div class="row">
-            <div class="col-md-12 mt-4">
+            <div class="col-md-12">
                 <div class="card mt-1">
                     <div class="card-header">
                         <h3 class="card-title">Buat Paket</h3>
@@ -75,7 +82,7 @@ include 'app/controller/eic/post_paket.php';
         <div class="modal-content">
             <form action="" method="post">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Input User</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Input Paket Acara</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -128,6 +135,10 @@ include 'app/controller/eic/post_paket.php';
                                     <option value="2">Proses Editing</option>
                                     <option value="3">Sudah Tayang</option>
                                 </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Masukkan Tanggal Tayang</label>
+                                <input name="tgl_tayang" type="date" class="form-control datetimepicker-input" data-target="#reservationdate" placeholder="Masukkan Tanggal Tayang" />
                             </div>
                         </div>
                     </div>

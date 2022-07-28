@@ -39,7 +39,7 @@ function tampil_paket($mysqli)
                 <?php
                     } else {
                 ?>
-                    <div class="badge badge-success"><i class="fas fa-check"></i> Sudah Tayang</div>
+                    <div class="badge badge-success"><i class="fas fa-check"></i> Sudah Tayang | <?= $data['tgl_tayang'] ?></div>
                 <?php
                     }
                 ?>
@@ -48,18 +48,18 @@ function tampil_paket($mysqli)
             <td>
                 <form action="" method="post">
                     <input type="hidden" name="id" value="<?= $data['id_paket'] ?>">
-                    <button class="btn btn-xs btn-primary" type="button" data-toggle="modal" data-target="#edit<?= $data['id_paket'] ?>"><i class="fas fa-edit"></i></button>
+                    <button class="btn btn-xs btn-warning text-white" type="button" data-toggle="modal" data-target="#edit<?= $data['id_paket'] ?>"><i class="fas fa-edit"></i></button>
                     <button class="btn btn-xs btn-danger" type="submit" name="hapus" onclick="return confirm('Anda yakin menghapus data ini?')"><i class="fas fa-trash"></i></button>
                 </form>
             </td>
         </tr>
 
-        <div class="modal fade" id="edit<?= $data['id_paketr'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="edit<?= $data['id_paket'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <form action="" method="post">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Edit Paket</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Edit - <?= $data['judul_paket'] ?></h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -68,31 +68,73 @@ function tampil_paket($mysqli)
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label>Nama User</label>
-                                        <input type="hidden" name="id" value="<?= $data['id_user'] ?>">
-                                        <input type="text" name="nm_user" class="form-control" value="<?= $data['nama_user'] ?>" id="">
+                                        <label>Paket Acara</label>
+                                        <input type="hidden" name="id" value="<?= $data['id_paket'] ?>">
+                                        <input type="text" name="judul_paket" class="form-control" value="<?= $data['judul_paket'] ?>" id="">
                                     </div>
                                     <div class="form-group">
-                                        <label>Level</label>
-                                        <select name="level" class="form-control">
-                                            <option hidden value="<?= $data['level'] ?>">
+                                        <label>Program Paket</label>
+                                        <select name="program_paket" class="form-control">
+                                            <option hidden value="<?= $data['program_paket'] ?>">
+                                                <?= $data['nama_program_cu'] ?>
+                                            </option>
+
+                                            <?php
+
+                                            $judul_cu = $mysqli->query("SELECT * FROM program_cu");
+                                            while ($dataz = $judul_cu->fetch_assoc()) {
+                                            ?>
+                                                <option value="<?= $dataz['id_program_cu'] ?>"><?= $dataz['nama_program_cu'] ?></option>
+                                            <?php
+                                            }
+
+                                            ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Pengarah Acara</label>
+                                        <select name="pengarah_acara" class="form-control">
+                                            <option hidden value="<?= $data['pengarah_acara'] ?>">
+                                                <?= $data['nama_user'] ?>
+                                            </option>
+
+                                            <?php
+
+                                            $userd = $mysqli->query("SELECT * FROM user WHERE level != '0'");
+                                            while ($dataaa = $userd->fetch_assoc()) {
+                                            ?>
+                                                <option value="<?= $dataaa['id_user'] ?>"><?= $dataaa['nama_user'] ?></option>
+                                            <?php
+                                            }
+
+                                            ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Status Paket Sekarang</label>
+                                        <select name="status" class="form-control">
+                                            <option hidden value="<?= $data['status'] ?>">
                                                 <?php
-                                                if ($data['level'] == '1') {
-                                                    echo 'Reporter';
-                                                } else if ($data['level'] == '2') {
-                                                    echo 'User';
-                                                } else if ($data['level'] == '3') {
-                                                    echo 'Desk';
-                                                } else if ($data['level'] == '4') {
-                                                    echo 'Editor';
+                                                if ($data['status'] == '0') {
+                                                    echo 'Belum Produksi';
+                                                } else if ($data['status'] == '1') {
+                                                    echo 'Sementara Produksi';
+                                                } else if ($data['status'] == '2') {
+                                                    echo 'Proses Editing';
+                                                } else if ($data['status'] == '3') {
+                                                    echo 'Sudah Tayang';
                                                 }
                                                 ?>
                                             </option>
-                                            <option value="1">Reporter</option>
-                                            <option value="2">User</option>
-                                            <option value="3">Desk</option>
-                                            <option value="4">Editor</option>
+                                            <option value="0">Belum Produksi</option>
+                                            <option value="1">Sementara Produksi</option>
+                                            <option value="2">Proses Editing</option>
+                                            <option value="3">Sudah Tayang</option>
                                         </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Masukkan Tanggal Tayang</label>
+                                        <input name="tgl_tayang" value="<?= $data['tgl_tayang'] ?>" type="date" class="form-control datetimepicker-input" data-target="#reservationdate" placeholder="Masukkan Tanggal Tayang" />
                                     </div>
                                 </div>
                             </div>
