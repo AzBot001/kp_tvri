@@ -124,6 +124,12 @@
                                       <p>Data Lead</p>
                                   </a>
                               </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>buatpaket_adm" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Data Paket</p>
+                                  </a>
+                              </li>
                           </ul>
                       </li>
                   </ul>

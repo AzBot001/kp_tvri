@@ -17,6 +17,7 @@ RewriteRule ^editNaskah_admin$ admin.php?t_admin=editNaskah_admin
 RewriteRule ^kategori_admin$ admin.php?t_admin=kategori_admin
 RewriteRule ^cu_admin$ admin.php?t_admin=cu_admin
 RewriteRule ^sumber_admin$ admin.php?t_admin=sumber_admin
+RewriteRule ^buatpaket_adm$ admin.php?t_admin=buatpaket_adm
 
 RewriteRule ^reporter$ reporter.php
 RewriteRule ^beranda_reporter$ reporter.php?t_reporter=beranda_reporter
@@ -43,7 +44,7 @@ RewriteRule ^buatpaket_rep$ reporter.php?t_reporter=buatpaket_rep
 RewriteRule ^editor$ editor.php
 RewriteRule ^beranda_editor$ editor.php?t_editor=beranda_editor
 RewriteRule ^dataBeritaNaskah_editor$ editor.php?t_editor=dataBeritaNaskah_editor
-RewriteRule ^buatpaket_editor$ editor.php?t_editor=buatpaket_editor
+RewriteRule ^buatpaket_editor$ editor.php?t_editor=buatspaket_editor
 
 
 RewriteRule ^eic$ eic.php
