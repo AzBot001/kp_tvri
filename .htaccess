@@ -41,6 +41,8 @@ RewriteRule ^editdialog/([0-9]+)$ reporter.php?t_reporter=editdialog&id=$1 [NC,L
 RewriteRule ^editor$ editor.php
 RewriteRule ^beranda_editor$ editor.php?t_editor=beranda_editor
 RewriteRule ^dataBeritaNaskah_editor$ editor.php?t_editor=dataBeritaNaskah_editor
+RewriteRule ^buatpaket_editor$ editor.php?t_editor=buatpaket_editor
+
 
 RewriteRule ^eic$ eic.php
 RewriteRule ^beranda_eic$ eic.php?t_eic=beranda_eic
