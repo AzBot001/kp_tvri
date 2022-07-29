@@ -5,13 +5,13 @@ include 'app/env.php';
 include 'base_url.php';
 if ($_SESSION['type_user'] != 'reporter' || !isset($_SESSION['type_user'])) {
 
-    ?>
-        <script>
-            alert('Anda harus login untuk mengakses halaman ini!');
-            window.location.href = '<?= $base_url; ?>';
-        </script>
-    <?php
-        return false;
+?>
+    <script>
+        alert('Anda harus login untuk mengakses halaman ini!');
+        window.location.href = '<?= $base_url; ?>';
+    </script>
+<?php
+    return false;
 }
 
 if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'beranda_reporter') {
@@ -41,6 +41,9 @@ if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'beranda_reporter') {
 } else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'dataBeritaLead') {
     $title = 'Data Lead';
     $icon = 'fas fa-edit';
+} else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'buatpaket_rep') {
+    $title = 'Data Lead';
+    $icon = 'fas fa-edit';
 }
 
 
@@ -53,7 +56,7 @@ if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'beranda_reporter') {
 } else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'buatNaskahGhi') {
     include 'views/pages/reporter/buatNaskahGhi_reporter.php';
 } else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'buatNaskahGns') {
-    include 'views/pages/reporter/buatNaskahGns_reporter.php'; 
+    include 'views/pages/reporter/buatNaskahGns_reporter.php';
 } else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'buatNaskahHabari') {
     include 'views/pages/reporter/buatNaskahHabari_reporter.php';
 } else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'buatNaskahSulampa') {
@@ -76,7 +79,19 @@ if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'beranda_reporter') {
     include 'views/pages/reporter/refgns.php';
 } else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'ref_habari') {
     include 'views/pages/reporter/ref_habari.php';
-}else {
+} else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'editghi') {
+    include 'views/pages/reporter/editghi.php';
+} else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'editgns') {
+    include 'views/pages/reporter/editgns.php';
+} else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'edithabari') {
+    include 'views/pages/reporter/edithabari.php';
+} else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'editsulampa') {
+    include 'views/pages/reporter/editsulampa.php';
+} else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'editdialog') {
+    include 'views/pages/reporter/editdialog.php';
+} else if (isset($_GET['t_reporter']) && $_GET['t_reporter'] == 'buatpaket_rep') {
+    include 'views/pages/reporter/buatpaket_rep.php';
+} else {
     include 'views/pages/reporter/beranda_reporter.php';
 }
 

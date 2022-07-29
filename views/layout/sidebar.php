@@ -130,6 +130,12 @@
                                       <p>Data Lead</p>
                                   </a>
                               </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>buatpaket_adm" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Data Paket</p>
+                                  </a>
+                              </li>
                           </ul>
                       </li>
                   </ul>
@@ -219,6 +225,13 @@
                                       <i class="far fa-circle nav-icon"></i>
                                       <p>Data Lead</p>
                                   </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>buatpaket_rep" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Data Paket</p>
+                                  </a>
+                              </li>
                           </ul>
                       </li>
                   </ul>
@@ -227,6 +240,117 @@
           <?php
             }
             ?>
+
+          <?php
+            if ($_SESSION['type_user'] == 'editor') {
+            ?>
+              <nav class="mt-2">
+                  <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                      <li class="nav-item">
+                          <a href="<?= $base_url ?>beranda_editor" class="nav-link active">
+                              <i class="nav-icon fas fa-tv text-white"></i>
+                              <p class="text-white">
+                                  Beranda
+                              </p>
+                          </a>
+                      </li>
+                      <li class="nav-item has-treeview">
+                          <a href="#" class="nav-link">
+                              <i class="nav-icon fas fa-newspaper"></i>
+                              <p>
+                                  Data Berita
+                                  <i class="fas fa-angle-left right"></i>
+                              </p>
+                          </a>
+                          <ul class="nav nav-treeview">
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>dataBeritaNaskah_editor" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Data Naskah</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>dataBeritaRundown_editor" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Data Rundown</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>dataBeritaLead_editor" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Data Lead</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>buatpaket_editor" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Data Paket</p>
+                                  </a>
+                              </li>
+                          </ul>
+                      </li>
+                  </ul>
+
+              </nav>
+          <?php
+            }
+            ?>
+
+          <?php
+            if ($_SESSION['type_user'] == 'eic') {
+            ?>
+              <nav class="mt-2">
+                  <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                      <li class="nav-item">
+                          <a href="<?= $base_url ?>beranda_eic" class="nav-link active">
+                              <i class="nav-icon fas fa-tv text-white"></i>
+                              <p class="text-white">
+                                  Beranda
+                              </p>
+                          </a>
+                      </li>
+                      <li class="nav-item has-treeview">
+                          <a href="#" class="nav-link">
+                              <i class="nav-icon fas fa-newspaper"></i>
+                              <p>
+                                  Data Berita
+                                  <i class="fas fa-angle-left right"></i>
+                              </p>
+                          </a>
+                          <ul class="nav nav-treeview">
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>dataBeritaNaskah_eic" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Data Naskah</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>dataBeritaRundown_eic" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Data Rundown</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>dataBeritaLead_eic" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Data Lead</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>buatpaket_eic" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Data Paket</p>
+                                  </a>
+                              </li>
+                          </ul>
+                      </li>
+                  </ul>
+
+              </nav>
+          <?php
+            }
+            ?>
+
 
 
 

@@ -11,42 +11,42 @@ include 'app/controller/admin/post_naskah_default.php';
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                    <?php
-                    if (isset($_SESSION['msg_simpan_naskah_default'])) {
-                    ?>
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <span class="fas fa-check fe-16 mr-2"></span> <?= flash('msg_simpan_naskah_default'); ?>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    <?php
-                    }
-                    ?>
-                    <?php
-                    if (isset($_SESSION['msg_edit_naskah_default'])) {
-                    ?>
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <span class="fas fa-check fe-16 mr-2"></span> <?= flash('msg_edit_naskah_default'); ?>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    <?php
-                    }
-                    ?>
-                     <?php
-                    if (isset($_SESSION['msg_hapus_naskah_default'])) {
-                    ?>
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <span class="fas fa-check fe-16 mr-2"></span> <?= flash('msg_hapus_naskah_default'); ?>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    <?php
-                    }
-                    ?>
+                        <?php
+                        if (isset($_SESSION['msg_simpan_naskah_default'])) {
+                        ?>
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <span class="fas fa-check fe-16 mr-2"></span> <?= flash('msg_simpan_naskah_default'); ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <?php
+                        }
+                        ?>
+                        <?php
+                        if (isset($_SESSION['msg_edit_naskah_default'])) {
+                        ?>
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <span class="fas fa-check fe-16 mr-2"></span> <?= flash('msg_edit_naskah_default'); ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <?php
+                        }
+                        ?>
+                        <?php
+                        if (isset($_SESSION['msg_hapus_naskah_default'])) {
+                        ?>
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <span class="fas fa-check fe-16 mr-2"></span> <?= flash('msg_hapus_naskah_default'); ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <?php
+                        }
+                        ?>
                         <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#inputnaskah_default"><i class="fas fa-plus-circle"></i> Naskah Default</button>
                         <table id="dataTable" class="table">
                             <thead class="thead-light">

@@ -17,6 +17,7 @@ RewriteRule ^editNaskah_admin$ admin.php?t_admin=editNaskah_admin
 RewriteRule ^kategori_admin$ admin.php?t_admin=kategori_admin
 RewriteRule ^cu_admin$ admin.php?t_admin=cu_admin
 RewriteRule ^sumber_admin$ admin.php?t_admin=sumber_admin
+RewriteRule ^buatpaket_adm$ admin.php?t_admin=buatpaket_adm
 
 RewriteRule ^reporter$ reporter.php
 RewriteRule ^beranda_reporter$ reporter.php?t_reporter=beranda_reporter
@@ -32,6 +33,29 @@ RewriteRule ^refghi/([0-9]+)$ reporter.php?t_reporter=refghi&id=$1 [NC,L]
 RewriteRule ^ref_sulampa/([0-9]+)$ reporter.php?t_reporter=ref_sulampa&id=$1 [NC,L]
 RewriteRule ^refgns/([0-9]+)$ reporter.php?t_reporter=refgns&id=$1 [NC,L]
 RewriteRule ^ref_habari/([0-9]+)$ reporter.php?t_reporter=ref_habari&id=$1 [NC,L]
+RewriteRule ^editghi/([0-9]+)$ reporter.php?t_reporter=editghi&id=$1 [NC,L]
+RewriteRule ^editgns/([0-9]+)$ reporter.php?t_reporter=editgns&id=$1 [NC,L]
+RewriteRule ^edithabari/([0-9]+)$ reporter.php?t_reporter=edithabari&id=$1 [NC,L]
+RewriteRule ^editsulampa/([0-9]+)$ reporter.php?t_reporter=editsulampa&id=$1 [NC,L]
+RewriteRule ^editdialog/([0-9]+)$ reporter.php?t_reporter=editdialog&id=$1 [NC,L]
+RewriteRule ^buatpaket_rep$ reporter.php?t_reporter=buatpaket_rep
+
+
+RewriteRule ^editor$ editor.php
+RewriteRule ^beranda_editor$ editor.php?t_editor=beranda_editor
+RewriteRule ^dataBeritaNaskah_editor$ editor.php?t_editor=dataBeritaNaskah_editor
+RewriteRule ^buatpaket_editor$ editor.php?t_editor=buatspaket_editor
+
+
+RewriteRule ^eic$ eic.php
+RewriteRule ^beranda_eic$ eic.php?t_eic=beranda_eic
+RewriteRule ^dataBeritaNaskah_eic$ eic.php?t_eic=dataBeritaNaskah_eic
+RewriteRule ^editghi_eic/([0-9]+)$ eic.php?t_eic=editghi&id=$1 [NC,L]
+RewriteRule ^editgns_eic/([0-9]+)$ eic.php?t_eic=editgns&id=$1 [NC,L]
+RewriteRule ^edithabari_eic/([0-9]+)$ eic.php?t_eic=edithabari&id=$1 [NC,L]
+RewriteRule ^editsulampa_eic/([0-9]+)$ eic.php?t_eic=editsulampa&id=$1 [NC,L]
+RewriteRule ^editdialog_eic/([0-9]+)$ eic.php?t_eic=editdialog&id=$1 [NC,L]
+RewriteRule ^buatpaket_eic$ eic.php?t_eic=buatpaket_eic
 
 <IfModule mod_headers.c>
 Header set X-XSS-Protection "1; mode=block"

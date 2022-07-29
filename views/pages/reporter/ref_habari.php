@@ -1,21 +1,14 @@
 <?php
 include 'app/controller/reporter/post_naskahlipuu.php';
 $idx = $_GET['id'];
-$query = $mysqli->query("SELECT * FROM naskah JOIN user ON naskah.kameramen = user.id_user JOIN kategori ON naskah.id_kategori = kategori.id_kategori WHERE id_naskah = '$idx'");
+$query = $mysqli->query("SELECT * FROM naskah JOIN kategori ON naskah.id_kategori = kategori.id_kategori WHERE id_naskah = '$idx'");
 $d = $query->fetch_assoc();
-
 ?>
 <div class="content-wrapper">
     <section class="content">
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
-            <a href="<?= $base_url ?>buatNaskahGns" class="btn btn-danger"><i class="fas fa-arrow-left"></i></a>
-            <button type="button" data-toggle="modal" data-target="#ref" class="btn btn-warning btn-md btn-flat mb-3 mt-3 text-white">
-                <i class="fas fa-eye fa-md  mr-2"></i>
-                Lihat Refrensi Naskah
-            </button>
-
-
+            <a href="<?= $base_url ?>buatNaskahHabari" class="btn btn-danger mb-3 mt-3"><i class="fas fa-arrow-left"></i></a>
             <form action="" method="post">
                 <div class="row">
                     <div class="col-md-12">
@@ -51,7 +44,11 @@ $d = $query->fetch_assoc();
                                             <label>Kameramen</label>
                                             <select name="kameramen" class="form-control select2bs4" style="width: 100%;">
                                                 <option value="<?= $d['kameramen'] ?>">
-                                                    <?= $d['nama_user'] ?>
+                                                    <?php
+                                                    $kDefault = $mysqli->query("SELECT * FROM user WHERE id_user = '{$d['kameramen']}'");
+                                                    $kDefaultx = $kDefault->fetch_assoc();
+                                                    echo $kDefaultx['nama_user']
+                                                    ?>
                                                 </option>
                                                 <?php
 
@@ -134,7 +131,7 @@ $d = $query->fetch_assoc();
                                         </div>
                                     </div>
                                 </div>
-                                <div class="mb-2">
+                                <div class=" after-add-more mb-2">
                                     <div class="row">
                                         <div class="col-12">
                                             <button type="button" class="btn btn-warning text-white add-more"><i class="fas fa-plus-circle"></i> Soundup</button>
@@ -152,6 +149,7 @@ $d = $query->fetch_assoc();
                                                 <div class="row mb-2">
                                                     <div class="col-8">
                                                         <label>Sound Up</label>
+                                                        <input type="text" value="<?= $sux['urutan'] ?>" class="form-control col-2 mb-1" name="u[]" placeholder="urutan">
                                                         <input type="text" value="<?= $sux['su'] ?>" name="su[]" placeholder="Masukan Soundup" class="form-control">
                                                     </div>
                                                     <div class="col-12 mt-2">
@@ -167,12 +165,13 @@ $d = $query->fetch_assoc();
                                 <?php
                                 }
                                 ?>
-      
-                                <div class=" after-add-more copy" style="display: none;">
+
+                                <div class=" copy" style="display: none;">
                                     <div class="control-group">
                                         <div class="row mb-2">
                                             <div class="col-8">
                                                 <label>Sound Up</label>
+                                                <input type="text" class="form-control col-2 mb-1" name="u[]" placeholder="urutan">
                                                 <input type="text" name="su[]" placeholder="Masukan Soundup" class="form-control">
                                             </div>
                                             <div class="col-12 mt-2">
@@ -196,38 +195,4 @@ $d = $query->fetch_assoc();
             </form>
         </div>
     </section>
-</div>
-
-<div class="modal fade" id="ref" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Referensi Naskah</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <table class="table">
-                    <thead class="thead-light">
-                        <tr>
-                            <th>#</th>
-                            <th>Judul</th>
-                            <th>Petugas</th>
-                            <th>Tanggal</th>
-                            <th>Kategori</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php tampil_ref_ghi($mysqli, $base_url) ?>
-                    </tbody>
-                </table>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
 </div>
