@@ -9,7 +9,7 @@
                     <a class="nav-link text-white" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item">
-                    <div class="text-white nav-link" role="button">TVRI GORONTALO</div>
+                    <div class="text-white nav-link" role="button">SIMPAN TVRI GORONTALO</div>
                 </li>
             </ul>
             <!-- Right navbar links -->

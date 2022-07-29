@@ -5,7 +5,7 @@
       <div class="sideba-head" style="background-color: #3ebdc6;">
           <a href="<?= $base_url ?>prwst/index.php?hal=beranda_admin" class="brand-link">
               <img src="<?= $base_url ?>public/assets/dist/img/logojadi.png" alt="AdminLTE Logo" class="brand-image">
-              <!-- <p class="text-white" style="font-family: 'Source Sans Pro'; font-size:medium;"> Stasiun Gorontalo</p> -->
+              <p class="text-white mt-1"style="font-family: 'montserrat'; font-size:medium; color:#fffff;">&nbsp;&nbsp;&nbsp;Stasiun Gorontalo</p>
               <span class="brand-text text-white"><img src="<?= $base_url ?>public/assets/image/logo/white.png" style="width: 92px; margin: auto;" alt=""></span>
           </a>
       </div>
@@ -22,7 +22,15 @@
                 <?php
                 if ( $_SESSION['type_user'] == 'reporter'){
                   echo "Reporter";  
-                }    
+                } else if ( $_SESSION['type_user'] == 'admin'){
+                    echo "Admin";  
+                } else if ( $_SESSION['type_user'] == 'editor'){
+                    echo "Editor";  
+                } else if ( $_SESSION['type_user'] == 'eic'){
+                    echo "Desk";  
+                } else {
+                    echo "User";  
+                }   
                 ?>
                 </a>
               </div>
@@ -39,7 +47,7 @@
                       <li class="nav-item">
                           <a href="<?= $base_url ?>beranda_admin" class="nav-link <?php if ($_GET['t_admin'] == 'beranda_admin') {
                                                                                         echo "active";
-                                                                                    } ?>">
+                                                                        } ?>">
                               <i class="nav-icon fas fa-tv text-white"></i>
                               <p class="text-white">
                                   Beranda
