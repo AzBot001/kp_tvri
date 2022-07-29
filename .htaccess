@@ -58,6 +58,11 @@ RewriteRule ^editsulampa_eic/([0-9]+)$ eic.php?t_eic=editsulampa&id=$1 [NC,L]
 RewriteRule ^editdialog_eic/([0-9]+)$ eic.php?t_eic=editdialog&id=$1 [NC,L]
 RewriteRule ^buatpaket_eic$ eic.php?t_eic=buatpaket_eic
 
+RewriteRule ^user$ user.php
+RewriteRule ^beranda_user$ user.php?t_user=beranda_user
+RewriteRule ^dataBeritaNaskah_user$ user.php?t_user=dataBeritaNaskah_user
+RewriteRule ^buatpaket_user$ user.php?t_user=buatpaket_user
+
 <IfModule mod_headers.c>
 Header set X-XSS-Protection "1; mode=block"
 </IfModule>

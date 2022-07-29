@@ -76,6 +76,17 @@ if (isset($_POST['login'])) {
                                 document.location.href = '<?= $base_url ?>beranda_eic';
                             </script>
                             <?php
+                        }else if($data['level'] == '2'){
+                            $_SESSION['uid'] = $data['user'];
+                            $_SESSION['nama'] = $data['nama_user'];
+                            $_SESSION['type_user'] = "user";
+                            $_SESSION['pass'] = $data['pass'];
+                            $_SESSION['id'] = $data['id_user'];
+                            ?>
+                            <script>
+                                document.location.href = '<?= $base_url ?>beranda_user';
+                            </script>
+                            <?php
                         }
 
                     } else {

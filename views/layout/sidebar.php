@@ -2,7 +2,7 @@
 
   <aside class="main-sidebar elevation-4" style="background-color: #6DAFFE;">
       <!-- Brand Logo -->
-      <div class="sideba-head" style="background-color: #3ebdc6;">
+      <div class="sidebar-head" style="background-color: #3ebdc6;">
           <a href="<?= $base_url ?>prwst/index.php?hal=beranda_admin" class="brand-link">
               <img src="<?= $base_url ?>public/assets/dist/img/logojadi.png" alt="AdminLTE Logo" class="brand-image">
               <p class="text-white mt-1"style="font-family: 'montserrat'; font-size:medium; color:#fffff;">&nbsp;&nbsp;&nbsp;Stasiun Gorontalo</p>
@@ -346,6 +346,61 @@
                               </li>
                               <li class="nav-item">
                                   <a href="<?= $base_url ?>buatpaket_eic" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Data Paket</p>
+                                  </a>
+                              </li>
+                          </ul>
+                      </li>
+                  </ul>
+
+              </nav>
+          <?php
+            }
+            ?>
+
+<?php
+            if ($_SESSION['type_user'] == 'user') {
+            ?>
+              <nav class="mt-2">
+                  <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                      <li class="nav-item">
+                          <a href="<?= $base_url ?>beranda_user" class="nav-link active">
+                              <i class="nav-icon fas fa-tv text-white"></i>
+                              <p class="text-white">
+                                  Beranda
+                              </p>
+                          </a>
+                      </li>
+                      <li class="nav-item has-treeview">
+                          <a href="#" class="nav-link">
+                              <i class="nav-icon fas fa-newspaper"></i>
+                              <p>
+                                  Data Berita
+                                  <i class="fas fa-angle-left right"></i>
+                              </p>
+                          </a>
+                          <ul class="nav nav-treeview">
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>dataBeritaNaskah_user" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Data Naskah</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>dataBeritaRundown_user" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Data Rundown</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>dataBeritaLead_user" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Data Lead</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>buatpaket_user" class="nav-link">
                                       <i class="far fa-circle nav-icon"></i>
                                       <p>Data Paket</p>
                                   </a>
