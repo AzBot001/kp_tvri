@@ -47,6 +47,9 @@ if (isset($_GET['t_admin']) && $_GET['t_admin'] == 'beranda_admin') {
 } else if (isset($_GET['t_admin']) && $_GET['t_admin'] == 'buatberita_adm') {
     $title = 'Sumber Berita';
     $icon = 'fas fa-edit';
+} else if (isset($_GET['t_admin']) && $_GET['t_admin'] == 'dataBeritaNaskah_admin') {
+    $title = 'Sumber Berita';
+    $icon = 'fas fa-edit';
 }
 
 
@@ -78,6 +81,8 @@ if (isset($_GET['t_admin']) && $_GET['t_admin'] == 'beranda_admin') {
     include 'views/pages/admin/sumber_admin.php';
 } else if (isset($_GET['t_admin']) && $_GET['t_admin'] == 'buatpaket_adm') {
     include 'views/pages/admin/buatpaket_adm.php';
+} else if (isset($_GET['t_admin']) && $_GET['t_admin'] == 'dataBeritaNaskah_admin') {
+    include 'views/pages/admin/dataBeritaNaskah_admin.php';
 } else {
     include 'views/pages/admin/beranda_admin.php';
 }

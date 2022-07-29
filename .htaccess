@@ -18,6 +18,7 @@ RewriteRule ^kategori_admin$ admin.php?t_admin=kategori_admin
 RewriteRule ^cu_admin$ admin.php?t_admin=cu_admin
 RewriteRule ^sumber_admin$ admin.php?t_admin=sumber_admin
 RewriteRule ^buatpaket_adm$ admin.php?t_admin=buatpaket_adm
+RewriteRule ^dataBeritaNaskah_admin$ admin.php?t_admin=dataBeritaNaskah_admin
 
 RewriteRule ^reporter$ reporter.php
 RewriteRule ^beranda_reporter$ reporter.php?t_reporter=beranda_reporter
