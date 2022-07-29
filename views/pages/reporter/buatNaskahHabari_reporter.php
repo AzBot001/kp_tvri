@@ -14,7 +14,7 @@ include 'app/controller/reporter/post_naskahlipuu.php';
                 <div class="col-12 ">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Referensi Berita - Gorontalo Hari Ini (GHI)</h3>
+                            <h3 class="card-title">Referensi Berita - HABARI LO HULONTHALO</h3>
                         </div>
                         <div class="card-body">
                             <table class="table" id="dataTable">

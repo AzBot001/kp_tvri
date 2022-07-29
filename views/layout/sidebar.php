@@ -18,7 +18,13 @@
                   <img src="<?= $base_url ?>public/assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
               </div>
               <div class="info">
-                  <a href="#" class="d-block text-white">Admin</a>
+                <a href="#" class="d-block text-white">
+                <?php
+                if ( $_SESSION['type_user'] == 'reporter'){
+                  echo "Reporter";  
+                }    
+                ?>
+                </a>
               </div>
           </div>
 

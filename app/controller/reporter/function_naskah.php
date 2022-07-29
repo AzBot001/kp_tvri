@@ -242,7 +242,7 @@ function tampil_naskah_dialog($mysqli)
             <td><?= $data['narasumber'] ?></td>
             <td><?= $data['ket_narsum'] ?></td>
             <td><?= tgl_indo($data['tgl_berita']) ?></td>
-            <td><?= $data['id_kategori'] ?></td>
+            <td><?= $data['nama_kategori'] ?></td>
             <td>
                 <?php
                 if ($data['sts_periksa'] == '0') {

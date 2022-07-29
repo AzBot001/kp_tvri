@@ -78,7 +78,7 @@ include 'app/controller/reporter/post_naskah.php';
 
                                 <div class="tab-pane fade" id="nav-habari" role="tabpanel" aria-labelledby="nav-habari-tab">
                                     <br>
-                                    <table id="dataTable2" class="table ">
+                                    <table id="dataTable3" class="table ">
                                         <thead class="thead-light">
                                             <tr>
                                                 <th>No</th>
@@ -100,7 +100,7 @@ include 'app/controller/reporter/post_naskah.php';
 
                                 <div class="tab-pane fade" id="nav-sulampa" role="tabpanel" aria-labelledby="nav-sulampa-tab">
                                     <br>
-                                    <table id="dataTable3" class="table">
+                                    <table id="dataTable4" class="table">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
@@ -120,7 +120,7 @@ include 'app/controller/reporter/post_naskah.php';
                                 </div>
                                 <div class="tab-pane fade" id="nav-dialog" role="tabpanel" aria-labelledby="nav-dialog-tab">
                                 <br>
-                                    <table id="dataTable3" class="table">
+                                    <table id="dataTable5" class="table">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
