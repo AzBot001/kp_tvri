@@ -2,7 +2,7 @@
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2 ml-1">
-                <h3>Selamat Datang Nama ADMIN</h3>
+                <h3>Selamat Datang <?= $_SESSION['nama'] ?></h3>
             </div>
         </div>
     </section>
