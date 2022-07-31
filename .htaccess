@@ -45,7 +45,7 @@ RewriteRule ^buatpaket_rep$ reporter.php?t_reporter=buatpaket_rep
 RewriteRule ^editor$ editor.php
 RewriteRule ^beranda_editor$ editor.php?t_editor=beranda_editor
 RewriteRule ^dataBeritaNaskah_editor$ editor.php?t_editor=dataBeritaNaskah_editor
-RewriteRule ^buatpaket_editor$ editor.php?t_editor=buatspaket_editor
+RewriteRule ^buatpaket_editor$ editor.php?t_editor=buatpaket_editor
 
 
 RewriteRule ^eic$ eic.php
