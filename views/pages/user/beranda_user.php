@@ -80,7 +80,7 @@ include 'app/controller/user/function_beranda_usr.php';
                             </h3>
                         </div>
                         <!-- /.card-header -->
-                        <div class="card-body table-responsive p-0" style="height: 400px;">
+                        <div class="card-body table-responsive p-0" style="max-height: 400px;">
                             <table class="table table-head-fixed text-nowrap table-striped">
                                 <thead>
                                     <tr>
