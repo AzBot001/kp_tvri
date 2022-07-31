@@ -220,15 +220,11 @@ function tampil_naskah_ghi($mysqli, $l_reporter, $base_url)
                                 <label for="">Masukan Durasi</label>
                                 <input type="hidden" name="id" value="<?= $data['id_naskah'] ?>">
                                 <div class="row">
-                                    <div class="col-4">
-                                        <input type="number" name="h" min="0" max=24 class="form-control" placeholder="Jam">
-
-                                    </div>
-                                    <div class="col-4">
+                                    <div class="col-6">
                                         <input type="number" name="m" min="0" max=59 class="form-control" placeholder="Menit">
 
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-6">
                                         <input type="number" name="s" min="0" max=59 class="form-control" placeholder="Detik">
                                     </div>
                                 </div>
@@ -314,15 +310,11 @@ function tampil_naskah_gns($mysqli, $base_url)
                                 <label for="">Masukan Durasi</label>
                                 <input type="hidden" name="id" value="<?= $data['id_naskah'] ?>">
                                 <div class="row">
-                                    <div class="col-4">
-                                        <input type="number" name="h" min="0" max=24 class="form-control" placeholder="Jam">
-
-                                    </div>
-                                    <div class="col-4">
+                                    <div class="col-6">
                                         <input type="number" name="m" min="0" max=59 class="form-control" placeholder="Menit">
 
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-6">
                                         <input type="number" name="s" min="0" max=59 class="form-control" placeholder="Detik">
                                     </div>
                                 </div>
@@ -408,15 +400,11 @@ function tampil_naskah_lipuu($mysqli, $base_url)
                                 <label for="">Masukan Durasi</label>
                                 <input type="hidden" name="id" value="<?= $data['id_naskah'] ?>">
                                 <div class="row">
-                                    <div class="col-4">
-                                        <input type="number" name="h" min="0" max=24 class="form-control" placeholder="Jam">
-
-                                    </div>
-                                    <div class="col-4">
+                                    <div class="col-6">
                                         <input type="number" name="m" min="0" max=59 class="form-control" placeholder="Menit">
 
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-6">
                                         <input type="number" name="s" min="0" max=59 class="form-control" placeholder="Detik">
                                     </div>
                                 </div>
@@ -494,15 +482,11 @@ function tampil_naskah_sulampa($mysqli, $base_url)
                                 <label for="">Masukan Durasi</label>
                                 <input type="hidden" name="id" value="<?= $data['id_naskah'] ?>">
                                 <div class="row">
-                                    <div class="col-4">
-                                        <input type="number" name="h" min="0" max=24 class="form-control" placeholder="Jam">
-
-                                    </div>
-                                    <div class="col-4">
+                                    <div class="col-6">
                                         <input type="number" name="m" min="0" max=59 class="form-control" placeholder="Menit">
 
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-6">
                                         <input type="number" name="s" min="0" max=59 class="form-control" placeholder="Detik">
                                     </div>
                                 </div>
@@ -581,15 +565,11 @@ function tampil_naskah_dialog($mysqli, $base_url)
                                 <label for="">Masukan Durasi</label>
                                 <input type="hidden" name="id" value="<?= $data['id_naskah'] ?>">
                                 <div class="row">
-                                    <div class="col-4">
-                                        <input type="number" name="h" min="0" max=24 class="form-control" placeholder="Jam">
-
-                                    </div>
-                                    <div class="col-4">
+                                    <div class="col-6">
                                         <input type="number" name="m" min="0" max=59 class="form-control" placeholder="Menit">
 
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-6">
                                         <input type="number" name="s" min="0" max=59 class="form-control" placeholder="Detik">
                                     </div>
                                 </div>
