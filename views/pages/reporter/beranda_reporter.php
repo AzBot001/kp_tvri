@@ -6,14 +6,14 @@ include 'app/controller/reporter/function_beranda_rep.php';
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2 ml-1">
-                <h3>Selamat Datang <?= $_SESSION['nama'] ?></h3>
+                <h3>Selamat Datang <?= $_SESSION['nama'] ?> - Reporter</h3>
             </div>
         </div>
     </section>
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-3 col-6">
+                <div class="col-lg-4 col-12">
                     <!-- small box -->
                     <div class="small-box bg-biru">
                         <div class="inner">
@@ -25,33 +25,34 @@ include 'app/controller/reporter/function_beranda_rep.php';
                                 ?>
                             </h3>
 
-                            <p>Jumlah Berita Hari Ini</p>
+                            <p>Berita Hari Ini</p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-newspaper"></i>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6">
+                <div class="col-lg-4 col-6">
                     <!-- small box -->
                     <div class="small-box bg-kuning">
                         <div class="inner">
                             <h3>
                                 <?php
+                                $iduserA = $_SESSION['id'];
                                 $date = date('Y-m-d');
-                                $sql_beritahariniR = $mysqli->query("SELECT * FROM naskah WHERE tgl_berita = '$date'");
+                                $sql_beritahariniR = $mysqli->query("SELECT * FROM naskah WHERE tgl_berita = '$date' AND id_user = '$iduserA'");
                                 echo mysqli_num_rows($sql_beritahariniR);
                                 ?>
                             </h3>
 
-                            <p>Jumlah Berita Kamu Hari Ini</p>
+                            <p>Berita Kamu Hari Ini</p>
                         </div>
                         <div class="icon">
-                            <i class="fas fa-newspaper"></i>
+                            <i class="fas fa-file"></i>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6">
+                <div class="col-lg-4 col-6">
                     <!-- small box -->
                     <div class="small-box bg-coklat">
                         <div class="inner">
@@ -63,26 +64,7 @@ include 'app/controller/reporter/function_beranda_rep.php';
                                 ?>
                             </h3>
 
-                            <p>Jumlah Sulampa Hari Ini</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-newspaper"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-hijau">
-                        <div class="inner">
-                            <h3>
-                                <?php
-                                $date = date('Y-m-d');
-                                $slmp = $mysqli->query("SELECT * FROM naskah WHERE tgl_berita = '$date' AND jenis != 'sulampa' AND sts_edit='1' ");
-                                echo mysqli_num_rows($slmp);
-                                ?>
-                            </h3>
-
-                            <p>Jumlah Berita Sudah Diedit</p>
+                            <p>Sulampa Hari Ini</p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-newspaper"></i>
@@ -91,20 +73,23 @@ include 'app/controller/reporter/function_beranda_rep.php';
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-7 col-12">
+                <div class="col-xl-8 col-sm-12">
                     <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">BERITA HARI INI</h3>
+                        <div class="card-header bg-dshbra">
+                            <h3 class="card-title">
+                                <i class="fas fa-list mr-2"></i>
+                                Berita Hari Ini
+                            </h3>
                         </div>
                         <!-- /.card-header -->
-                        <div class="card-body">
-                            <table class="table table-striped">
+                        <div class="card-body table-responsive p-0" style="height: 400px;">
+                            <table class="table table-head-fixed text-nowrap table-striped">
                                 <thead>
                                     <tr>
                                         <th>No</th>
                                         <th>Judul</th>
-                                        <th>Petugas</th>
-                                        <th>status</th>
+                                        <th>Reporter</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -115,40 +100,35 @@ include 'app/controller/reporter/function_beranda_rep.php';
                         <!-- /.card-body -->
                     </div>
                 </div>
-                <div class="col-lg-5 col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">DATA RUNDOWN</h3>
+                <div class="col-lg-4">
+                    <div class="calendar light">
+                        <div class="calendar-header">
+                            <span class="month-picker" id="month-picker">February</span>
+                            <div class="year-picker">
+                                <span class="year-change text-white" id="prev-year">
+                                    <pre><</pre>
+                                </span>
+                                <span id="year">2021</span>
+                                <span class="year-change" id="next-year">
+                                    <pre>></pre>
+                                </span>
+                            </div>
                         </div>
-                        <!-- /.card-header -->
-                        <div class="card-body">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Program</th>
-                                        <th>Tanggal</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            1
-                                        </td>
-                                        <td>
-                                            Gorontalo Hari Ini
-                                        </td>
-                                        <td>
-                                            Rabu, 15 Juni 2022
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="calendar-body">
+                            <div class="calendar-week-day">
+                                <div>Minggu</div>
+                                <div>Senin</div>
+                                <div>Selasa</div>
+                                <div>Rabu</div>
+                                <div>Kamis</div>
+                                <div>Jumat</div>
+                                <div>Sabtu</div>
+                            </div>
+                            <div class="calendar-days"></div>
                         </div>
-                        <!-- /.card-body -->
+                        <div class="month-list"></div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>

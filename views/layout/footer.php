@@ -9,6 +9,8 @@
 </div>
 <!-- ./wrapper -->
 
+<script src="<?= $base_url ?>public/assets/dist/js/calendar/app.js"></script>
+
 <!-- jQuery -->
 <script src="<?= $base_url ?>public/assets/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
@@ -105,6 +107,9 @@
   $(document).ready(function() {
     $('#dataTable5').DataTable();
   });
+  $(document).ready(function() {
+    $('#dataTable6').DataTable();
+  }); 
 </script>
 
 

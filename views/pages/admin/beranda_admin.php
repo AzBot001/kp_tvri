@@ -1,3 +1,7 @@
+<?php
+include 'app/controller/admin/function_beranda_adm.php';
+?>
+
 <div class="content-wrapper">
     <section class="content-header">
         <div class="container-fluid">
@@ -21,7 +25,7 @@
                                 ?>
                             </h3>
 
-                            <p>Jumlah Berita Hari Ini</p>
+                            <p>Berita Hari Ini</p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-newspaper"></i>
@@ -30,7 +34,7 @@
                 </div>
                 <div class="col-lg-4 col-6">
                     <!-- small box -->
-                    <div class="small-box bg-kuning">
+                    <div class="small-box bg-coklat">
                         <div class="inner">
                             <h3>
                                 <?php 
@@ -39,7 +43,7 @@
                                 ?>
                             </h3>
 
-                            <p>Jumlah User Yang Aktif</p>
+                            <p>User Aktif</p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-users"></i>
@@ -48,7 +52,7 @@
                 </div>
                 <div class="col-lg-4 col-6">
                     <!-- small box -->
-                    <div class="small-box bg-coklat">
+                    <div class="small-box bg-kuning">
                         <div class="inner">
                             <h3>
                                 <?php
@@ -58,11 +62,70 @@
                                 ?>
                             </h3>
 
-                            <p>Jumlah Naskah Default</p>
+                            <p> Naskah Default</p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-file"></i>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-8 col-sm-12">
+                    <div class="card">
+                        <div class="card-header bg-dshbra">
+                            <h3 class="card-title">
+                                <i class="fas fa-list mr-2"></i>
+                                User Aplikasi
+                            </h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body table-responsive p-0" style="height: 400px;">
+                            <table class="table table-head-fixed text-nowrap table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama</th>
+                                        <th>Username</th>
+                                        <th>Level</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php tampil_naskah_beranda($mysqli); ?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="calendar light">
+                        <div class="calendar-header">
+                            <span class="month-picker" id="month-picker">February</span>
+                            <div class="year-picker">
+                                <span class="year-change text-white" id="prev-year">
+                                    <pre><</pre>
+                                </span>
+                                <span id="year">2021</span>
+                                <span class="year-change" id="next-year">
+                                    <pre>></pre>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="calendar-body">
+                            <div class="calendar-week-day">
+                                <div>Minggu</div>
+                                <div>Senin</div>
+                                <div>Selasa</div>
+                                <div>Rabu</div>
+                                <div>Kamis</div>
+                                <div>Jumat</div>
+                                <div>Sabtu</div>
+                            </div>
+                            <div class="calendar-days"></div>
+                        </div>
+                        <div class="month-list"></div>
                     </div>
                 </div>
             </div>
