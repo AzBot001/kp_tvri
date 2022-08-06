@@ -23,14 +23,14 @@ include 'app/controller/reporter/post_naskahdialog.php';
                                         <div class="form-group">
                                             <label>Judul</label>
                                             <input type="hidden"name="id_user" value="<?= $_SESSION['id'] ?>">
-                                            <input name="judul" type="text" class="form-control" placeholder="Masukkan Judul Berita">
+                                            <input name="judul" type="text" class="form-control" placeholder="Masukkan Judul Berita" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <!-- text input -->
                                         <div class="form-group">
                                             <label>Nama Narasumber</label>
-                                            <input name="narasumber" type="text" class="form-control" placeholder="Masukkan Nama Narasumber">
+                                            <input name="narasumber" type="text" class="form-control" placeholder="Masukkan Nama Narasumber" required>
                                         </div>
                                     </div>
                                 </div>
@@ -45,7 +45,7 @@ include 'app/controller/reporter/post_naskahdialog.php';
                                     <div class="col-sm-6">
                                         <div class="form-group" >
                                             <label>Keterangan Narasumber</label>
-                                            <input name="ket_narsum"  type="text" class="form-control" placeholder="Masukkan Keterangan Narasumber" />
+                                            <input name="ket_narsum"  type="text" class="form-control" placeholder="Masukkan Keterangan Narasumber"/>
                                         </div>
                                     </div>
                                     
@@ -53,13 +53,13 @@ include 'app/controller/reporter/post_naskahdialog.php';
                                 <div class="row">
                                     <div class="form-group col-sm-6">
                                         <label>Tanggal Berita</label>
-                                        <input name="tgl_berita" type="date" class="form-control datetimepicker-input" data-target="#reservationdate" placeholder="Masukkan Tanggal Berita" />
+                                        <input name="tgl_berita" type="date" class="form-control datetimepicker-input" data-target="#reservationdate" placeholder="Masukkan Tanggal Berita" required />
                                     </div>
                                     <div class="col-sm-6">
                                         <!-- select -->
                                         <div class="form-group">
                                             <label>Kategori Berita</label>
-                                            <select class="form-control" name="kategori">
+                                            <select class="form-control" name="kategori" required>
                                                 <option hidden>--Pilih Kategori--</option>
                                                 <?php
     
@@ -88,7 +88,7 @@ include 'app/controller/reporter/post_naskahdialog.php';
                                         <!-- textarea -->
                                         <div class="form-group">
                                             <label>Lead Berita</label>
-                                            <textarea name="lead" class="form-control" rows="10" placeholder="Masukkan Lead Berita"></textarea>
+                                            <textarea name="lead" class="form-control" rows="10" placeholder="Masukkan Lead Berita" required></textarea>
                                         </div>
                                     </div>
                                 </div>

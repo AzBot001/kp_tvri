@@ -3,10 +3,9 @@
   <aside class="main-sidebar elevation-4" style="background-color: #6DAFFE;">
       <!-- Brand Logo -->
       <div class="sidebar-head" style="background-color: #3ebdc6;">
-          <a href="<?= $base_url ?>prwst/index.php?hal=beranda_admin" class="brand-link">
+          <a href="" class="brand-link">
               <img src="<?= $base_url ?>public/assets/dist/img/logojadi.png" alt="AdminLTE Logo" class="brand-image">
               <p class="text-white mt-1"style="font-family: 'montserrat'; font-size:medium; color:#fffff;">&nbsp;&nbsp;&nbsp;Stasiun Gorontalo</p>
-              <span class="brand-text text-white"><img src="<?= $base_url ?>public/assets/image/logo/white.png" style="width: 92px; margin: auto;" alt=""></span>
           </a>
       </div>
 
