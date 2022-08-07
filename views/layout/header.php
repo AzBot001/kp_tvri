@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>TVRI Gorontalo - Pemberitaan</title>
     <!-- Tell the browser to be responsive to screen width -->
+
+    <link rel="stylesheet" href="<?= $base_url ?>public/assets/dist/css/calendar/app.css">
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Font Awesome -->
@@ -88,6 +92,11 @@
 
         .t-bl:hover  {
             color:  #437fc7 !important;
+        }
+
+        .bg-dshbra {
+            background-color: #69a1e5;
+            color: #ffffff;
         }
 
         .bg-biru {

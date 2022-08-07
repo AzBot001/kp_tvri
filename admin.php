@@ -5,14 +5,14 @@ include 'app/env.php';
 include 'base_url.php';
 if ($_SESSION['type_user'] != 'admin' || !isset($_SESSION['type_user'])) {
 
-    ?>
-        <script>
-            alert('Anda harus login untuk mengakses halaman ini!');
-            window.location.href = '<?= $base_url; ?>';
-        </script>
-    <?php
-        return false;
-    }
+?>
+    <script>
+        alert('Anda harus login untuk mengakses halaman ini!');
+        window.location.href = '<?= $base_url; ?>';
+    </script>
+<?php
+    return false;
+}
 
 if (isset($_GET['t_admin']) && $_GET['t_admin'] == 'beranda_admin') {
     $title = 'Beranda';
@@ -32,9 +32,6 @@ if (isset($_GET['t_admin']) && $_GET['t_admin'] == 'beranda_admin') {
 } else if (isset($_GET['t_admin']) && $_GET['t_admin'] == 'naskahDefault_admin') {
     $title = 'Naskah Default';
     $icon = 'fas fa-edit';
-} else if (isset($_GET['t_admin']) && $_GET['t_admin'] == 'editNaskah_admin') {
-    $title = 'edit Naskah';
-    $icon = 'fas fa-edit';
 } else if (isset($_GET['t_admin']) && $_GET['t_admin'] == 'kategori_admin') {
     $title = 'kategori_admin';
     $icon = 'fas fa-edit';
@@ -42,6 +39,12 @@ if (isset($_GET['t_admin']) && $_GET['t_admin'] == 'beranda_admin') {
     $title = 'Current Affairs';
     $icon = 'fas fa-edit';
 } else if (isset($_GET['t_admin']) && $_GET['t_admin'] == 'sumber_admin') {
+    $title = 'Sumber Berita';
+    $icon = 'fas fa-edit';
+} else if (isset($_GET['t_admin']) && $_GET['t_admin'] == 'buatberita_adm') {
+    $title = 'Sumber Berita';
+    $icon = 'fas fa-edit';
+} else if (isset($_GET['t_admin']) && $_GET['t_admin'] == 'dataBeritaNaskah_admin') {
     $title = 'Sumber Berita';
     $icon = 'fas fa-edit';
 }
@@ -65,14 +68,16 @@ if (isset($_GET['t_admin']) && $_GET['t_admin'] == 'beranda_admin') {
     include 'views/pages/admin/formatTimredaksi_admin.php';
 } else if (isset($_GET['t_admin']) && $_GET['t_admin'] == 'naskahDefault_admin') {
     include 'views/pages/admin/naskahDefault_admin.php';
-} else if (isset($_GET['t_admin']) && $_GET['t_admin'] == 'editNaskah_admin') {
-    include 'views/pages/admin/editNaskah_admin.php';
 } else if (isset($_GET['t_admin']) && $_GET['t_admin'] == 'kategori_admin') {
     include 'views/pages/admin/kategori_admin.php';
 } else if (isset($_GET['t_admin']) && $_GET['t_admin'] == 'cu_admin') {
     include 'views/pages/admin/cu_admin.php';
 } else if (isset($_GET['t_admin']) && $_GET['t_admin'] == 'sumber_admin') {
     include 'views/pages/admin/sumber_admin.php';
+} else if (isset($_GET['t_admin']) && $_GET['t_admin'] == 'buatpaket_adm') {
+    include 'views/pages/admin/buatpaket_adm.php';
+} else if (isset($_GET['t_admin']) && $_GET['t_admin'] == 'dataBeritaNaskah_admin') {
+    include 'views/pages/admin/dataBeritaNaskah_admin.php';
 } else {
     include 'views/pages/admin/beranda_admin.php';
 }

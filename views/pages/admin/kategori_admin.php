@@ -84,7 +84,7 @@ include 'app/controller/admin/post_kategori.php';
                         <div class="col-12">
                             <div class="form-group">
                                 <label>Nama Kategori</label>
-                                <input type="text" name="nama_kategori" class="form-control">
+                                <input type="text" name="nama_kategori" class="form-control" required>
                             </div>
                         </div>
                     </div>

@@ -84,7 +84,7 @@ include 'app/controller/admin/post_cu.php';
                         <div class="col-12">
                             <div class="form-group">
                                 <label>Nama Program Current Affairs</label>
-                                <input type="text" name="nama_program_cu" class="form-control">
+                                <input type="text" name="nama_program_cu" class="form-control" required>
                             </div>
                         </div>
                     </div>

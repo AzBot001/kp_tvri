@@ -120,11 +120,11 @@ include 'app/controller/admin/post_user.php';
                         <div class="col-12">
                             <div class="form-group">
                                 <label>Nama User</label>
-                                <input type="text" name="nm_user" class="form-control" id="">
+                                <input type="text" name="nm_user" class="form-control" id="" required>
                             </div>
                             <div class="form-group">
                                 <label>Username</label>
-                                <input type="text" name="username" class="form-control" id="">
+                                <input type="text" name="username" class="form-control" id="" required>
                             </div>
                             <div class="form-group">
                                 <label>Level</label>

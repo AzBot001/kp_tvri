@@ -40,7 +40,7 @@ function tampil_program_cu($mysqli)
                                     <div class="form-group">
                                         <label>Nama program_cu</label>
                                         <input type="hidden" name="id" value="<?= $data['id_program_cu'] ?>">
-                                        <input type="text" value="<?= $data['nama_program_cu'] ?>" name="nama_program_cu" class="form-control">
+                                        <input type="text" value="<?= $data['nama_program_cu'] ?>" name="nama_program_cu" class="form-control" required>
                                     </div>
                                 </div>
                             </div>

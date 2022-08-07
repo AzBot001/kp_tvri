@@ -74,7 +74,7 @@ include 'app/controller/admin/post_sumber_berita.php';
         <div class="modal-content">
             <form action="" method="post">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Input Program Current Affairs</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Input Sumber Berita</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -83,8 +83,8 @@ include 'app/controller/admin/post_sumber_berita.php';
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <label>Nama Program Current Affairs</label>
-                                <input type="text" name="nama_sumber_berita" class="form-control">
+                                <label>Sumber Berita</label>
+                                <input type="text" name="nama_sumber_berita" class="form-control" required>
                             </div>
                         </div>
                     </div>

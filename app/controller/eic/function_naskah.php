@@ -70,7 +70,7 @@ function tampil_paket($mysqli)
                                     <div class="form-group">
                                         <label>Paket Acara</label>
                                         <input type="hidden" name="id" value="<?= $data['id_paket'] ?>">
-                                        <input type="text" name="judul_paket" class="form-control" value="<?= $data['judul_paket'] ?>" id="">
+                                        <input type="text" name="judul_paket" class="form-control" value="<?= $data['judul_paket'] ?>" id="" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Program Paket</label>
@@ -134,7 +134,7 @@ function tampil_paket($mysqli)
                                     </div>
                                     <div class="form-group">
                                         <label>Masukkan Tanggal Tayang</label>
-                                        <input name="tgl_tayang" value="<?= $data['tgl_tayang'] ?>" type="date" class="form-control datetimepicker-input" data-target="#reservationdate" placeholder="Masukkan Tanggal Tayang" />
+                                        <input name="tgl_tayang" value="<?= $data['tgl_tayang'] ?>" type="date" class="form-control datetimepicker-input" data-target="#reservationdate" placeholder="Masukkan Tanggal Tayang"  required />
                                     </div>
                                 </div>
                             </div>
@@ -157,7 +157,7 @@ function tampil_naskah_ghi($mysqli, $base_url)
     $nomor = 1;
     $query = $mysqli->query("SELECT * FROM kategori JOIN naskah ON kategori.id_kategori = naskah.id_kategori JOIN user ON naskah.id_user = user.id_user WHERE jenis='ghi' ORDER BY id_naskah DESC ");
     while ($data = $query->fetch_assoc()) {
-    ?>
+        ?>
         <tr>
             <td><?= $nomor++ ?></td>
             <td><?= $data['judul'] ?></td>
@@ -472,6 +472,7 @@ function tampil_rndwn($mysqli, $base_url)
                 
             </td>
         </tr>
+
 <?php
     }
 }

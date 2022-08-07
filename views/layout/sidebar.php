@@ -2,11 +2,10 @@
 
   <aside class="main-sidebar elevation-4" style="background-color: #6DAFFE;">
       <!-- Brand Logo -->
-      <div class="sideba-head" style="background-color: #3ebdc6;">
-          <a href="<?= $base_url ?>prwst/index.php?hal=beranda_admin" class="brand-link">
+      <div class="sidebar-head" style="background-color: #3ebdc6;">
+          <a href="" class="brand-link">
               <img src="<?= $base_url ?>public/assets/dist/img/logojadi.png" alt="AdminLTE Logo" class="brand-image">
-              <!-- <p class="text-white" style="font-family: 'Source Sans Pro'; font-size:medium;"> Stasiun Gorontalo</p> -->
-              <span class="brand-text text-white"><img src="<?= $base_url ?>public/assets/image/logo/white.png" style="width: 92px; margin: auto;" alt=""></span>
+              <p class="text-white mt-1"style="font-family: 'montserrat'; font-size:medium; color:#fffff;">&nbsp;&nbsp;&nbsp;Stasiun Gorontalo</p>
           </a>
       </div>
 
@@ -18,7 +17,21 @@
                   <img src="<?= $base_url ?>public/assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
               </div>
               <div class="info">
-                  <a href="#" class="d-block text-white">Admin</a>
+                <a href="#" class="d-block text-white">
+                <?php
+                if ( $_SESSION['type_user'] == 'reporter'){
+                  echo "Reporter";  
+                } else if ( $_SESSION['type_user'] == 'admin'){
+                    echo "Admin";  
+                } else if ( $_SESSION['type_user'] == 'editor'){
+                    echo "Editor";  
+                } else if ( $_SESSION['type_user'] == 'eic'){
+                    echo "Desk";  
+                } else {
+                    echo "User";  
+                }   
+                ?>
+                </a>
               </div>
           </div>
 
@@ -33,7 +46,7 @@
                       <li class="nav-item">
                           <a href="<?= $base_url ?>beranda_admin" class="nav-link <?php if ($_GET['t_admin'] == 'beranda_admin') {
                                                                                         echo "active";
-                                                                                    } ?>">
+                                                                        } ?>">
                               <i class="nav-icon fas fa-tv text-white"></i>
                               <p class="text-white">
                                   Beranda
@@ -107,7 +120,7 @@
                           </a>
                           <ul class="nav nav-treeview">
                               <li class="nav-item">
-                                  <a href="<?= $base_url ?>dataBeritaNaskah" class="nav-link">
+                                  <a href="<?= $base_url ?>dataBeritaNaskah_admin" class="nav-link">
                                       <i class="far fa-circle nav-icon"></i>
                                       <p>Data Naskah</p>
                                   </a>
@@ -122,6 +135,12 @@
                                   <a href="<?= $base_url ?>dataBeritaLead" class="nav-link">
                                       <i class="far fa-circle nav-icon"></i>
                                       <p>Data Lead</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>buatpaket_adm" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Data Paket</p>
                                   </a>
                               </li>
                           </ul>
@@ -213,6 +232,13 @@
                                       <i class="far fa-circle nav-icon"></i>
                                       <p>Data Lead</p>
                                   </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>buatpaket_rep" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Data Paket</p>
+                                  </a>
+                              </li>
                           </ul>
                       </li>
                   </ul>
@@ -261,6 +287,13 @@
                                       <i class="far fa-circle nav-icon"></i>
                                       <p>Data Lead</p>
                                   </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>buatpaket_editor" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Data Paket</p>
+                                  </a>
+                              </li>
                           </ul>
                       </li>
                   </ul>
@@ -372,6 +405,68 @@
                                       <i class="far fa-circle nav-icon"></i>
                                       <p>Data Lead</p>
                                   </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>buatpaket_eic" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Data Paket</p>
+                                  </a>
+                              </li>
+                          </ul>
+                      </li>
+                  </ul>
+
+              </nav>
+          <?php
+            }
+            ?>
+
+<?php
+            if ($_SESSION['type_user'] == 'user') {
+            ?>
+              <nav class="mt-2">
+                  <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                      <li class="nav-item">
+                          <a href="<?= $base_url ?>beranda_user" class="nav-link active">
+                              <i class="nav-icon fas fa-tv text-white"></i>
+                              <p class="text-white">
+                                  Beranda
+                              </p>
+                          </a>
+                      </li>
+                      <li class="nav-item has-treeview">
+                          <a href="#" class="nav-link">
+                              <i class="nav-icon fas fa-newspaper"></i>
+                              <p>
+                                  Data Berita
+                                  <i class="fas fa-angle-left right"></i>
+                              </p>
+                          </a>
+                          <ul class="nav nav-treeview">
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>dataBeritaNaskah_user" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Data Naskah</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>dataBeritaRundown_user" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Data Rundown</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>dataBeritaLead_user" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Data Lead</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>buatpaket_user" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Data Paket</p>
+                                  </a>
+                              </li>
                           </ul>
                       </li>
                   </ul>

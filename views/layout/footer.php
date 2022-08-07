@@ -9,6 +9,8 @@
 </div>
 <!-- ./wrapper -->
 
+<script src="<?= $base_url ?>public/assets/dist/js/calendar/app.js"></script>
+
 <!-- jQuery -->
 <script src="<?= $base_url ?>public/assets/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
@@ -56,7 +58,7 @@
     $('#summernote_naskah_default').summernote({
       height: 200
     })
-    $('#summernote_naskah_default_edit').summernote({
+    $('.summernotee').summernote({
       height: 200
     })
     $('.teaser').summernote({
@@ -112,6 +114,9 @@
   $(document).ready(function() {
     $('#dataTable5').DataTable();
   });
+  $(document).ready(function() {
+    $('#dataTable6').DataTable();
+  }); 
 </script>
 
 

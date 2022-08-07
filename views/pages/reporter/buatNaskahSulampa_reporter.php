@@ -26,14 +26,14 @@ include 'app/controller/reporter/post_naskahsulampa.php';
                                         <div class="form-group">
                                             <label>Judul</label>
                                             <input type="hidden" name="id_user" value="<?= $_SESSION['id'] ?>">
-                                            <input name="judul" type="text" class="form-control" placeholder="Masukkan Judul Berita">
+                                            <input name="judul" type="text" class="form-control" placeholder="Masukkan Judul Berita" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <!-- text input -->
                                         <div class="form-group">
                                             <label>Sumber Berita</label>
-                                            <select class="form-control" name="kategori">
+                                            <select class="form-control" name="kategori" required>
                                                 <option hidden>--Pilih Sumber--</option>
                                                 <?php
 
@@ -54,13 +54,13 @@ include 'app/controller/reporter/post_naskahsulampa.php';
                                         <!-- text input -->
                                         <div class="form-group">
                                             <label>Rep / Cam</label>
-                                            <input name="kameramen" type="text" class="form-control" placeholder="Masukkan Reporter dan Kameramen Berita">
+                                            <input name="kameramen" type="text" class="form-control" placeholder="Masukkan Reporter dan Kameramen Berita" required>
                                         </div>
                                     </div>
 
                                     <div class="form-group col-sm-6">
                                         <label>Tanggal Berita</label>
-                                        <input name="tgl_berita" type="date" class="form-control datetimepicker-input" data-target="#reservationdate" placeholder="Masukkan Tanggal Berita" />
+                                        <input name="tgl_berita" type="date" class="form-control datetimepicker-input" data-target="#reservationdate" placeholder="Masukkan Tanggal Berita" required />
 
                                         <!-- titip bobot dg lokasii -->
                                         <input type="hidden" name="bobot" value="1">
@@ -80,7 +80,7 @@ include 'app/controller/reporter/post_naskahsulampa.php';
                                         <!-- textarea -->
                                         <div class="form-group">
                                             <label>Lead Berita</label>
-                                            <textarea name="lead" class="form-control" rows="10" placeholder="Masukkan Lead Berita"></textarea>
+                                            <textarea name="lead" class="form-control" rows="10" placeholder="Masukkan Lead Berita" required></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@ include 'app/controller/reporter/post_naskahsulampa.php';
                                         <!-- textarea -->
                                         <div class="form-group">
                                             <label>Narasi Berita</label>
-                                            <textarea name="narasi" class="form-control" rows="10" placeholder="Masukkan Narasi Berita"></textarea>
+                                            <textarea name="narasi" class="form-control" rows="10" placeholder="Masukkan Narasi Berita" required></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -107,11 +107,11 @@ include 'app/controller/reporter/post_naskahsulampa.php';
                                             <div class="col-8">
                                                 <label>Sound Up</label>
                                                 <input type="text" class="form-control col-2 mb-1" name="u[]" placeholder="urutan">
-                                                <input type="text" name="su[]" placeholder="Masukan Soundup" class="form-control">
+                                                <input type="text" name="su[]" placeholder="Masukan Soundup" class="form-control" required>
                                             </div>
                                             <div class="col-12 mt-2">
                                                 <label>Narasi</label>
-                                                <textarea class="form-control" rows="10" name="narasi_soundup[]"></textarea>
+                                                <textarea class="form-control" rows="10" name="narasi_soundup[]" required></textarea>
                                             </div>
                                         </div>
                                         <button type="button" class="btn btn-danger remove"><i class="fas fa-trash"></i> SoundUp</button>
