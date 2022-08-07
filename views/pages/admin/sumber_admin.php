@@ -84,7 +84,7 @@ include 'app/controller/admin/post_sumber_berita.php';
                         <div class="col-12">
                             <div class="form-group">
                                 <label>Sumber Berita</label>
-                                <input type="text" name="nama_sumber_berita" class="form-control">
+                                <input type="text" name="nama_sumber_berita" class="form-control" required>
                             </div>
                         </div>
                     </div>

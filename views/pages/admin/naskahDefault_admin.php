@@ -84,7 +84,7 @@ include 'app/controller/admin/post_naskah_default.php';
                         <div class="col-12">
                             <div class="form-group">
                                 <label>Judul Naskah</label>
-                                <input type="text" name="judul_naskah" class="form-control">
+                                <input type="text" name="judul_naskah" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Narasi</label>

@@ -4,14 +4,27 @@ include 'app/controller/admin/function_user.php';
 include 'app/flash_message.php';
 
 if (isset($_POST['simpan_user'])) {
-    $nama = $_POST['nm_user'];
-    $username = $_POST['username'];
-    $level = $_POST['level'];
-    $pass = md5('tvrinews123');
-    $query = $mysqli->query("INSERT INTO user(id_user,nama_user,user,status_user,pass,level) VALUES ('','$nama','$username','Aktif','$pass','$level')");
-    flash("msg_simpan_user", "Data User Berhasil Disimpan");
+    
+
+    if ($_POST['level'] == 0 ) {
+        ?>
+            <script>
+                alert("Masukkan Level User ! Silahkan Input Kembali");
+            </script>
+            <?php
+        }
+    else {
+        $nama = $_POST['nm_user'];
+        $username = $_POST['username'];
+        $level = $_POST['level'];
+        $pass = md5('tvrinews123');
+        $query = $mysqli->query("INSERT INTO user(id_user,nama_user,user,status_user,pass,level) VALUES ('','$nama','$username','Aktif','$pass','$level')");
+        flash("msg_simpan_user", "Data User Berhasil Disimpan");
+    }
+        
 }
 
+    
 if (isset($_POST['reset'])) {
     $id = $_POST['id'];
     $pass = md5('tvrinews123');
