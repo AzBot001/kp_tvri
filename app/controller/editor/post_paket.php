@@ -4,13 +4,23 @@ include 'app/controller/editor/function_naskah.php';
 include 'app/flash_message.php';
 
 if (isset($_POST['simpan_paket'])) {
-    $program_paket = $_POST['program_paket'];
-    $judul_paket = $_POST['judul_paket'];
-    $pengarah_acara = $_POST['pengarah_acara'];
-    $status = $_POST['status'];
-    $tgl_tayang = $_POST['tgl_tayang'];
-    $query = $mysqli->query("INSERT INTO paket VALUES ('','$program_paket','$judul_paket','$pengarah_acara','$status','$tgl_tayang')");
-    flash("msg_simpan", "Data Paket Berhasil Disimpan");
+    if($_POST['program_paket'] == 0 || $_POST['pengarah_acara'] == 0 || $_POST['status'] == 0 ){
+?>
+    <script>
+        alert("Lengkapi Isian ! Silahkan Input Kembali");
+    </script>
+<?php
+    }
+    else {
+        $program_paket = $_POST['program_paket'];
+        $judul_paket = $_POST['judul_paket'];
+        $pengarah_acara = $_POST['pengarah_acara'];
+        $status = $_POST['status'];
+        $tgl_tayang = $_POST['tgl_tayang'];
+        $query = $mysqli->query("INSERT INTO paket VALUES ('','$program_paket','$judul_paket','$pengarah_acara','$status','$tgl_tayang')");
+        flash("msg_simpan", "Data Paket Berhasil Disimpan");
+    }
+   
 }
 
 if (isset($_POST['hapus'])) {

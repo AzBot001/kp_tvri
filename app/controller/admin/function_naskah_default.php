@@ -69,11 +69,11 @@ function tampil_naskah_default($mysqli)
                                     <div class="form-group">
                                         <label>Judul Naskah</label>
                                         <input type="hidden" name="id" value="<?= $data['id_naskahdefault'] ?>">
-                                        <input type="text" value="<?= $data['judul_naskah'] ?>" name="judul_naskah" class="form-control">
+                                        <input type="text" value="<?= $data['judul_naskah'] ?>" name="judul_naskah" class="form-control" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Narasi</label>
-                                        <textarea id="summernote_naskah_default_edit" name="narasi_default" cols="30" rows="10" class="form-control pp"><?= $data['narasi'] ?></textarea>
+                                        <textarea id="summernote_naskah_default_edit" name="narasi_default" cols="30" rows="10" class="form-control summernotee"><?= $data['narasi'] ?></textarea>
                                     </div>
                                 </div>
                             </div>

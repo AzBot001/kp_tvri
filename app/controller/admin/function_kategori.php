@@ -40,7 +40,7 @@ function tampil_kategori($mysqli)
                                     <div class="form-group">
                                         <label>Nama Kategori</label>
                                         <input type="hidden" name="id" value="<?= $data['id_kategori'] ?>">
-                                        <input type="text" value="<?= $data['nama_kategori'] ?>" name="nama_kategori" class="form-control">
+                                        <input type="text" value="<?= $data['nama_kategori'] ?>" name="nama_kategori" class="form-control" required>
                                     </div>
                                 </div>
                             </div>

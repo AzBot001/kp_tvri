@@ -30,7 +30,7 @@ $d = $query->fetch_assoc();
                                             <label>Judul</label>
                                             <input type="hidden" name="id" value="<?= $idx ?>">
                                             <input type="hidden" name="lokasi" value="SULAMPA">
-                                            <input name="judul" type="text" class="form-control" value="<?= $d['judul'] ?>" placeholder="Masukkan Judul Berita">
+                                            <input name="judul" type="text" class="form-control" value="<?= $d['judul'] ?>" placeholder="Masukkan Judul Berita" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
@@ -64,7 +64,7 @@ $d = $query->fetch_assoc();
 
                                     <div class="form-group col-sm-6">
                                         <label>Tanggal Berita</label>
-                                        <input name="tgl_berita" value="<?= $d['tgl_berita'] ?>" type="date" class="form-control datetimepicker-input" data-target="#reservationdate" placeholder="Masukkan Tanggal Berita" />
+                                        <input name="tgl_berita" value="<?= $d['tgl_berita'] ?>" type="date" class="form-control datetimepicker-input" data-target="#reservationdate" placeholder="Masukkan Tanggal Berita" required/>
                                     </div>
                                 </div>
                                 
@@ -81,7 +81,7 @@ $d = $query->fetch_assoc();
                                         <!-- textarea -->
                                         <div class="form-group">
                                             <label>Lead Berita</label>
-                                            <textarea name="lead" class="form-control" rows="10" placeholder="Masukkan Lead Berita"><?= $d['lead'] ?></textarea>
+                                            <textarea name="lead" class="form-control" rows="10" placeholder="Masukkan Lead Berita" required><?= $d['lead'] ?></textarea>
                                         </div>
                                     </div>
                                 </div>

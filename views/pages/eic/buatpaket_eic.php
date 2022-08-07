@@ -108,7 +108,7 @@ include 'app/controller/eic/post_paket.php';
                             </div>
                             <div class="form-group">
                                 <label>Masukkan Judul Paket</label>
-                                <input type="text" name="judul_paket" class="form-control" id="">
+                                <input type="text" name="judul_paket" class="form-control" id="" required>
                             </div>
                             <div class="form-group">
                                 <label>Masukkan Pengarah Acara</label>
@@ -138,7 +138,7 @@ include 'app/controller/eic/post_paket.php';
                             </div>
                             <div class="form-group">
                                 <label>Masukkan Tanggal Tayang</label>
-                                <input name="tgl_tayang" type="date" class="form-control datetimepicker-input" data-target="#reservationdate" placeholder="Masukkan Tanggal Tayang" />
+                                <input name="tgl_tayang" type="date" class="form-control datetimepicker-input" data-target="#reservationdate" placeholder="Masukkan Tanggal Tayang" required/>
                             </div>
                         </div>
                     </div>

@@ -31,14 +31,14 @@ $d = $query->fetch_assoc();
                                             <label>Judul</label>
                                             <input type="hidden" name="idx" value="<?= $idx ?>">
                                             <input type="hidden" name="id_user" value="<?= $_SESSION['id'] ?>">
-                                            <input name="judul" type="text" class="form-control" value="<?= $d['judul'] ?>" placeholder="Masukkan Judul Berita">
+                                            <input name="judul" type="text" class="form-control" value="<?= $d['judul'] ?>" placeholder="Masukkan Judul Berita" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <!-- text input -->
                                         <div class="form-group">
                                             <label>Lokasi</label>
-                                            <input name="lokasi" type="text" value="<?= $d['lokasi'] ?>" class="form-control" placeholder="Masukkan Lokasi Berita">
+                                            <input name="lokasi" type="text" value="<?= $d['lokasi'] ?>" class="form-control" placeholder="Masukkan Lokasi Berita" required>
                                         </div>
                                     </div>
                                 </div>
@@ -72,7 +72,7 @@ $d = $query->fetch_assoc();
 
                                     <div class="form-group col-sm-6">
                                         <label>Tanggal Berita</label>
-                                        <input name="tgl_berita" value="<?= $d['tgl_berita'] ?>" type="date" class="form-control datetimepicker-input" data-target="#reservationdate" placeholder="Masukkan Tanggal Berita" />
+                                        <input name="tgl_berita" value="<?= $d['tgl_berita'] ?>" type="date" class="form-control datetimepicker-input" data-target="#reservationdate" placeholder="Masukkan Tanggal Berita" required/>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -122,7 +122,7 @@ $d = $query->fetch_assoc();
                                         <!-- textarea -->
                                         <div class="form-group">
                                             <label>Lead Berita</label>
-                                            <textarea name="lead" class="form-control" rows="10" placeholder="Masukkan Lead Berita"><?= $d['lead'] ?></textarea>
+                                            <textarea name="lead" class="form-control" rows="10" placeholder="Masukkan Lead Berita" required><?= $d['lead'] ?> </textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -155,7 +155,7 @@ $d = $query->fetch_assoc();
                                                     <div class="col-8">
                                                         <label>Sound Up</label>
                                                         <input type="text" value="<?= $sux['urutan'] ?>" class="form-control col-2 mb-1" name="u[]" placeholder="urutan">
-                                                        <input type="text" value="<?= $sux['su'] ?>" name="su[]" placeholder="Masukan Soundup" class="form-control">
+                                                        <input type="text" value="<?= $sux['su'] ?>" name="su[]" placeholder="Masukan Soundup" class="form-control" required>
                                                     </div>
                                                     <div class="col-12 mt-2">
                                                         <label>Narasi</label>

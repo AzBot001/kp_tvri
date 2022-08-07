@@ -40,7 +40,7 @@ function tampil_sumber_berita($mysqli)
                                     <div class="form-group">
                                         <label>Nama Sumber Berita</label>
                                         <input type="hidden" name="id" value="<?= $data['id_sumber_berita'] ?>">
-                                        <input type="text" value="<?= $data['nama_sumber_berita'] ?>" name="nama_sumber_berita" class="form-control">
+                                        <input type="text" value="<?= $data['nama_sumber_berita'] ?>" name="nama_sumber_berita" class="form-control" required>
                                     </div>
                                 </div>
                             </div>

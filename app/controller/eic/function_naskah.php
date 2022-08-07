@@ -70,7 +70,7 @@ function tampil_paket($mysqli)
                                     <div class="form-group">
                                         <label>Paket Acara</label>
                                         <input type="hidden" name="id" value="<?= $data['id_paket'] ?>">
-                                        <input type="text" name="judul_paket" class="form-control" value="<?= $data['judul_paket'] ?>" id="">
+                                        <input type="text" name="judul_paket" class="form-control" value="<?= $data['judul_paket'] ?>" id="" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Program Paket</label>
@@ -134,7 +134,7 @@ function tampil_paket($mysqli)
                                     </div>
                                     <div class="form-group">
                                         <label>Masukkan Tanggal Tayang</label>
-                                        <input name="tgl_tayang" value="<?= $data['tgl_tayang'] ?>" type="date" class="form-control datetimepicker-input" data-target="#reservationdate" placeholder="Masukkan Tanggal Tayang" />
+                                        <input name="tgl_tayang" value="<?= $data['tgl_tayang'] ?>" type="date" class="form-control datetimepicker-input" data-target="#reservationdate" placeholder="Masukkan Tanggal Tayang"  required />
                                     </div>
                                 </div>
                             </div>

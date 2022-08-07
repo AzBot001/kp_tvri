@@ -77,7 +77,7 @@ function tampil_user($mysqli)
                                     <div class="form-group">
                                         <label>Nama User</label>
                                         <input type="hidden" name="id" value="<?= $data['id_user'] ?>">
-                                        <input type="text" name="nm_user" class="form-control" value="<?= $data['nama_user'] ?>" id="">
+                                        <input type="text" name="nm_user" class="form-control" value="<?= $data['nama_user'] ?>" id="" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Level</label>
