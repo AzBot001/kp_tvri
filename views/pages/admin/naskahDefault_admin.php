@@ -57,7 +57,7 @@ include 'app/controller/admin/post_naskah_default.php';
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php tampil_naskah_default($mysqli); ?>
+                                <?php tampil_naskah_default($mysqli,$base_url); ?>
                             </tbody>
                         </table>
                     </div>
@@ -85,6 +85,16 @@ include 'app/controller/admin/post_naskah_default.php';
                             <div class="form-group">
                                 <label>Judul Naskah</label>
                                 <input type="text" name="judul_naskah" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Jenis</label>
+                                <select name="jenis" class="form-control">
+                                    <option hidden>-Pilih Jenis-</option>
+                                    <option value="1">GHI</option>
+                                    <option value="2">GNS</option>
+                                    <option value="3">HABARI</option>
+                                    <option value="4">SEMUA JENIS</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label>Narasi</label>

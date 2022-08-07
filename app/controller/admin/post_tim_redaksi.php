@@ -1,21 +1,46 @@
 <?php
-
+include 'app/controller/admin/function_kerabat.php';
 include 'app/flash_message.php';
-if(isset($_POST['simpan'])){
-    $pj = $_POST['penanggung_jawab'];
-    $pp = $_POST['pelaksana_produser'];
-    $pb = $_POST['pelaksana_berita'];
-    $cu = $_POST['pelaksana_cu'];
-    $eic = $_POST['eic'];
-    $rd = $_POST['redaktur'];
-    $it = $_POST['petugas_it'];
-    $pd = $_POST['pd_berita'];
-    $fd = $_POST['fd_berita'];
-    $ed = $_POST['editor'];
-    $py = $_POST['penyiar'];
 
-    $query = $mysqli->query("UPDATE setting_tim_redaksi SET penanggung_jawab = '$pj', pelaksana_produser = '$pp', pelaksana_berita = '$pb', eic = '$eic', redaktur = '$redaktur', pd_berita = '$pd', fd_berita = '$fd', editor = '$ed', petugas_it = '$it', penyiar = '$py', pelaksana_cu = '$cu', redaktur = '$rd' WHERE id = '1'");
-    flash("msg_set", "Data Berhasil Disimpan");
+if (isset($_POST['simpan'])) {
+    $jabatan = $_POST['jabatan'];
+    $nama = $_POST['nama'];
+    $nip = $_POST['nip'];
+   
+    if (empty($_POST['ttd'])) {
+       $ttd = 0;
+    }else{
+        $ttd = $_POST['ttd'];
+    }
+
+    $query = $mysqli->query("INSERT INTO kerabat_kerja VALUES (''   ,'$jabatan','$nama','$nip','$ttd')");
+    flash('kerabat','Data Kerabat Berhasil Ditambahkan');
 }
+
+if (isset($_POST['hapus'])) {
+
+    $id = $_POST['id'];
+    $mysqli->query("DELETE FROM kerabat_kerja WHERE id = '$id'");
+    flash('hps','Data Kerabat Berhasil Dihapus');
+
+}
+
+if (isset($_POST['ubah'])) {
+    $id = $_POST['id'];
+    $jabatan = $_POST['jabatan'];
+    $nama = $_POST['nama'];
+    $nip = $_POST['nip'];
+   
+    if (empty($_POST['ttd'])) {
+       $ttd = 0;
+    }else{
+        $ttd = $_POST['ttd'];
+    }
+    $query = $mysqli->query("UPDATE kerabat_kerja SET jabatan = '$jabatan', nama = '$nama', nip = '$nip', ttd = '$ttd' WHERE id = '$id' ");
+    flash('edit','Data Kerabat Berhasi Diubah');
+}
+
+
+
 
 ?>

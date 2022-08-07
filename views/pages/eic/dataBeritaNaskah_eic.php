@@ -60,7 +60,7 @@ include 'app/controller/eic/post_naskah.php';
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php tampil_naskah_ghi($mysqli, $l_reporter, $base_url); ?>
+                                            <?php tampil_naskah_ghi($mysqli, $base_url); ?>
                                         </tbody>
                                     </table>
                                 </div>

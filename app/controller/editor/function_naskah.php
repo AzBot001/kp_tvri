@@ -48,9 +48,19 @@ function tampil_naskah_ghi($mysqli, $l_reporter, $base_url)
                 ?>
             </td>
             <td>
+                <?php 
+                if ($data['sts_edit'] == '1') {
+                    echo '<i class="fas fa-check-circle text-success"></i>';
+                }else{
+
+                
+                ?>
                 <button type="button" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#ghi<?= $data['id_naskah'] ?>">
                     <i class="fas fa-cog"></i>
                 </button>
+                <?php
+                }
+                ?>
             </td>
         </tr>
 
@@ -70,7 +80,7 @@ function tampil_naskah_ghi($mysqli, $l_reporter, $base_url)
                                 <input type="hidden" name="id" value="<?= $data['id_naskah'] ?>">
                                <div class="row">
                                     <div class="col-4">
-                                    <input type="number" name="h" min="1" max=24 class="form-control" placeholder="Jam">
+                                    <input type="number" name="h" min="0" max=24 class="form-control" placeholder="Jam">
                              
                                     </div>
                                     <div class="col-4">
@@ -142,9 +152,19 @@ function tampil_naskah_gns($mysqli, $base_url)
                 ?>
             </td>
             <td>
+                <?php 
+                if ($data['sts_edit'] == '1') {
+                    echo '<i class="fas fa-check-circle text-success"></i>';
+                }else{
+
+                
+                ?>
                 <button type="button" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#ghi<?= $data['id_naskah'] ?>">
                     <i class="fas fa-cog"></i>
                 </button>
+                <?php
+                }
+                ?>
             </td>
         </tr>
 
@@ -236,9 +256,19 @@ function tampil_naskah_lipuu($mysqli, $base_url)
                 ?>
             </td>
             <td>
+                <?php 
+                if ($data['sts_edit'] == '1') {
+                    echo '<i class="fas fa-check-circle text-success"></i>';
+                }else{
+
+                
+                ?>
                 <button type="button" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#ghi<?= $data['id_naskah'] ?>">
                     <i class="fas fa-cog"></i>
                 </button>
+                <?php
+                }
+                ?>
             </td>
         </tr>
 
@@ -258,7 +288,7 @@ function tampil_naskah_lipuu($mysqli, $base_url)
                                 <input type="hidden" name="id" value="<?= $data['id_naskah'] ?>">
                                <div class="row">
                                     <div class="col-4">
-                                    <input type="number" name="h" min="1" max=24 class="form-control" placeholder="Jam">
+                                    <input type="number" name="h" min="0" max=24 class="form-control" placeholder="Jam">
                              
                                     </div>
                                     <div class="col-4">
@@ -322,9 +352,19 @@ function tampil_naskah_sulampa($mysqli, $base_url)
                 ?>
             </td>
             <td>
+                <?php 
+                if ($data['sts_edit'] == '1') {
+                    echo '<i class="fas fa-check-circle text-success"></i>';
+                }else{
+
+                
+                ?>
                 <button type="button" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#ghi<?= $data['id_naskah'] ?>">
                     <i class="fas fa-cog"></i>
                 </button>
+                <?php
+                }
+                ?>
             </td>
         </tr>
 
@@ -344,7 +384,7 @@ function tampil_naskah_sulampa($mysqli, $base_url)
                                 <input type="hidden" name="id" value="<?= $data['id_naskah'] ?>">
                                <div class="row">
                                     <div class="col-4">
-                                    <input type="number" name="h" min="1" max=24 class="form-control" placeholder="Jam">
+                                    <input type="number" name="h" min="0" max=24 class="form-control" placeholder="Jam">
                              
                                     </div>
                                     <div class="col-4">
@@ -409,9 +449,19 @@ function tampil_naskah_dialog($mysqli, $base_url)
                 ?>
             </td>
             <td>
+                <?php 
+                if ($data['sts_edit'] == '1') {
+                    echo '<i class="fas fa-check-circle text-success"></i>';
+                }else{
+
+                
+                ?>
                 <button type="button" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#ghi<?= $data['id_naskah'] ?>">
                     <i class="fas fa-cog"></i>
                 </button>
+                <?php
+                }
+                ?>
             </td>
         </tr>
 
@@ -431,7 +481,7 @@ function tampil_naskah_dialog($mysqli, $base_url)
                                 <input type="hidden" name="id" value="<?= $data['id_naskah'] ?>">
                                <div class="row">
                                     <div class="col-4">
-                                    <input type="number" name="h" min="1" max=24 class="form-control" placeholder="Jam">
+                                    <input type="number" name="h" min="0" max=24 class="form-control" placeholder="Jam">
                              
                                     </div>
                                     <div class="col-4">

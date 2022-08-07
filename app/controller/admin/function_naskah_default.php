@@ -1,6 +1,6 @@
 <?php
 
-function tampil_naskah_default($mysqli)
+function tampil_naskah_default($mysqli, $base_url)
 {
 
     $no = 1;
@@ -70,6 +70,28 @@ function tampil_naskah_default($mysqli)
                                         <label>Judul Naskah</label>
                                         <input type="hidden" name="id" value="<?= $data['id_naskahdefault'] ?>">
                                         <input type="text" value="<?= $data['judul_naskah'] ?>" name="judul_naskah" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Jenis</label>
+                                        <select name="jenis" class="form-control">
+                                            <option value="<?= $data['jenis'] ?>">
+                                            <?php
+                                                if ($data['jenis'] == '1') {
+                                                    echo 'GHI';
+                                                }else if($data['jenis'] == '2'){
+                                                    echo 'GNS';
+                                                }else if($data['jenis'] == '3'){
+                                                    echo 'HABARI';
+                                                }else{
+                                                    echo 'SEMUA JENIS';
+                                                }
+                                            ?>
+                                            </option>
+                                            <option value="1">GHI</option>
+                                            <option value="2">GNS</option>
+                                            <option value="3">HABARI</option>
+                                            <option value="4">SEMUA JENIS</option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Narasi</label>

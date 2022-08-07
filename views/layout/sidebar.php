@@ -270,7 +270,7 @@
             }
             ?>
 
-<?php
+          <?php
             if ($_SESSION['type_user'] == 'eic') {
             ?>
               <nav class="mt-2">
@@ -285,25 +285,88 @@
                       </li>
                       <li class="nav-item has-treeview">
                           <a href="#" class="nav-link">
-                              <i class="nav-icon fas fa-newspaper"></i>
+                              <i class="nav-icon fas fa-edit"></i>
                               <p>
-                                  Data Berita
+                                  Buat Naskah
                                   <i class="fas fa-angle-left right"></i>
                               </p>
                           </a>
                           <ul class="nav nav-treeview">
                               <li class="nav-item">
-                                  <a href="<?= $base_url ?>dataBeritaNaskah_eic" class="nav-link">
+                                  <a href="<?= $base_url ?>buatNaskahGhi" class="nav-link">
                                       <i class="far fa-circle nav-icon"></i>
-                                      <p>Data Naskah</p>
+                                      <p>Naskah GHI</p>
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a href="<?= $base_url ?>dataBeritaRundown_eic" class="nav-link">
+                                  <a href="<?= $base_url ?>buatNaskahGns" class="nav-link">
                                       <i class="far fa-circle nav-icon"></i>
-                                      <p>Data Rundown</p>
+                                      <p>Naskah GNS</p>
                                   </a>
                               </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>buatNaskahHabari" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Naskah Habari</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>buatNaskahSulampa" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Naskah Sulampa</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>buatNaskahDialog" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Naskah Dialog</p>
+                                  </a>
+                              </li>
+                          </ul>
+                      </li>
+                      <li class="nav-item">
+                          <a href="<?= $base_url ?>dataBeritaNaskah_eic" class="nav-link">
+                              <i class="far fa-file nav-icon"></i>
+                              <p>Data Naskah</p>
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="<?= $base_url ?>data_rundown" class="nav-link">
+                              <i class="nav-icon fas fa-newspaper text-white"></i>
+                              <p class="text-white">
+                                  Data Rundown
+                              </p>
+                          </a>
+                      </li>
+                      <li class="nav-item has-treeview">
+                          <a href="#" class="nav-link">
+                              <i class="nav-icon fas fa-list"></i>
+                              <p>
+                                  Buat Rundown
+                                  <i class="fas fa-angle-left right"></i>
+                              </p>
+                          </a>
+                          <ul class="nav nav-treeview">
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>dataBeritaRundown_eic" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Buat Rundown GHI</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>dataBeritaRundowngns_eic" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Buat Rundown GNS</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="<?= $base_url ?>dataBeritaRundownhabari_eic" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Buat Rundown HABARI</p>
+                                  </a>
+                              </li>
+
+
                               <li class="nav-item">
                                   <a href="<?= $base_url ?>dataBeritaLead_eic" class="nav-link">
                                       <i class="far fa-circle nav-icon"></i>

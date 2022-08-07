@@ -59,6 +59,13 @@
     $('#summernote_naskah_default_edit').summernote({
       height: 200
     })
+    $('.teaser').summernote({
+      height: 200
+    })
+    $('.kerabat_kerja').summernote({
+      height: 500
+    })
+    
   })
   $(document).ready(function() {
     $(".add-more").click(function() {

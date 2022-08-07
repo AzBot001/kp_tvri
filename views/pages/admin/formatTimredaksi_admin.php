@@ -1,34 +1,21 @@
 <?php
 include 'app/controller/admin/post_tim_redaksi.php';
-$query = $mysqli->query("SELECT * FROM setting_tim_redaksi");
-$data = $query->fetch_assoc();
-
 ?>
 <div class="content-wrapper">
-
     <section class="content">
-        <!-- <div class="container-fluid">
-            <div class="row">
-                <h3>Verivikasi User</h3>
-            </div>
-        </div> -->
         <div class="row">
             <div class="col-md-12 mt-4">
-                <!-- general form elements disabled -->
-                <div class="card card-info">
+                <div class="card mt-1">
                     <div class="card-header">
-                        <h3 class="card-title">TIM REDAKSI TVRI GORONTALO</h3>
+                        <h3 class="card-title">Kerabat Kerja</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <form role="form" method="post">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                <?php
-                        if (isset($_SESSION['msg_set'])) {
+                        <?php
+                        if (isset($_SESSION['kerabat'])) {
                         ?>
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <span class="fas fa-check fe-16 mr-2"></span> <?= flash('msg_set'); ?>
+                                <span class="fas fa-check fe-16 mr-2"></span> <?= flash('kerabat'); ?>
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -36,106 +23,90 @@ $data = $query->fetch_assoc();
                         <?php
                         }
                         ?>
-                                </div>
-                                <div class="col-sm-6">
-                                    <!-- text input -->
-                                    <div class="form-group">
-                                        <label>Penanggung Jawab</label>
-                                        <input type="text" name="penanggung_jawab" class="form-control" value="<?= $data['penanggung_jawab'] ?>">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <!-- text input -->
-                                    <div class="form-group">
-                                        <label>Pelaksana Produser</label>
-                                        <input type="text" name="pelaksana_produser" class="form-control" value="<?= $data['pelaksana_produser'] ?>">
-                                    </div>
-                                </div>
+                        <?php
+                        if (isset($_SESSION['hps'])) {
+                        ?>
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <span class="fas fa-check fe-16 mr-2"></span> <?= flash('hps'); ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <!-- text input -->
-                                    <div class="form-group">
-                                        <label>Pelaksana Tugas Berita</label>
-                                        <input type="text" name="pelaksana_berita" class="form-control" value="<?= $data['pelaksana_berita'] ?>">
-                                    </div>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <div class="form-group">
-                                        <label>Pelaksana Current Affair</label>
-                                        <input type="text" name="pelaksana_cu" class="form-control" value="<?= $data['pelaksana_cu'] ?>">
-                                    </div>
-                                </div>
+                        <?php
+                        }
+                        ?>
+                        <?php
+                        if (isset($_SESSION['edit'])) {
+                        ?>
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <span class="fas fa-check fe-16 mr-2"></span> <?= flash('edit'); ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <!-- text input -->
-                                    <div class="form-group">
-                                        <label>E.I.C</label>
-                                        <input type="text" name="eic" class="form-control" value="<?= $data['eic'] ?>">
-                                    </div>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <div class="form-group">
-                                        <label>Redaktur</label>
-                                        <input type="text" name="redaktur" class="form-control" value="<?= $data['redaktur'] ?>">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <!-- text input -->
-                                    <div class="form-group">
-                                        <label>Petugas IT</label>
-                                        <input type="text" name="petugas_it" class="form-control" value="<?= $data['petugas_it'] ?>">
-                                    </div>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <div class="form-group">
-                                        <label>PD Berita</label>
-                                        <input type="text" name="pd_berita" class="form-control" value="<?= $data['pd_berita'] ?>">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <!-- text input -->
-                                    <div class="form-group">
-                                        <label>FD Berita</label>
-                                        <input type="text" name="fd_berita" class="form-control" value="<?= $data['fd_berita'] ?>">
-                                    </div>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <div class="form-group">
-                                        <label>Editor</label>
-                                        <input type="text" name="editor" class="form-control" value="<?= $data['editor'] ?>">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <!-- text input -->
-                                    <div class="form-group">
-                                        <label>Penyiar</label>
-                                        <input type="text" name="penyiar" class="form-control" value="<?= $data['penyiar'] ?>">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                               <div class="col-sm-6">
-                               <div class="form-group">
-                                    <button name="simpan" class="btn btn-warning text-white"><i class="fas fa-save"></i> Simpan</button>
-                                </div>
-                               </div>
-                            </div>
-
-                        </form>
+                        <?php
+                        }
+                        ?>
+                        <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#inputkerabat"><i class="fas fa-plus-circle"></i> Kerabat Kerja</button>
+                        <table id="dataTable" class="table">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Jabatan</th>
+                                    <th>Nama Pegawai</th>
+                                    <th>NIP</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php tampil_kerabat($mysqli); ?>
+                            </tbody>
+                        </table>
                     </div>
                     <!-- /.card-body -->
                 </div>
-                <!-- /.card -->
             </div>
         </div>
+    </section>
 </div>
-</section>
+
+<!-- ----------------------modal_input---------------------- -->
+<div class="modal fade" id="inputkerabat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form action="" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Input Kerabat Kerja</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>Nama Jabatan</label>
+                                <input type="text" name="jabatan" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Nama Pegawai</label>
+                                <input type="text" name="nama" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>NIP</label>
+                                <input type="text" name="nip" class="form-control">
+                            </div>
+                            <div class="form-group">
+                               <input type="checkbox" name="ttd" value="1"> <label for="">Tanda Tangan</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" name="simpan" class="btn btn-success btn-block"><i class="fas fa-save"></i> Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
+<!-- ----------------------modal_input---------------------- -->

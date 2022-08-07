@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+// error_reporting(0);
 session_start();
 include 'app/env.php';
 include 'base_url.php';
@@ -38,6 +38,25 @@ if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'beranda_eic') {
 }else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'editdialog') {
     $title = 'Verifikasi Naskah';
     $icon = 'fas fa-edit';
+}else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'dataBeritaRundown_eic') {
+    $title = 'Data Rundown GHI';
+    $icon = 'fas fa-newspaper';
+}
+else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'dataBeritaRundown_eic_next') {
+    $title = 'Data Rundown';
+    $icon = 'fas fa-newspaper';
+}
+else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'dataBeritaRundowngns_eic') {
+    $title = 'Data Rundown GNS';
+    $icon = 'fas fa-newspaper';
+}
+else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'dataBeritaRundownhabari_eic') {
+    $title = 'Data Rundown HABARI';
+    $icon = 'fas fa-newspaper';
+}
+else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'data_rundown') {
+    $title = 'Data Rundown';
+    $icon = 'fas fa-newspaper';
 }
 
 
@@ -59,8 +78,20 @@ if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'beranda_eic') {
     include 'views/pages/eic/editsulampa.php';
 }else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'editdialog') {
     include 'views/pages/eic/editdialog.php';
+}else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'dataBeritaRundown_eic') {
+    include 'views/pages/eic/data_rundown.php';
+}else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'dataBeritaRundown_eic_next') {
+    include 'views/pages/eic/data_rundown_next.php';
+}else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'dataBeritaRundowngns_eic') {
+    include 'views/pages/eic/data_rundown_gns.php';
+}else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'dataBeritaRundownhabari_eic') {
+    include 'views/pages/eic/data_rundown_habari.php';
+}else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'data_rundown') {
+    include 'views/pages/eic/rundown.php';
 }else {
     include 'views/pages/eic/beranda_eic.php';
 }
+
+
 
 include 'views/layout/footer.php';

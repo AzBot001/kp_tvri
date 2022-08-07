@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /kp_tvri/
+RewriteBase /kpabidamir/
 Options +FollowSymLinks
 
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -50,11 +50,16 @@ RewriteRule ^editgns_eic/([0-9]+)$ eic.php?t_eic=editgns&id=$1 [NC,L]
 RewriteRule ^edithabari_eic/([0-9]+)$ eic.php?t_eic=edithabari&id=$1 [NC,L]
 RewriteRule ^editsulampa_eic/([0-9]+)$ eic.php?t_eic=editsulampa&id=$1 [NC,L]
 RewriteRule ^editdialog_eic/([0-9]+)$ eic.php?t_eic=editdialog&id=$1 [NC,L]
+RewriteRule ^dataBeritaRundown_eic$ eic.php?t_eic=dataBeritaRundown_eic
+RewriteRule ^dataBeritaRundowngns_eic$ eic.php?t_eic=dataBeritaRundowngns_eic
+RewriteRule ^dataBeritaRundownhabari_eic$ eic.php?t_eic=dataBeritaRundownhabari_eic
+RewriteRule ^data_rundown$ eic.php?t_eic=data_rundown
+RewriteRule ^dataBeritaRundown_eic_next([0-9]+)$ eic.php?t_eic=dataBeritaRundown_eic_next&id=$1 [NC,L]
 <IfModule mod_headers.c>
 Header set X-XSS-Protection "1; mode=block"
 </IfModule>
 
 <Files env.php>
-deny from all
+deny from alls
 </Files>
 Options All -Indexes

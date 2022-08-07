@@ -6,15 +6,16 @@ include 'app/flash_message.php';
 if(isset($_POST['simpan_naskah_default'])){
     $judul = $_POST['judul_naskah'];
     $narasi = $_POST['narasi_default'];
-
-    $query = $mysqli->query("INSERT INTO naskah_default(judul_naskah,narasi) VALUES ('$judul','$narasi')");
+    $jenis = $_POST['jenis'];
+    $query = $mysqli->query("INSERT INTO naskah_default(judul_naskah,jenis,narasi) VALUES ('$judul','$jenis','$narasi')");
     flash("msg_simpan_naskah_default","Data Berhasil Disimpan");
 }
 if(isset($_POST['edit_naskah_default'])){
     $judul = $_POST['judul_naskah'];
     $narasi = $_POST['narasi_default'];
     $id = $_POST['id'];
-    $query = $mysqli->query("UPDATE naskah_default SET judul_naskah = '$judul', narasi = '$narasi' WHERE id_naskahdefault = '$id' ");
+    $jenis = $_POST['jenis'];
+    $query = $mysqli->query("UPDATE naskah_default SET judul_naskah = '$judul',jenis = '$jenis', narasi = '$narasi' WHERE id_naskahdefault = '$id' ");
     flash("msg_edit_naskah_default","Data Berhasil Disimpan");
 }
 if(isset($_POST['hapus_naskah_default'])){

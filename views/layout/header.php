@@ -25,6 +25,8 @@
     <link href="<?= $base_url ?>public/assets/plugins/summernote/summernote.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= $base_url ?>public/assets/plugins/select2/css/select2.min.css">
 <link rel="stylesheet" href="<?= $base_url ?>public/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <style>
         .sidebar-head {
             background-color: #FBB62B;
