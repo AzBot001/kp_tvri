@@ -73,7 +73,7 @@ function tampil_naskah_default($mysqli)
                                     </div>
                                     <div class="form-group">
                                         <label>Narasi</label>
-                                        <textarea id="summernote_naskah_default_edit" name="narasi_default" cols="30" rows="10" class="form-control"><?= $data['narasi'] ?></textarea>
+                                        <textarea id="summernote_naskah_default_edit" name="narasi_default" cols="30" rows="10" class="form-control pp"><?= $data['narasi'] ?></textarea>
                                     </div>
                                 </div>
                             </div>

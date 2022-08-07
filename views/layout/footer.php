@@ -58,7 +58,7 @@
     $('#summernote_naskah_default').summernote({
       height: 200
     })
-    $('#summernote_naskah_default_edit').summernote({
+    $('.summernotee').summernote({
       height: 200
     })
   })
