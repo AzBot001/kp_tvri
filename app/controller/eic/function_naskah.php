@@ -462,10 +462,10 @@ function tampil_rndwn($mysqli, $base_url)
                     <button class="btn btn-xs btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-print"></i>
                     </button>
-                    <button class="btn btn-xs btn-warning text-white"><i class="fas fa-edit"></i></button>
+                    <a href="<?php if($data['jenis'] == 'ghi'){echo 'edit_rundownghi';}else if($data['jenis'] == 'gns'){ echo 'edit_rundowngns';}else{echo 'edit_rundownhabari';} ?>/<?= $data['id_rundown'] ?>" class="btn btn-xs btn-warning text-white"><i class="fas fa-edit"></i></a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Cetak Rundown</a>
-                        <a class="dropdown-item" href="#">Cetak Naskah</a>
+                        <a class="dropdown-item" target="_blank" href="<?= $base_url ?>app/controller/eic/cetak/cetak_rundown.php?id=<?= $data['id_rundown'] ?>">Cetak Rundown</a>
+                        <a class="dropdown-item" target="_blank" href="<?= $base_url ?>app/controller/eic/cetak/cetak_naskah.php?id=<?= $data['id_rundown'] ?>">Cetak Naskah</a>
                         <a class="dropdown-item" href="#">Cetak Lead</a>
                     </div>
                 </div>

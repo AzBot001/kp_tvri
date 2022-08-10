@@ -19,48 +19,36 @@ include 'app/controller/eic/post_naskah.php';
                             <?= $title ?>
                         </div>
                         <div class="card-body">
-                            <form action="" method="post">
-                                <div class="row">
-                                    <div class="form-group col-3">
-                                        <label>Masukan Tanggal</label>
-                                        <input type="date" name="tanggal" class="form-control">
-                                    </div>
-                                    <div class="form-group col-6">
-                                        <label for="sd">&nbsp;</label><br>
-                                        <button name="cek" class="btn btn-primary"><i class="fas fa-search"></i></button>
-                                    </div>
-                                </div>
-                            </form>
+                          
                             <?php
-                            if (isset($_POST['cek'])) {
-                                $t = $_POST['tanggal'];
+                           
+                                $id = $_GET['id'];
+                                $query = $mysqli->query("SELECT * FROM rundown WHERE id_rundown = '$id'");
+                                $data_awal = $query->fetch_assoc();
+                                $t = $data_awal['tanggal'];
+                                
+                                
                                 $nomor = 1;
-                                $tanggal = $mysqli->query("SELECT * FROM naskah WHERE (tgl_berita = '$t') AND (jenis = 'habari') AND (sts_periksa = '1' AND sts_edit = '1') ORDER BY bobot DESC");
+                                $tanggal = $mysqli->query("SELECT * FROM naskah WHERE (tgl_berita = '$t') AND (jenis = 'ghi' || jenis = 'sulampa' || jenis = 'dialog') AND (sts_periksa = '1' AND sts_edit = '1') ORDER BY bobot DESC");
                                 $cek = mysqli_num_rows($tanggal);
                                 if ($cek < 1) {
-                                   ?>
+                                    ?>
                                     <script>
-                                    alert("Tidak ada naskah yang terdaftar");   
+                                    alert("Tidak ada naskah yang terdaftar ditanggal tersebut");   
                                     </script>
                                    <?php
                                 } else {
-                                    $cek_2 = $mysqli->query("SELECT * FROM rundown WHERE (tanggal = '$t') AND (jenis = 'habari')");
+                                    $cek_2 = $mysqli->query("SELECT * FROM rundown WHERE (tanggal = '$t') AND (jenis = 'ghi')");
                                     $check = mysqli_num_rows($cek_2);
 
-                                    if ($check > 0) {
-                                        ?>
-                                        <script>
-                                        alert("Data rundown sudah dibuat");   
-                                        </script>
-                                       <?php 
-                                    }else{
+                                    
                                     while ($data = $tanggal->fetch_assoc()) {
                                         $array[] = $data['id_naskah'];
                                     }
 
                                     $jumlah = count($array);
 
-                                    $insert_rundown = $mysqli->query("INSERT INTO rundown VALUES('','$t','habari')");
+                                    $insert_rundown = $mysqli->query("INSERT INTO rundown VALUES('','$t','ghi')");
                                     $id_last = $mysqli->insert_id;
 
 
@@ -68,6 +56,9 @@ include 'app/controller/eic/post_naskah.php';
                                     for ($i = 0; $i < $jumlah; $i++) {
                                         $insert_detail = $mysqli->query("INSERT INTO detail_rundown VALUES ('','$id_last','$array[$i]','','','$i')");
                                     }
+                                    $mysqli->query("DELETE FROM rundown WHERE id_rundown = '$id'");
+                                    $mysqli->query("DELETE FROM detail_rundown WHERE id_rundown = '$id'");
+                                    $mysqli->query("DELETE FROM kerabat_rundown WHERE id_rundown = '$id'");
                             ?>
                                     <div id="list">
                                     </div>
@@ -80,7 +71,7 @@ include 'app/controller/eic/post_naskah.php';
 
                                             <?php
                                             $xx = 1;
-                                            $def = $mysqli->query("SELECT * FROM naskah_default WHERE jenis = '3' || jenis = '4'");
+                                            $def = $mysqli->query("SELECT * FROM naskah_default WHERE jenis = '1' || jenis = '4'");
                                             while ($rowD = $def->fetch_assoc()) {
                                             ?>
                                                 <form action="" id="form-input<?= $rowD['id_naskahdefault'] ?>">
@@ -179,8 +170,8 @@ include 'app/controller/eic/post_naskah.php';
 
                             <?php
                                 }
-                            }
-                            }
+                            
+                            
                             ?>
                         </div>
                     </div>

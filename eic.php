@@ -1,5 +1,5 @@
 <?php
-// error_reporting(0);
+error_reporting(0);
 session_start();
 include 'app/env.php';
 include 'base_url.php';
@@ -61,6 +61,19 @@ else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'data_rundown') {
     $title = 'Data Rundown';
     $icon = 'fas fa-newspaper';
 }
+else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'edit_rundownghi') {
+    $title = 'Edit Rundown';
+    $icon = 'fas fa-newspaper';
+}
+else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'edit_rundowngns') {
+    $title = 'Edit Rundown';
+    $icon = 'fas fa-newspaper';
+}
+else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'edit_rundownhabari') {
+    $title = 'Edit Rundown';
+    $icon = 'fas fa-newspaper';
+}
+
 
 
 include 'views/layout/header.php';
@@ -93,6 +106,12 @@ if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'beranda_eic') {
     include 'views/pages/eic/rundown.php';
 } else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'buatpaket_eic') {
     include 'views/pages/eic/buatpaket_eic.php';
+} else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'edit_rundownghi') {
+    include 'views/pages/eic/edit_rundownghi.php';
+}else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'edit_rundowngns') {
+    include 'views/pages/eic/edit_rundowngns.php';
+}else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'edit_rundownhabari') {
+    include 'views/pages/eic/edit_rundownhabari.php';
 } else {
     include 'views/pages/eic/beranda_eic.php';
 }

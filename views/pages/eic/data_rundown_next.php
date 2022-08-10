@@ -24,7 +24,7 @@ include 'app/controller/eic/post_naskah.php';
                                     <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
                                     <label>Kerabat Kerja</label>
                                     <textarea name="kerabat" class="kerabat_kerja" cols="30" rows="10">
-                                        <table cellpadding = "5">
+                                        <table cellpadding = "2">
                                         <?php
                                         $query = $mysqli->query("SELECT * FROM kerabat_kerja");
                                         while ($data = $query->fetch_assoc()) {

@@ -35,11 +35,25 @@ include 'app/controller/eic/post_naskah.php';
                             if (isset($_POST['cek'])) {
                                 $t = $_POST['tanggal'];
                                 $nomor = 1;
-                                $tanggal = $mysqli->query("SELECT * FROM naskah WHERE (tgl_berita = '$t') AND (jenis = 'gns') ORDER BY bobot DESC");
+                                $tanggal = $mysqli->query("SELECT * FROM naskah WHERE (tgl_berita = '$t') AND (jenis = 'gns') AND (sts_periksa = '1' AND sts_edit = '1') ORDER BY bobot DESC");
                                 $cek = mysqli_num_rows($tanggal);
                                 if ($cek < 1) {
-                                    echo 'tdak ada data';
-                                } else {
+                                    ?>
+                                     <script>
+                                     alert("Tidak ada naskah yang terdaftar");   
+                                     </script>
+                                    <?php
+                                 } else {
+                                     $cek_2 = $mysqli->query("SELECT * FROM rundown WHERE (tanggal = '$t') AND (jenis = 'gns')");
+                                     $check = mysqli_num_rows($cek_2);
+ 
+                                     if ($check > 0) {
+                                         ?>
+                                         <script>
+                                         alert("Data rundown sudah dibuat");   
+                                         </script>
+                                        <?php 
+                                    } else {
                                     while ($data = $tanggal->fetch_assoc()) {
                                         $array[] = $data['id_naskah'];
                                     }
@@ -165,6 +179,7 @@ include 'app/controller/eic/post_naskah.php';
 
                             <?php
                                 }
+                            }
                             }
                             ?>
                         </div>

@@ -2,6 +2,25 @@
 include 'app/controller/eic/function_naskah.php';
 include 'app/flash_message.php';
 
+if (isset($_POST['simpan_kerabat'])) {
+    $id = $_POST['id'];
+    $kerabat = $_POST['kerabat'];
+    $jabatan1 = $_POST['jabatan1'];
+    $jabatan2 = $_POST['jabatan2'];
+    $jabatan3 = $_POST['jabatan3'];
+    $nama1 = $_POST['nama1'];
+    $nama2 = $_POST['nama2'];
+    $nama3 = $_POST['nama3'];
+    $nip1 = $_POST['nip1'];
+    $nip2 = $_POST['nip2'];
+    $nip3 = $_POST['nip3'];
+    $mysqli->query("INSERT INTO kerabat_rundown VALUES ('','$id','$kerabat','$jabatan1','$jabatan2','$jabatan3','$nama1','$nama2','$nama3','$nip1','$nip2','$nip3')");
+    ?>
+<script>
+        document.location.href = '<?= $base_url ?>data_rundown';
+    </script>
+    <?php
+}
 
 if (isset($_POST['verifikasighi'])) {
     if($_POST['kategori'] == 0 ){
