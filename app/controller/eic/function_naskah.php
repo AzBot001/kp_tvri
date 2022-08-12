@@ -202,8 +202,9 @@ function tampil_naskah_ghi($mysqli, $base_url)
                 <form action="" method="post">
                     <input type="hidden" name="id" value="<?= $data['id_naskah'] ?>">
                     <a href="<?= $base_url ?>app/controller/eic/cetak/cetak_ghi.php?id=<?= $data['id_naskah'] ?>" class="btn btn-success btn-xs" target="_blank"><i class="fas fa-print"></i></a>
+                    <a href="<?= $base_url ?>editghi_eic/<?= $data['id_naskah'] ?>" class="btn btn-xs btn-primary"><i class="fas fa-edit"></i></a>
+                    <button name="hapus_ghi" onclick="return confirm('Anda Yakin?')" class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
                 </form>
-                <a href="<?= $base_url ?>editghi_eic/<?= $data['id_naskah'] ?>" class="btn btn-xs btn-primary"><i class="fas fa-edit"></i></a>
             </td>
         </tr>
 
@@ -261,8 +262,9 @@ function tampil_naskah_gns($mysqli, $base_url)
                 <form action="" method="post">
                     <input type="hidden" name="id" value="<?= $data['id_naskah'] ?>">
                     <a href="<?= $base_url ?>app/controller/eic/cetak/cetak_gns.php?id=<?= $data['id_naskah'] ?>" class="btn btn-success btn-xs" target="_blank"><i class="fas fa-print"></i></a>
+                    <a href="<?= $base_url ?>editgns_eic/<?= $data['id_naskah'] ?>" class="btn btn-xs btn-primary"><i class="fas fa-edit"></i></a>
+                    <button name="hapus_gns" onclick="return confirm('Anda Yakin?')" class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
                 </form>
-                <a href="<?= $base_url ?>editgns_eic/<?= $data['id_naskah'] ?>" class="btn btn-xs btn-primary"><i class="fas fa-edit"></i></a>
             </td>
         </tr>
 
@@ -321,8 +323,9 @@ function tampil_naskah_lipuu($mysqli, $base_url)
                 <form action="" method="post">
                     <input type="hidden" name="id" value="<?= $data['id_naskah'] ?>">
                     <a href="<?= $base_url ?>app/controller/eic/cetak/cetak_habari.php?id=<?= $data['id_naskah'] ?>" class="btn btn-success btn-xs" target="_blank"><i class="fas fa-print"></i></a>
+                    <a href="<?= $base_url ?>edithabari_eic/<?= $data['id_naskah'] ?>" class="btn btn-xs btn-primary"><i class="fas fa-edit"></i></a>
+                    <button name="hapus_habari" onclick="return confirm('Anda Yakin?')" class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
                 </form>
-                <a href="<?= $base_url ?>edithabari_eic/<?= $data['id_naskah'] ?>" class="btn btn-xs btn-primary"><i class="fas fa-edit"></i></a>
             </td>
         </tr>
 
@@ -373,8 +376,9 @@ function tampil_naskah_sulampa($mysqli, $base_url)
                 <form action="" method="post">
                     <input type="hidden" name="id" value="<?= $data['id_naskah'] ?>">
                     <a href="<?= $base_url ?>app/controller/eic/cetak/cetak_sulampa.php?id=<?= $data['id_naskah'] ?>" class="btn btn-success btn-xs" target="_blank"><i class="fas fa-print"></i></a>
+                    <a href="<?= $base_url ?>editsulampa_eic/<?= $data['id_naskah'] ?>" class="btn btn-xs btn-primary"><i class="fas fa-edit"></i></a>
+                    <button name="hapus_sulampa" onclick="return confirm('Anda Yakin?')" class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
                 </form>
-                <a href="<?= $base_url ?>editsulampa_eic/<?= $data['id_naskah'] ?>" class="btn btn-xs btn-primary"><i class="fas fa-edit"></i></a>
             </td>
         </tr>
 
@@ -424,8 +428,9 @@ function tampil_naskah_dialog($mysqli, $base_url)
                 <form action="" method="post">
                     <input type="hidden" name="id" value="<?= $data['id_naskah'] ?>">
                     <a href="<?= $base_url ?>app/controller/eic/cetak/cetak_dialog.php?id=<?= $data['id_naskah'] ?>" class="btn btn-success btn-xs" target="_blank"><i class="fas fa-print"></i></a>
+                    <a href="<?= $base_url ?>editdialog_eic/<?= $data['id_naskah'] ?>" class="btn btn-xs btn-primary"><i class="fas fa-edit"></i></a>
+                    <button name="hapus_dialog" onclick="return confirm('Anda Yakin?')" class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
                 </form>
-                <a href="<?= $base_url ?>editdialog_eic/<?= $data['id_naskah'] ?>" class="btn btn-xs btn-primary"><i class="fas fa-edit"></i></a>
             </td>
         </tr>
 

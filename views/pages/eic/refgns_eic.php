@@ -1,5 +1,5 @@
 <?php
-include 'app/controller/reporter/post_naskahgns.php';
+include 'app/controller/eic/post_naskahgns.php';
 $idx = $_GET['id'];
 $query = $mysqli->query("SELECT * FROM naskah JOIN kategori ON naskah.id_kategori = kategori.id_kategori WHERE id_naskah = '$idx'");
 $d = $query->fetch_assoc();
@@ -9,7 +9,7 @@ $d = $query->fetch_assoc();
     <section class="content">
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
-            <a href="<?= $base_url ?>buatNaskahGns_reporter" class="btn btn-danger mb-3 mt-3"><i class="fas fa-arrow-left"></i></a>
+            <a href="<?= $base_url ?>buatNaskahGns_eic" class="btn btn-danger mb-3 mt-3"><i class="fas fa-arrow-left"></i></a>
 
 
             <form action="" method="post">

@@ -17,6 +17,21 @@ if ($_SESSION['type_user'] != 'eic' || !isset($_SESSION['type_user'])) {
 if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'beranda_eic') {
     $title = 'Beranda';
     $icon = 'fas fa-dashboard';
+} else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'buatNaskahGhi_eic') {
+    $title = 'Buat Naskah GHI';
+    $icon = 'fas fa-edit';
+} else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'buatNaskahGns_eic') {
+    $title = 'Buat Naskah GNS';
+    $icon = 'fas fa-edit';
+} else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'buatNaskahHabari_eic') {
+    $title = 'Buat Naskah Habari';
+    $icon = 'fas fa-edit';
+} else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'buatNaskahSulampa_eic') {
+    $title = 'Buat Naskah Sulampa';
+    $icon = 'fas fa-edit';
+} else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'buatNaskahDialog_eic') {
+    $title = 'Buat Naskah Dialog';
+    $icon = 'fas fa-edit';
 } else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'dataBeritaNaskah_eic') {
     $title = 'Data Naskah';
     $icon = 'fas fa-edit';
@@ -82,6 +97,27 @@ include 'views/layout/sidebar.php';
 
 if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'beranda_eic') {
     include 'views/pages/eic/beranda_eic.php';
+} else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'buatNaskahGhi_eic') {
+    include 'views/pages/eic/buatNaskahGhi_eic.php';
+} else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'buatNaskahGns_eic') {
+    include 'views/pages/eic/buatNaskahGns_eic.php';
+} else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'buatNaskahHabari_eic') {
+    include 'views/pages/eic/buatNaskahHabari_eic.php';
+} else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'buatNaskahSulampa_eic') {
+    include 'views/pages/eic/buatNaskahSulampa_eic.php';
+} else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'buatNaskahDialog_eic') {
+    include 'views/pages/eic/buatNaskahDialog_eic.php';
+} else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'buatNaskahLc') {
+    include 'views/pages/eic/buatNaskahLc_eic.php';
+} else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'refghi_eic') {
+    include 'views/pages/eic/refghi_eic.php';
+} else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'ref_sulampa_eic') {
+    include 'views/pages/eic/ref_sulampa_eic.php';
+} else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'refgns_eic') {
+    include 'views/pages/eic/refgns_eic.php';
+} else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'ref_habari_eic') {
+    include 'views/pages/eic/ref_habari_eic.php';
+
 } else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'dataBeritaNaskah_eic') {
     include 'views/pages/eic/dataBeritaNaskah_eic.php';
 } else if (isset($_GET['t_eic']) && $_GET['t_eic'] == 'editghi') {

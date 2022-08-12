@@ -175,31 +175,31 @@
                           </a>
                           <ul class="nav nav-treeview">
                               <li class="nav-item">
-                                  <a href="<?= $base_url ?>buatNaskahGhi" class="nav-link">
+                                  <a href="<?= $base_url ?>buatNaskahGhi_reporter" class="nav-link">
                                       <i class="far fa-circle nav-icon"></i>
                                       <p>Naskah GHI</p>
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a href="<?= $base_url ?>buatNaskahGns" class="nav-link">
+                                  <a href="<?= $base_url ?>buatNaskahGns_reporter" class="nav-link">
                                       <i class="far fa-circle nav-icon"></i>
                                       <p>Naskah GNS</p>
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a href="<?= $base_url ?>buatNaskahHabari" class="nav-link">
+                                  <a href="<?= $base_url ?>buatNaskahHabari_reporter" class="nav-link">
                                       <i class="far fa-circle nav-icon"></i>
                                       <p>Naskah Habari</p>
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a href="<?= $base_url ?>buatNaskahSulampa" class="nav-link">
+                                  <a href="<?= $base_url ?>buatNaskahSulampa_reporter" class="nav-link">
                                       <i class="far fa-circle nav-icon"></i>
                                       <p>Naskah Sulampa</p>
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a href="<?= $base_url ?>buatNaskahDialog" class="nav-link">
+                                  <a href="<?= $base_url ?>buatNaskahDialog_reporter" class="nav-link">
                                       <i class="far fa-circle nav-icon"></i>
                                       <p>Naskah Dialog</p>
                                   </a>
@@ -326,31 +326,31 @@
                           </a>
                           <ul class="nav nav-treeview">
                               <li class="nav-item">
-                                  <a href="<?= $base_url ?>buatNaskahGhi" class="nav-link">
+                                  <a href="<?= $base_url ?>buatNaskahGhi_eic" class="nav-link">
                                       <i class="far fa-circle nav-icon"></i>
                                       <p>Naskah GHI</p>
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a href="<?= $base_url ?>buatNaskahGns" class="nav-link">
+                                  <a href="<?= $base_url ?>buatNaskahGns_eic" class="nav-link">
                                       <i class="far fa-circle nav-icon"></i>
                                       <p>Naskah GNS</p>
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a href="<?= $base_url ?>buatNaskahHabari" class="nav-link">
+                                  <a href="<?= $base_url ?>buatNaskahHabari_eic" class="nav-link">
                                       <i class="far fa-circle nav-icon"></i>
                                       <p>Naskah Habari</p>
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a href="<?= $base_url ?>buatNaskahSulampa" class="nav-link">
+                                  <a href="<?= $base_url ?>buatNaskahSulampa_eic" class="nav-link">
                                       <i class="far fa-circle nav-icon"></i>
                                       <p>Naskah Sulampa</p>
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a href="<?= $base_url ?>buatNaskahDialog" class="nav-link">
+                                  <a href="<?= $base_url ?>buatNaskahDialog_eic" class="nav-link">
                                       <i class="far fa-circle nav-icon"></i>
                                       <p>Naskah Dialog</p>
                                   </a>

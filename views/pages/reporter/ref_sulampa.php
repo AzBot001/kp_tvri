@@ -9,7 +9,7 @@ $d = $query->fetch_assoc();
     <section class="content">
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
-            <a href="<?= $base_url ?>buatNaskahSulampa" class="btn btn-danger"><i class="fas fa-arrow-left"></i></a>
+            <a href="<?= $base_url ?>buatNaskahSulampa_reporter" class="btn btn-danger"><i class="fas fa-arrow-left"></i></a>
             <button type="button" data-toggle="modal" data-target="#ref" class="btn btn-warning btn-md btn-flat mb-3 mt-3 text-white">
                 <i class="fas fa-eye fa-md  mr-2"></i>
                 Lihat Refrensi Naskah

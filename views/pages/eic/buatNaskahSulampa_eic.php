@@ -1,5 +1,5 @@
 <?php
-include 'app/controller/reporter/post_naskahsulampa.php';
+include 'app/controller/eic/post_naskahsulampa.php';
 ?>
 <div class="content-wrapper">
     <section class="content">

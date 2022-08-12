@@ -1,24 +1,21 @@
 <?php
-include 'app/controller/reporter/post_naskahgns.php';
+include 'app/controller/eic/post_naskahlipuu.php';
 $idx = $_GET['id'];
 $query = $mysqli->query("SELECT * FROM naskah JOIN kategori ON naskah.id_kategori = kategori.id_kategori WHERE id_naskah = '$idx'");
 $d = $query->fetch_assoc();
-
 ?>
 <div class="content-wrapper">
     <section class="content">
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
-            <a href="<?= $base_url ?>buatNaskahGns_reporter" class="btn btn-danger mb-3 mt-3"><i class="fas fa-arrow-left"></i></a>
-
-
+            <a href="<?= $base_url ?>buatNaskahHabari_eic" class="btn btn-danger mb-3 mt-3"><i class="fas fa-arrow-left"></i></a>
             <form action="" method="post">
                 <div class="row">
                     <div class="col-md-12">
                         <!-- general form elements disabled -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title">NASKAH GORONTALO HARI INI</h3>
+                                <h3 class="card-title">NASKAH HABARI LO HULONTHALO</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -28,7 +25,6 @@ $d = $query->fetch_assoc();
                                         <!-- text input -->
                                         <div class="form-group">
                                             <label>Judul</label>
-                                            <input type="hidden" name="idx" value="<?= $idx ?>">
                                             <input type="hidden" name="id_user" value="<?= $d['id_user'] ?>">
                                             <input name="judul" type="text" class="form-control" value="<?= $d['judul'] ?>" placeholder="Masukkan Judul Berita">
                                         </div>
@@ -135,7 +131,7 @@ $d = $query->fetch_assoc();
                                         </div>
                                     </div>
                                 </div>
-                                <div class="after-add-more mb-2">
+                                <div class=" after-add-more mb-2">
                                     <div class="row">
                                         <div class="col-12">
                                             <button type="button" class="btn btn-warning text-white add-more"><i class="fas fa-plus-circle"></i> Soundup</button>
@@ -170,7 +166,7 @@ $d = $query->fetch_assoc();
                                 }
                                 ?>
 
-                                <div class="copy" style="display: none;">
+                                <div class=" copy" style="display: none;">
                                     <div class="control-group">
                                         <div class="row mb-2">
                                             <div class="col-8">
@@ -188,7 +184,7 @@ $d = $query->fetch_assoc();
                                     </div>
                                 </div>
                                 <div class="mt-5">
-                                    <button type="submit" name="simpangns" class="btn btn-block btn-success">Simpan</button>
+                                    <button type="submit" name="simpanhabari" class="btn btn-block btn-success">Simpan</button>
                                 </div>
                             </div>
                             <!-- /.card-body -->

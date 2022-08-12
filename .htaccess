@@ -21,11 +21,11 @@ RewriteRule ^dataBeritaNaskah_admin$ admin.php?t_admin=dataBeritaNaskah_admin
 
 RewriteRule ^reporter$ reporter.php
 RewriteRule ^beranda_reporter$ reporter.php?t_reporter=beranda_reporter
-RewriteRule ^buatNaskahGhi$ reporter.php?t_reporter=buatNaskahGhi
-RewriteRule ^buatNaskahGns$ reporter.php?t_reporter=buatNaskahGns
-RewriteRule ^buatNaskahHabari$ reporter.php?t_reporter=buatNaskahHabari
-RewriteRule ^buatNaskahSulampa$ reporter.php?t_reporter=buatNaskahSulampa
-RewriteRule ^buatNaskahDialog$ reporter.php?t_reporter=buatNaskahDialog
+RewriteRule ^buatNaskahGhi_reporter$ reporter.php?t_reporter=buatNaskahGhi_reporter
+RewriteRule ^buatNaskahGns_reporter$ reporter.php?t_reporter=buatNaskahGns_reporter
+RewriteRule ^buatNaskahHabari_reporter$ reporter.php?t_reporter=buatNaskahHabari_reporter
+RewriteRule ^buatNaskahSulampa_reporter$ reporter.php?t_reporter=buatNaskahSulampa_reporter
+RewriteRule ^buatNaskahDialog_reporter$ reporter.php?t_reporter=buatNaskahDialog_reporter
 RewriteRule ^dataBeritaNaskah_reporter$ reporter.php?t_reporter=dataBeritaNaskah_reporter
 RewriteRule ^dataBeritaRundown_reporter$ reporter.php?t_reporter=dataBeritaRundown_reporter
 RewriteRule ^dataBeritaLead_reporter$ reporter.php?t_reporter=dataBeritaLead_reporter
@@ -49,6 +49,17 @@ RewriteRule ^buatpaket_editor$ editor.php?t_editor=buatpaket_editor
 
 RewriteRule ^eic$ eic.php
 RewriteRule ^beranda_eic$ eic.php?t_eic=beranda_eic
+
+RewriteRule ^buatNaskahGhi_eic$ eic.php?t_eic=buatNaskahGhi_eic
+RewriteRule ^buatNaskahGns_eic$ eic.php?t_eic=buatNaskahGns_eic
+RewriteRule ^buatNaskahHabari_eic$ eic.php?t_eic=buatNaskahHabari_eic
+RewriteRule ^buatNaskahSulampa_eic$ eic.php?t_eic=buatNaskahSulampa_eic
+RewriteRule ^buatNaskahDialog_eic$ eic.php?t_eic=buatNaskahDialog_eic
+RewriteRule ^refghi_eic/([0-9]+)$ eic.php?t_eic=refghi_eic&id=$1 [NC,L]
+RewriteRule ^ref_sulampa_eic/([0-9]+)$ eic.php?t_eic=ref_sulampa_eic&id=$1 [NC,L]
+RewriteRule ^refgns_eic/([0-9]+)$ eic.php?t_eic=refgns_eic&id=$1 [NC,L]
+RewriteRule ^ref_habari_eic/([0-9]+)$ eic.php?t_eic=ref_habari_eic&id=$1 [NC,L]
+
 RewriteRule ^dataBeritaNaskah_eic$ eic.php?t_eic=dataBeritaNaskah_eic
 RewriteRule ^editghi_eic/([0-9]+)$ eic.php?t_eic=editghi&id=$1 [NC,L]
 RewriteRule ^editgns_eic/([0-9]+)$ eic.php?t_eic=editgns&id=$1 [NC,L]

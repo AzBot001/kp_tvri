@@ -1,5 +1,5 @@
 <?php
-include 'app/controller/reporter/post_naskahgns.php';
+include 'app/controller/eic/post_naskahghi.php';
 $idx = $_GET['id'];
 $query = $mysqli->query("SELECT * FROM naskah JOIN kategori ON naskah.id_kategori = kategori.id_kategori WHERE id_naskah = '$idx'");
 $d = $query->fetch_assoc();
@@ -9,7 +9,11 @@ $d = $query->fetch_assoc();
     <section class="content">
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
-            <a href="<?= $base_url ?>buatNaskahGns_reporter" class="btn btn-danger mb-3 mt-3"><i class="fas fa-arrow-left"></i></a>
+            <a href="<?= $base_url ?>buatNaskahGhi_eic" class="btn btn-danger"><i class="fas fa-arrow-left"></i></a>
+            <button type="button" data-toggle="modal" data-target="#ref" class="btn btn-warning btn-md btn-flat mb-3 mt-3 text-white">
+                <i class="fas fa-eye fa-md  mr-2"></i>
+                Lihat Refrensi Naskah
+            </button>
 
 
             <form action="" method="post">
@@ -28,8 +32,7 @@ $d = $query->fetch_assoc();
                                         <!-- text input -->
                                         <div class="form-group">
                                             <label>Judul</label>
-                                            <input type="hidden" name="idx" value="<?= $idx ?>">
-                                            <input type="hidden" name="id_user" value="<?= $d['id_user'] ?>">
+                                            <input type="hidden" name="id_user" value="<?= $_SESSION['id'] ?>">
                                             <input name="judul" type="text" class="form-control" value="<?= $d['judul'] ?>" placeholder="Masukkan Judul Berita">
                                         </div>
                                     </div>
@@ -49,10 +52,10 @@ $d = $query->fetch_assoc();
                                             <select name="kameramen" class="form-control select2bs4" style="width: 100%;">
                                                 <option value="<?= $d['kameramen'] ?>">
                                                     <?php
-                                                    $kDefault = $mysqli->query("SELECT * FROM user WHERE id_user = '{$d['kameramen']}'");
-                                                    $kDefaultx = $kDefault->fetch_assoc();
-                                                    echo $kDefaultx['nama_user']
-                                                    ?>
+                                                        $kDefault = $mysqli->query("SELECT * FROM user WHERE id_user = '{$d['kameramen']}'");
+                                                        $kDefaultx = $kDefault->fetch_assoc();
+                                                        echo $kDefaultx['nama_user']
+                                                    ?> 
                                                 </option>
                                                 <?php
 
@@ -170,7 +173,7 @@ $d = $query->fetch_assoc();
                                 }
                                 ?>
 
-                                <div class="copy" style="display: none;">
+                                <div class="  copy" style="display: none;">
                                     <div class="control-group">
                                         <div class="row mb-2">
                                             <div class="col-8">
@@ -188,7 +191,7 @@ $d = $query->fetch_assoc();
                                     </div>
                                 </div>
                                 <div class="mt-5">
-                                    <button type="submit" name="simpangns" class="btn btn-block btn-success">Simpan</button>
+                                    <button type="submit" name="simpanghi" class="btn btn-block btn-success">Simpan</button>
                                 </div>
                             </div>
                             <!-- /.card-body -->
@@ -199,4 +202,38 @@ $d = $query->fetch_assoc();
             </form>
         </div>
     </section>
+</div>
+
+<div class="modal fade" id="ref" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Referensi Naskah</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table" id="dataTable">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>#</th>
+                            <th>Judul</th>
+                            <th>Kameramen</th>
+                            <th>Reporter</th>
+                            <th>Tanggal</th>
+                            <th>Kategori</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php tampil_ref_ghi($mysqli, $base_url) ?>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>

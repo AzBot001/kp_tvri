@@ -8,7 +8,7 @@ $d = $query->fetch_assoc();
     <section class="content">
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
-            <a href="<?= $base_url ?>buatNaskahHabari" class="btn btn-danger mb-3 mt-3"><i class="fas fa-arrow-left"></i></a>
+            <a href="<?= $base_url ?>buatNaskahHabari_reporter" class="btn btn-danger mb-3 mt-3"><i class="fas fa-arrow-left"></i></a>
             <form action="" method="post">
                 <div class="row">
                     <div class="col-md-12">
