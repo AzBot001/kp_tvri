@@ -1,3 +1,3 @@
 <?php
 
-$base_url = "http://localhost/kpabidamir/";
+$base_url = "http://localhost/kp_tvri/";
