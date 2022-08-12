@@ -357,20 +357,7 @@
                               </li>
                           </ul>
                       </li>
-                      <li class="nav-item">
-                          <a href="<?= $base_url ?>dataBeritaNaskah_eic" class="nav-link">
-                              <i class="far fa-file nav-icon"></i>
-                              <p>Data Naskah</p>
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="<?= $base_url ?>data_rundown" class="nav-link">
-                              <i class="nav-icon fas fa-newspaper text-white"></i>
-                              <p class="text-white">
-                                  Data Rundown
-                              </p>
-                          </a>
-                      </li>
+                      
                       <li class="nav-item has-treeview">
                           <a href="#" class="nav-link">
                               <i class="nav-icon fas fa-list"></i>
@@ -398,18 +385,28 @@
                                       <p>Buat Rundown HABARI</p>
                                   </a>
                               </li>
+                          </ul>
+                      </li>
 
-
+                      <li class="nav-item has-treeview">
+                          <a href="#" class="nav-link">
+                              <i class="nav-icon fas fa-newspaper"></i>
+                              <p>
+                                  Data Berita
+                                  <i class="fas fa-angle-left right"></i>
+                              </p>
+                          </a>
+                          <ul class="nav nav-treeview">
                               <li class="nav-item">
-                                  <a href="<?= $base_url ?>dataBeritaLead_eic" class="nav-link">
+                                  <a href="<?= $base_url ?>dataBeritaNaskah_eic" class="nav-link">
                                       <i class="far fa-circle nav-icon"></i>
-                                      <p>Data Lead</p>
+                                      <p>Data Naskah</p>
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a href="<?= $base_url ?>buatpaket_eic" class="nav-link">
+                                  <a href="<?= $base_url ?>data_rundown" class="nav-link">
                                       <i class="far fa-circle nav-icon"></i>
-                                      <p>Data Paket</p>
+                                      <p>Data Rundown</p>
                                   </a>
                               </li>
                           </ul>
