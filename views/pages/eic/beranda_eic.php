@@ -107,6 +107,7 @@ include 'app/controller/eic/function_beranda_eic.php';
                                         <th>No</th>
                                         <th>Judul</th>
                                         <th>Reporter</th>
+                                        <th>Jenis</th>
                                         <th>Status</th>
                                     </tr>
                                 </thead>

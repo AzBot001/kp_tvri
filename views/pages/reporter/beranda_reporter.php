@@ -89,6 +89,7 @@ include 'app/controller/reporter/function_beranda_rep.php';
                                         <th>No</th>
                                         <th>Judul</th>
                                         <th>Reporter</th>
+                                        <th>Jenis</th>
                                         <th>Status</th>
                                     </tr>
                                 </thead>

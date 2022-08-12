@@ -17,6 +17,7 @@ function tampil_naskah_beranda($mysqli)
                 echo $data['nama_user'];
                 ?>
             </td>
+            <td><?= $data['jenis'] ?></td>
             <td>
                 <?php
                 if ($data['sts_periksa'] == '0') {

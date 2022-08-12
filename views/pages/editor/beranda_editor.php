@@ -88,6 +88,7 @@ include 'app/controller/editor/function_beranda_edt.php';
                                         <th>No</th>
                                         <th>Judul</th>
                                         <th>Reporter</th>
+                                        <th>Jenis</th>
                                         <th>Status</th>
                                     </tr>
                                 </thead>

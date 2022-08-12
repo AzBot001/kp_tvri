@@ -9,7 +9,7 @@ if (isset($_POST['simpandialog'])) {
     $kategori = $_POST['kategori'];
     $bobot = '4';
     $lead = $_POST['lead'];
-    $jenis = 'dialog';
+    $jenis = 'DIALOG';
     $sts_periksa = $_POST['sts_periksa'];
     $stss_edit = $_POST['sts_edit'];
     $id = $_POST['id_user'];

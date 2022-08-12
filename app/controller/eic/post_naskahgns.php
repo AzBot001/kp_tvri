@@ -15,7 +15,7 @@ if (isset($_POST['simpangns'])) {
     $su = $_POST['su'];
     $u = $_POST['u'];
     $narasi_soundup = $_POST['narasi_soundup'];
-    $jenis = 'gns';
+    $jenis = 'GNS';
     $sts_periksa = $_POST['sts_periksa'];
     $stss_edit = $_POST['sts_edit'];
     $id = $_POST['id_user'];
