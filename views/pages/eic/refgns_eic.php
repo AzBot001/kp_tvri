@@ -30,14 +30,14 @@ $d = $query->fetch_assoc();
                                             <label>Judul</label>
                                             <input type="hidden" name="idx" value="<?= $idx ?>">
                                             <input type="hidden" name="id_user" value="<?= $d['id_user'] ?>">
-                                            <input name="judul" type="text" class="form-control" value="<?= $d['judul'] ?>" placeholder="Masukkan Judul Berita">
+                                            <input name="judul" type="text" class="form-control" value="<?= $d['judul'] ?>" placeholder="Masukkan Judul Berita" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <!-- text input -->
                                         <div class="form-group">
                                             <label>Lokasi</label>
-                                            <input name="lokasi" type="text" value="<?= $d['lokasi'] ?>" class="form-control" placeholder="Masukkan Lokasi Berita">
+                                            <input name="lokasi" type="text" value="<?= $d['lokasi'] ?>" class="form-control" placeholder="Masukkan Lokasi Berita" required>
                                         </div>
                                     </div>
                                 </div>
@@ -71,7 +71,7 @@ $d = $query->fetch_assoc();
 
                                     <div class="form-group col-sm-6">
                                         <label>Tanggal Berita</label>
-                                        <input name="tgl_berita" value="<?= $d['tgl_berita'] ?>" type="date" class="form-control datetimepicker-input" data-target="#reservationdate" placeholder="Masukkan Tanggal Berita" />
+                                        <input name="tgl_berita" value="<?= $d['tgl_berita'] ?>" type="date" class="form-control datetimepicker-input" data-target="#reservationdate" placeholder="Masukkan Tanggal Berita" required />
                                     </div>
                                 </div>
                                 <div class="row">
@@ -121,7 +121,7 @@ $d = $query->fetch_assoc();
                                         <!-- textarea -->
                                         <div class="form-group">
                                             <label>Lead Berita</label>
-                                            <textarea name="lead" class="form-control" rows="10" placeholder="Masukkan Lead Berita"><?= $d['lead'] ?></textarea>
+                                            <textarea name="lead" class="form-control summernotee" rows="10" placeholder="Masukkan Lead Berita" required><?= $d['lead'] ?></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -131,7 +131,7 @@ $d = $query->fetch_assoc();
                                         <!-- textarea -->
                                         <div class="form-group">
                                             <label>Narasi Berita</label>
-                                            <textarea name="narasi" class="form-control" rows="10" placeholder="Masukkan Narasi Berita"><?= $d['naskah'] ?></textarea>
+                                            <textarea name="narasi" class="form-control summernotee" rows="10" placeholder="Masukkan Narasi Berita" required><?= $d['naskah'] ?></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -158,7 +158,7 @@ $d = $query->fetch_assoc();
                                                     </div>
                                                     <div class="col-12 mt-2">
                                                         <label>Narasi</label>
-                                                        <textarea class="form-control" rows="10" name="narasi_soundup[]"><?= $sux['naskah_su'] ?></textarea>
+                                                        <textarea class="form-control summernotee" rows="10" name="narasi_soundup[]"><?= $sux['naskah_su'] ?></textarea>
                                                     </div>
                                                 </div>
                                                 <button type="button" class="btn btn-danger remove"><i class="fas fa-trash"></i> SoundUp</button>
@@ -180,7 +180,7 @@ $d = $query->fetch_assoc();
                                             </div>
                                             <div class="col-12 mt-2">
                                                 <label>Narasi</label>
-                                                <textarea class="form-control" rows="10" name="narasi_soundup[]"></textarea>
+                                                <textarea class="form-control summernotee" rows="10" name="narasi_soundup[]"></textarea>
                                             </div>
                                         </div>
                                         <button type="button" class="btn btn-danger remove"><i class="fas fa-trash"></i> SoundUp</button>

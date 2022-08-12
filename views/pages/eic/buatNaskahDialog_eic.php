@@ -59,7 +59,7 @@ include 'app/controller/eic/post_naskahdialog.php';
                                         <!-- select -->
                                         <div class="form-group">
                                             <label>Kategori Berita</label>
-                                            <select class="form-control" name="kategori" required>
+                                            <select class="form-control" name="kategori">
                                                 <option hidden>--Pilih Kategori--</option>
                                                 <?php
     
@@ -88,7 +88,7 @@ include 'app/controller/eic/post_naskahdialog.php';
                                         <!-- textarea -->
                                         <div class="form-group">
                                             <label>Lead Berita</label>
-                                            <textarea name="lead" class="form-control" rows="10" placeholder="Masukkan Lead Berita" required></textarea>
+                                            <textarea name="lead" class="form-control summernotee" rows="10" placeholder="Masukkan Lead Berita" required></textarea>
                                         </div>
                                     </div>
                                 </div>

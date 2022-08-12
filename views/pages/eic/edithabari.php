@@ -118,7 +118,7 @@ $d = $query->fetch_assoc();
                                         <!-- textarea -->
                                         <div class="form-group">
                                             <label>Lead Berita</label>
-                                            <textarea name="lead" class="form-control" rows="10" placeholder="Masukkan Lead Berita" required><?= $d['lead'] ?></textarea>
+                                            <textarea name="lead" class="form-control summernotee" rows="10" placeholder="Masukkan Lead Berita" required><?= $d['lead'] ?></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -128,7 +128,7 @@ $d = $query->fetch_assoc();
                                         <!-- textarea -->
                                         <div class="form-group">
                                             <label>Narasi Berita</label>
-                                            <textarea name="narasi" class="form-control" rows="10" placeholder="Masukkan Narasi Berita"><?= $d['naskah'] ?></textarea>
+                                            <textarea name="narasi" class="form-control summernotee" rows="10" placeholder="Masukkan Narasi Berita" required><?= $d['naskah'] ?></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -155,7 +155,7 @@ $d = $query->fetch_assoc();
                                                     </div>
                                                     <div class="col-12 mt-2">
                                                         <label>Narasi</label>
-                                                        <textarea class="form-control" rows="10" name="narasi_soundup[]"><?= $sux['naskah_su'] ?></textarea>
+                                                        <textarea class="form-control summernotee" rows="10" name="narasi_soundup[]"><?= $sux['naskah_su'] ?></textarea>
                                                     </div>
                                                 </div>
                                                 <button type="button" class="btn btn-danger remove"><i class="fas fa-trash"></i> SoundUp</button>
@@ -177,7 +177,7 @@ $d = $query->fetch_assoc();
                                             </div>
                                             <div class="col-12 mt-2">
                                                 <label>Narasi</label>
-                                                <textarea class="form-control" rows="10" name="narasi_soundup[]"></textarea>
+                                                <textarea class="form-control summernotee" rows="10" name="narasi_soundup[]"></textarea>
                                             </div>
                                         </div>
                                         <button type="button" class="btn btn-danger remove"><i class="fas fa-trash"></i> SoundUp</button>

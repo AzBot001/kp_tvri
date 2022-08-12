@@ -88,7 +88,7 @@ include 'app/controller/reporter/post_naskahdialog.php';
                                         <!-- textarea -->
                                         <div class="form-group">
                                             <label>Lead Berita</label>
-                                            <textarea name="lead" class="form-control" rows="10" placeholder="Masukkan Lead Berita" required></textarea>
+                                            <textarea name="lead" class="form-control summernotee" rows="10" placeholder="Masukkan Lead Berita"></textarea>
                                         </div>
                                     </div>
                                 </div>

@@ -26,14 +26,14 @@ $d = $query->fetch_assoc();
                                         <div class="form-group">
                                             <label>Judul</label>
                                             <input type="hidden" name="id" value="<?= $idx ?>">
-                                            <input name="judul" type="text" value="<?= $d['judul'] ?>" class="form-control" placeholder="Masukkan Judul Berita">
+                                            <input name="judul" type="text" value="<?= $d['judul'] ?>" class="form-control" placeholder="Masukkan Judul Berita" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <!-- text input -->
                                         <div class="form-group">
                                             <label>Nama Narasumber</label>
-                                            <input name="narasumber" value="<?= $d['narasumber'] ?>" type="text" class="form-control" placeholder="Masukkan Nama Narasumber">
+                                            <input name="narasumber" value="<?= $d['narasumber'] ?>" type="text" class="form-control" placeholder="Masukkan Nama Narasumber" required>
                                         </div>
                                     </div>
                                 </div>
@@ -56,7 +56,7 @@ $d = $query->fetch_assoc();
                                 <div class="row">
                                     <div class="form-group col-sm-6">
                                         <label>Tanggal Berita</label>
-                                        <input name="tgl_berita" value="<?= $d['tgl_berita'] ?>" type="date" class="form-control datetimepicker-input" data-target="#reservationdate" placeholder="Masukkan Tanggal Berita" />
+                                        <input name="tgl_berita" value="<?= $d['tgl_berita'] ?>" type="date" class="form-control datetimepicker-input" data-target="#reservationdate" placeholder="Masukkan Tanggal Berita" required/>
                                     </div>
                                     <div class="col-sm-6">
                                         <!-- select -->
@@ -91,7 +91,7 @@ $d = $query->fetch_assoc();
                                         <!-- textarea -->
                                         <div class="form-group">
                                             <label>Lead Berita</label>
-                                            <textarea name="lead" class="form-control" rows="10" placeholder="Masukkan Lead Berita"><?= $d['lead'] ?></textarea>
+                                            <textarea name="lead" class="form-control summernotee" rows="10" placeholder="Masukkan Lead Berita"><?= $d['lead'] ?></textarea>
                                         </div>
                                     </div>
                                 </div>

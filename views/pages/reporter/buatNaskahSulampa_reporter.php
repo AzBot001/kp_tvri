@@ -80,7 +80,7 @@ include 'app/controller/reporter/post_naskahsulampa.php';
                                         <!-- textarea -->
                                         <div class="form-group">
                                             <label>Lead Berita</label>
-                                            <textarea name="lead" class="form-control" rows="10" placeholder="Masukkan Lead Berita" required></textarea>
+                                            <textarea name="lead" class="form-control summernotee" rows="10" placeholder="Masukkan Lead Berita" required></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@ include 'app/controller/reporter/post_naskahsulampa.php';
                                         <!-- textarea -->
                                         <div class="form-group">
                                             <label>Narasi Berita</label>
-                                            <textarea name="narasi" class="form-control" rows="10" placeholder="Masukkan Narasi Berita" required></textarea>
+                                            <textarea name="narasi" class="form-control summernotee" rows="10" placeholder="Masukkan Narasi Berita" required></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -111,7 +111,7 @@ include 'app/controller/reporter/post_naskahsulampa.php';
                                             </div>
                                             <div class="col-12 mt-2">
                                                 <label>Narasi</label>
-                                                <textarea class="form-control" rows="10" name="narasi_soundup[]"></textarea>
+                                                <textarea class="form-control summernotee" rows="10" name="narasi_soundup[]"></textarea>
                                             </div>
                                         </div>
                                         <button type="button" class="btn btn-danger remove"><i class="fas fa-trash"></i> SoundUp</button>
