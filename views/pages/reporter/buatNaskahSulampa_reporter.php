@@ -33,7 +33,7 @@ include 'app/controller/reporter/post_naskahsulampa.php';
                                         <!-- text input -->
                                         <div class="form-group">
                                             <label>Sumber Berita</label>
-                                            <select class="form-control" name="kategori" required>
+                                            <select class="form-control" name="kategori">
                                                 <option hidden>--Pilih Sumber--</option>
                                                 <?php
 
