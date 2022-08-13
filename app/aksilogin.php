@@ -38,6 +38,7 @@ if (isset($_POST['login'])) {
                             $_SESSION['type_user'] = "admin";
                             $_SESSION['pass'] = $data['pass'];
                             // $_SESSION['id'] = $data['id_user'];
+                            $_SESSION['id'] = $data['id_user'];
                             ?>
                             <script>
                                 document.location.href = '<?= $base_url ?>beranda_admin';

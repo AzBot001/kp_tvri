@@ -107,11 +107,11 @@ include 'app/controller/reporter/post_naskahsulampa.php';
                                             <div class="col-8">
                                                 <label>Sound Up</label>
                                                 <input type="text" class="form-control col-2 mb-1" name="u[]" placeholder="urutan">
-                                                <input type="text" name="su[]" placeholder="Masukan Soundup" class="form-control" required>
+                                                <input type="text" name="su[]" placeholder="Masukan Soundup" class="form-control">
                                             </div>
                                             <div class="col-12 mt-2">
                                                 <label>Narasi</label>
-                                                <textarea class="form-control" rows="10" name="narasi_soundup[]" required></textarea>
+                                                <textarea class="form-control" rows="10" name="narasi_soundup[]"></textarea>
                                             </div>
                                         </div>
                                         <button type="button" class="btn btn-danger remove"><i class="fas fa-trash"></i> SoundUp</button>

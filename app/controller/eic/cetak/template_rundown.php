@@ -31,8 +31,12 @@ function tgl_indo($tanggal)
 $query = $mysqli->query("SELECT * FROM rundown WHERE id_rundown = '$id'");
 $dR = $query->fetch_assoc();
 ?>
-
-<table width=100%>
+<style media="print">
+    div, table, b { 
+        font-size: 12px;
+    }
+</style>
+<table width="100%" style="font-size: 16px !important ;">
     <tr>
         <th>RUNDOWN</th>
     </tr>
@@ -54,7 +58,7 @@ $dR = $query->fetch_assoc();
     </tr>
 </table>
 
-<table cellpadding="3" border="1" width="100%" style="margin-top: 5px ; border-collapse:collapse; font-size: 12px;">
+<table cellpadding="3" border="1" width="100%" style="margin-top: 5px ; border-collapse:collapse; font-size: 9px;">
     <thead>
         <tr>
             <th>No</th>
@@ -195,15 +199,16 @@ $dR = $query->fetch_assoc();
         </tr>
     </tbody>
 </table>
-<div style="margin-top: 10px ;">
+<div style="margin-top: 10px;">
     <b>Kerabat Kerja :</b>
     <?php
     $q_ker = $mysqli->query("SELECT * FROM kerabat_rundown WHERE id_rundown = '$id'");
     $d_ker = $q_ker->fetch_assoc();
     echo $d_ker['kerabat_kerja'];
+   
     ?>
 </div>
-<div style="margin-top: 10px ;">
+<div class="te" style="margin-top: 10px ;">
     <table width='100%'>
         <tr>
             <td>

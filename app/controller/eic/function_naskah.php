@@ -466,7 +466,7 @@ function tampil_rndwn($mysqli, $base_url)
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" target="_blank" href="<?= $base_url ?>app/controller/eic/cetak/cetak_rundown.php?id=<?= $data['id_rundown'] ?>">Cetak Rundown</a>
                         <a class="dropdown-item" target="_blank" href="<?= $base_url ?>app/controller/eic/cetak/cetak_naskah.php?id=<?= $data['id_rundown'] ?>">Cetak Naskah</a>
-                        <a class="dropdown-item" href="#">Cetak Lead</a>
+                        <a class="dropdown-item" target="_blank" href="<?= $base_url ?>app/controller/eic/cetak/cetak_lead.php?id=<?= $data['id_rundown'] ?>">Cetak Lead</a>
                     </div>
                 </div>
                 

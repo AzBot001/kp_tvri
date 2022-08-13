@@ -3,6 +3,7 @@ error_reporting(0);
 session_start();
 include 'app/env.php';
 include 'base_url.php';
+include 'getapp.php';
 if ($_SESSION['type_user'] != 'user' || !isset($_SESSION['type_user'])) {
 
 ?>

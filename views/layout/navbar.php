@@ -27,7 +27,7 @@
                 <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link text-white" data-toggle="dropdown" href="#">
-                        <i class="far fa-user"></i>  <?= $_SESSION['nama']; ?>
+                        <i class="far fa-user"></i> <?= $nama_user ?>
                     </a>
                     <div class="dropdown-menu">
                         <button type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModal">
@@ -50,9 +50,90 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                      
-
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Profil</a>
+                                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Password</a>
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                <br>
+                                <form action="" method="post">
+                                    <div class="form-group">
+                                        <label for="">Nama Pengguna</label>
+                                        <input type="hidden" name="id" value="<?= $id_us ?>">
+                                        <input type="text" class="form-control" name="nama" value="<?= $nama_user ?>" id="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Usernamae</label>
+                                        <input type="text" class="form-control" name="username" value="<?= $username_user ?>" id="">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" name="profil" class="btn btn-block btn-primary"><i class="fas fa-save"></i> Simpan</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                <br>
+                                <form action="" method="post">
+                                    <div class="form-group">
+                                        <label for="">Password Lama</label>
+                                        <input type="hidden" name="id" value="<?= $id_us ?>">
+                                        <input type="password" class="form-control" name="lama" id="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Password Baru</label>
+                                        <input type="password" class="form-control" name="baru" id="">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" name="password" class="btn btn-block btn-primary"><i class="fas fa-save"></i> Simpan</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <?php
+
+        if (isset($_POST['profil'])) {
+            $id = $_POST['id'];
+            $nama = $_POST['nama'];
+            $user = $_POST['username'];
+
+            $mysqli->query("UPDATE user SET nama_user = '$nama', user = '$user' WHERE id_user = '$id'");
+        ?>
+            <script>
+                alert('Berhasil Mengganti Profil');
+            </script>
+        <?php
+        }
+
+        ?>
+        <?php
+
+        if (isset($_POST['password'])) {
+            $id = $_POST['id'];
+            $lama = md5($_POST['lama']);
+            $baru = md5($_POST['baru']);
+
+            if ($lama == $password_user) {
+                $mysqli->query("UPDATE user SET pass = '$baru' WHERE id_user = '$id'");
+        ?>
+                <script>
+                    alert('Berhasil Mengganti Password');
+                </script>
+            <?php
+            } else {
+            ?>
+                <script>
+                    alert('Konfirmasi Ulang Kata Sandi');
+                </script>
+        <?php
+            }
+        }
+
+        ?>

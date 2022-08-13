@@ -1,8 +1,11 @@
 <?php
 error_reporting(0);
-$id = $_GET['id'];
-
 include "../../../../app/env.php";
+
+$id = $_GET['id'];
+$rndwn = $mysqli->query("SELECT * FROM rundown WHERE id_rundown = '$id'");
+$drndwn = $rndwn->fetch_assoc();
+
 function tgl_indo($tanggal)
 {
     $bulan = array(
@@ -37,8 +40,8 @@ while ($dR = $query_naskah_awal->fetch_assoc()) {
     if ($id_naskah != '0' && $id_naskah_default == '0' && empty($teaser)) {
         $query_naskah = $mysqli->query("SELECT * FROM naskah WHERE id_naskah = '$id_naskah'");
         $data_naskah = $query_naskah->fetch_assoc();
-        echo $data_naskah['kameramen'];
-        if ($data_naskah['jenis'] == 'ghi') {
+       
+        if ($data_naskah['jenis'] == 'GHI' || $data_naskah['jenis'] == 'GNS' || $data_naskah['jenis'] == 'HABARI') {
             $kameramen = $mysqli->query("SELECT * FROM user WHERE id_user = '{$data_naskah['kameramen']}'");
             $k = $kameramen->fetch_assoc();
 
@@ -49,7 +52,7 @@ while ($dR = $query_naskah_awal->fetch_assoc()) {
             <table border="0" style="width:100%; border-collapse:collapse;" cellpadding="2">
                 <tr>
                     <td rowspan="2">
-                        <h3>TELEVISI RI STASIUN GORONsTALO</h3>
+                        <h3>TELEVISI RI STASIUN GORONTALO</h3>
                     </td>
                     <td>Tanggal</td>
                     <td>:</td>
@@ -116,7 +119,7 @@ while ($dR = $query_naskah_awal->fetch_assoc()) {
             </table>
 
         <?php
-        } else if ($data_naskah['jenis'] == 'sulampa') {
+        } else if ($data_naskah['jenis'] == 'SULAMPA') {
             $dkg = $data_naskah['id_kategori'];
             $query_sumber = $mysqli->query("SELECT * FROM sumber_berita WHERE id_sumber_berita = '$dkg' ");
             $kg = $query_sumber->fetch_assoc();
@@ -128,7 +131,7 @@ while ($dR = $query_naskah_awal->fetch_assoc()) {
                     </td>
                     <td>Tanggal</td>
                     <td>:</td>
-                    <td><?= tgl_indo($data_naskah['tgl_berita']) ?></td>
+                    <td><?= tgl_indo($data_naskah['tgl_berita']);?></td>
                 </tr>
                 <tr>
                     <td>Rep / Cam</td>
@@ -190,7 +193,7 @@ while ($dR = $query_naskah_awal->fetch_assoc()) {
 
             </table>
         <?php
-        } else if ($data_naskah['jenis'] == 'dialog') {
+        } else if ($data_naskah['jenis'] == 'DIALOG') {
         ?>
             <table border="0" style="width:100%; border-collapse:collapse;" cellpadding="2">
                 <tr>
@@ -226,7 +229,7 @@ while ($dR = $query_naskah_awal->fetch_assoc()) {
                 <p><?= $data_naskah['lead'] ?></p>
             </div>
         <?php
-        }
+        } 
         ?>
         <pagebreak>
         <?php
@@ -245,7 +248,7 @@ while ($dR = $query_naskah_awal->fetch_assoc()) {
                     </td>
                     <td>Tanggal</td>
                     <td>:</td>
-                    <td>Sementara</td>
+                    <td><?= tgl_indo($drndwn['tanggal']) ?></td>
                 </tr>
                 <tr>
                     <td><b>TIM DESK</b></td>
@@ -279,21 +282,12 @@ while ($dR = $query_naskah_awal->fetch_assoc()) {
     if ($id_naskah == '0' && $id_naskah_default == '0' && !empty($teaser)) {
        ?>
         <table border="0" style="width:100%; border-collapse:collapse;" cellpadding="2">
-                <tr>
-                    <td rowspan="2">
-                        <h3>TELEVISI RI STASIUN GORONTALO</h3>
-                    </td>
-                    <td>Tanggal</td>
-                    <td>:</td>
-                    <td>Sementara</td>
-                </tr>
-                <tr>
-                    <td><b>TIM DESK</b></td>
-                </tr>
+                
                 <tr>
                     <td rowspan="2" valign="top">
                         <h4>Pokok Pokok Gorontalo Hari Ini</h4>
                     </td>
+                </tr>
             </table>
             <br>
             <table width="100%">

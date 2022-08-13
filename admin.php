@@ -1,7 +1,8 @@
 <?php
-error_reporting(0);
+// error_reporting(0);
 session_start();
 include 'app/env.php';
+include 'getapp.php';
 include 'base_url.php';
 if ($_SESSION['type_user'] != 'admin' || !isset($_SESSION['type_user'])) {
 
